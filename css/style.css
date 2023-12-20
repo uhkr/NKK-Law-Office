@@ -54,6 +54,7 @@ select{
 }
 
 .--ff-en{ font-family: var(--ff-en); }
+.--ff-mincho{ font-family: var(--ff-mincho); }
 .--c-red{ color: #e60012 !important; }
 .--c-white{ color: #fff !important; }
 .--c-yellow{ color: #ffff00 !important; }
@@ -124,7 +125,7 @@ select{
 	margin: 0 auto;
 }
 ._Inner{
-
+	max-width: 1200px;
 }
 
 /* ローディング */
@@ -185,6 +186,7 @@ select{
 
 /* スマホナビ */
 #nav{
+	display: none;
 }
 
 /* フッター */
