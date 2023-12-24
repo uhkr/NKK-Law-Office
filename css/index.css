@@ -42,6 +42,7 @@
   margin-top: 1.75vw;
   font-family: var(--ff-mincho);
   font-size: 1.90vw;
+  font-weight: 400;
   letter-spacing: .2em;
 }
 #mainVisual .cntBox-news{
@@ -79,4 +80,40 @@
     grid-column: 1/4;
   }
   
+}
+
+/* About Us */
+#_about{
+  padding: 100px 50px;
+  background: url(../img/top/about_bg.jpg) center/cover no-repeat;
+}
+#_about .cntInner{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  max-width: 1035px;
+  padding: 82px 0;
+  z-index: 2;
+}
+#_about .cntInner::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: calc(100vw - 40px);
+  height: 100%;
+  max-width: 1200px;
+  background: #ffffffe6;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+#_about .cntBox-title{
+  max-width: 470px;
+}
+#_about .cntText{
+  margin-bottom: 48px;
+}
+#_about .cntBtn{
+  margin-top: 20px;
 }

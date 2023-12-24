@@ -129,6 +129,61 @@ select{
 ._Inner{
 	max-width: 1200px;
 }
+._Title{
+	margin-bottom: 30px;
+	color: var(--c-base-btn);
+}
+._Title .en{
+	display: block;
+	font-family: var(--ff-en);
+	font-weight: 400;
+	font-size: 5.8rem;
+	letter-spacing: .1em;
+}
+._Title .ja{
+	margin-top: 7px;
+	font-family: var(--ff-mincho);
+	font-size: 2rem;
+	font-weight: 600;
+	letter-spacing: .2em;
+}
+._Catch{
+	font-family: var(--ff-mincho);
+	font-size: 3.2rem;
+	letter-spacing: .1em;
+	line-height: 1.8;
+}
+._Text{
+	line-height: 1.8;
+}
+._Btn{
+	position: relative;
+	display: block;
+	padding: 23px 26px 22px 20px;
+	background: var(--c-base-btn);
+	color: #fff;
+	font-family: var(--ff-mincho);
+	font-weight: 700;
+	letter-spacing: .2em;
+	text-align: center;
+}
+._Btn::before,
+._Btn::after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	width: 11px;
+	height: 2px;
+	background: #fff;
+	transform-origin: right;
+}
+._Btn::before{
+	transform: rotate(45deg);
+}
+._Btn::after{
+	transform: rotate(-45deg);
+}
 ._Btn-en{
 	display: inline-block;
 	min-width: 79px;
@@ -142,7 +197,7 @@ select{
 	position: relative;
 	display: inline-block;
 	width: 13px;
-	height: 1em;
+	height: .9em;
 }
 ._Btn-en .arrow::before,
 ._Btn-en .arrow::after{
