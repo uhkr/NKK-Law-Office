@@ -7,7 +7,7 @@ body {
 	--max-width: 900px;
   --c-base: #000;
   --c-main: #000;
-  --c-accent: #000;
+  --c-accent: #262626;
   --ff-main: 'Noto Sans JP', "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 	--ff-mincho: 'Noto Serif JP', "游明朝", YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif;
   --ff-en: 'Cormorant', 'Fjalla One', 'Noto Serif JP', "游明朝", YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif;
@@ -20,6 +20,7 @@ body {
   position: relative;
   width: 100%;
   overflow-x: hidden;
+	color: var(--c-base);
 	font-family: var(--ff-main);
 	font-size: 1.6rem;
 	font-weight: 500;
@@ -150,7 +151,74 @@ select{
 
 /* ヘッダー */
 #header{
+	background: #fff;
 	z-index: 100;
+}
+#header .cntInner{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0 20px;
+	max-width: 1920px;
+	min-height: 76px;
+}
+#headerLogo{
+	padding: 16px 0 15px 4.393%;
+	flex-shrink: 0;
+	font-family: var(--ff-mincho);
+	font-weight: 700;
+	letter-spacing: .2em;
+	line-height: 1.4;
+}
+#header .cntBox{
+	display: flex;
+	justify-content: flex-end;
+}
+#header .cntList-01{
+	display: flex;
+	font-weight: 700;
+	letter-spacing: .2em;
+}
+#header .cntList-01 > li{
+	position: relative;
+	padding: 25px 0;
+}
+#header .cntList-01 > li > a{
+	position: relative;
+	padding: 0 28px;
+}
+#header .cntList-01 > li + li > a::before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 1px;
+	height: 20px;
+	background: var(--c-base);
+	transform: translateY(-50%);
+}
+#header .cntList-01 > li > .child{
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	display: none;
+	min-width: 221px;
+	padding: 10px 28px;
+	background: #fff;
+	transform: translateX(-50%);
+	font-size: 1.4rem;
+}
+#header .cntList-01 > li:hover > .child{
+	display: block;
+}
+#header .cntList-01 .child li + li{
+	border-top: 1px solid #CFD4D2;
+}
+#header .cntList-01 .child a{
+	padding: 18px 0;
+}
+#header .cntList-02{
+	color: #10291E;
 }
 #headerBtn{
 	position: relative;
