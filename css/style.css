@@ -163,12 +163,18 @@ select{
 	min-height: 76px;
 }
 #headerLogo{
-	padding: 16px 0 15px 4.393%;
-	flex-shrink: 0;
+	/* flex-shrink: 0; */
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 306px;
+	/* padding: 16px 0 15px 4.393%; */
+	padding: 16px 0 15px 15px;
 	font-family: var(--ff-mincho);
 	font-weight: 700;
 	letter-spacing: .2em;
 	line-height: 1.4;
+	white-space: nowrap;
 }
 #header .cntBox{
 	display: flex;
@@ -250,6 +256,11 @@ select{
 }
 #headerBtn.active span:nth-of-type(3){
 	transform: translateY(-7px) rotate(-45deg);
+}
+@media screen and (max-width: 1366px) {
+	#header .cntList-01 > li > a{
+		padding: 0 2.04vw;
+	}
 }
 
 /* スマホナビ */
