@@ -234,17 +234,20 @@ select{
 }
 ._Btn-en{
 	display: inline-block;
-	min-width: 79px;
 	color: var(--c-base-btn);
 	font-family: var(--ff-en-2);
-	font-size: 1.3rem;
+	font-size: 1.6rem;
 	font-weight: 400;
 	letter-spacing: .1em;
+}
+._Btn-en.-right{
+	float: right;
+	clear: both;
 }
 ._Btn-en .arrow{
 	position: relative;
 	display: inline-block;
-	width: 13px;
+	width: 1.125em;
 	height: .9em;
 }
 ._Btn-en .arrow::before,
@@ -265,6 +268,17 @@ select{
 ._Btn-en .arrow::after{
 	transform: rotate(-45deg);
 }
+._Category{
+  display: inline-block;
+  min-width: 116px;
+	padding: 6px;
+	color: #fff;
+	font-size: 1.2rem;
+	text-align: center;
+}
+._Category.-topics{ background: #C69C2D; }
+._Category.-news{ background: #A1D154; }
+._Category.-seminar{ background: var(--c-base-btn); }
 
 /* ローディング */
 #loading{
