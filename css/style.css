@@ -151,6 +151,7 @@ select{
 	position: relative;
 	margin-bottom: 100px;
 	padding: 17px 0;
+	overflow: hidden;
 	text-align: center;
 }
 ._Title-bg .ja{

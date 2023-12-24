@@ -146,8 +146,10 @@
 #_lawyers .cntBox-text,
 #_service .cntBox-text{
   width: 50%;
-  max-width: 519px;
-  padding-right: 20px;
+  max-width: 529px;
+}
+#_lawyers .cntBox-text{
+  padding-right: 30px;
 }
 #_lawyers .cntText{
   margin: 48px 0;
@@ -184,6 +186,9 @@
 #_service::before{
   left: auto;
   right: 0;
+}
+#_service .cntBox-text{
+  padding-left: 30px;
 }
 #_service .cntText{
   margin: 32px 0 48px;
