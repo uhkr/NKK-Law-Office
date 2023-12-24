@@ -129,6 +129,39 @@ select{
 ._Inner{
 	max-width: 1200px;
 }
+._Btn-en{
+	display: inline-block;
+	min-width: 79px;
+	color: var(--c-base-btn);
+	font-family: var(--ff-en-2);
+	font-size: 1.3rem;
+	font-weight: 400;
+	letter-spacing: .1em;
+}
+._Btn-en .arrow{
+	position: relative;
+	display: inline-block;
+	width: 13px;
+	height: 1em;
+}
+._Btn-en .arrow::before,
+._Btn-en .arrow::after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 0;
+	display: block;
+	width: 7px;
+	height: 1px;
+	background: var(--c-base-btn);
+	transform-origin: right;
+}
+._Btn-en .arrow::before{
+	transform: rotate(45deg);
+}
+._Btn-en .arrow::after{
+	transform: rotate(-45deg);
+}
 
 /* ローディング */
 #loading{
