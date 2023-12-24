@@ -207,12 +207,14 @@ select{
 
 /* ヘッダー */
 #header{
+	position: fixed;
+	top: 0;
+	left: 0;
 	background: #fff;
 	z-index: 100;
 	background: #FFF;
-	position: fixed;
-	height: 76px;
 	width: 100%;
+	min-height: 76px;
 }
 #header .cntInner{
 	display: flex;
