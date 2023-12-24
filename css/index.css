@@ -117,3 +117,74 @@
 #_about .cntBtn{
   margin-top: 20px;
 }
+
+/* Lawyers */
+#_lawyers{
+  position: relative;
+  padding: 160px 30px 120px;
+  overflow: hidden;
+}
+#_lawyers::before,
+#_service::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 84.37vw;
+  height: 240px;
+  background: #F4F5F5;
+  z-index: -1;
+}
+#_lawyers .cntDiv,
+#_service .cntDiv{
+  display: flex;
+  justify-content: space-between;
+}
+#_lawyers .cntBox-text,
+#_service .cntBox-text{
+  width: 50%;
+  max-width: 519px;
+  padding-right: 20px;
+}
+#_lawyers .cntText{
+  margin: 48px 0;
+}
+#_lawyers .cntBox-img,
+#_service .cntBox-img{
+  position: relative;
+  width: 50%;
+  min-height: 492px;
+}
+#_lawyers .cntImg,
+#_service .cntImg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 100%;
+  max-width: 960px;
+}
+/* TAB */
+@media screen and (max-width: 899px) {
+  #_lawyers::before,
+  #_service::before{
+    width: 92.67vw;
+  }
+}
+
+/* Service */
+#_service{
+  position: relative;
+  padding: 160px 30px 120px;
+  overflow: hidden;
+}
+#_service::before{
+  right: 0;
+}
+#_service .cntText{
+  margin: 32px 0 48px;
+}
+#_service .cntImg{
+  left: auto;
+  right: 0;
+}
