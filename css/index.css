@@ -188,3 +188,33 @@
   left: auto;
   right: 0;
 }
+
+/* Information */
+#_info{
+  padding: 160px 30px;
+}
+#_info .cntTitle{
+  margin-bottom: 80px;
+}
+#_info .cntList-nav{
+  display: flex;
+  gap: 0 4px;
+  border-bottom: 1px solid var(--c-base-btn);
+}
+#_info .cntList-nav .item{
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--c-base-btn);
+  border-bottom: 0;
+  font-family: var(--ff-mincho);
+  font-weight: 600;
+  letter-spacing: .1em;
+  transition: all .3s;
+  cursor: pointer;
+  text-align: center;
+}
+#_info .cntList-nav .item:hover,
+#_info .cntList-nav .item.active{
+  background: var(--c-base-btn);
+  color: #fff;
+}

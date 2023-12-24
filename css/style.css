@@ -190,13 +190,19 @@ select{
 	font-weight: 700;
 	letter-spacing: .2em;
 	text-align: center;
+	transition: all .3s;
 }
+._Btn + ._Btn{
+	margin-top: 20px;
+}
+._Btn:not(.-white):hover,
 ._Btn.-white{
 	background: #fff;
 	color: var(--c-base-btn);
 }
-._Btn + ._Btn{
-	margin-top: 20px;
+._Btn.-white:hover{
+	background: var(--c-base-btn);
+	color: #fff;
 }
 ._Btn::before,
 ._Btn::after{
@@ -208,16 +214,23 @@ select{
 	height: 2px;
 	background: #fff;
 	transform-origin: right;
-}
-._Btn.-white::before,
-._Btn.-white::after{
-	background: var(--c-base-btn);
+	transition: background .3s;
 }
 ._Btn::before{
 	transform: rotate(45deg);
 }
 ._Btn::after{
 	transform: rotate(-45deg);
+}
+._Btn:not(.-white):hover::before,
+._Btn:not(.-white):hover::after,
+._Btn.-white::before,
+._Btn.-white::after{
+	background: var(--c-base-btn);
+}
+._Btn.-white:hover::before,
+._Btn.-white:hover::after{
+	background: #fff;
 }
 ._Btn-en{
 	display: inline-block;
