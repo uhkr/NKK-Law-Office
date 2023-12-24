@@ -166,3 +166,11 @@ $(function(){
     setOverflow();
   });
 });
+
+// 新着情報
+$(function(){
+  $('#_info .cntList-nav .item').click(function(){
+    $("#_info .cntList").removeClass("active");
+    $("#_info .cntList.-"+$(this).data("cat")).addClass("active");
+  });
+});

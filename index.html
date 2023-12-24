@@ -46,7 +46,7 @@
 <div id="loading"></div>
 
 <!-- トップへ戻るボタン -->
-<div id="top"><a href="#" target="_blank" rel="noopener"></a></div>
+<a id="top" href="#" target="_blank" rel="noopener"></a>
 
 <!-- スマホメニュー -->
 <div id="nav">
@@ -112,7 +112,7 @@
 			<h2 class="title">NEWS</h2>
 			<time class="date" datetime="2021-06-21">2021.06.21</time>
 			<a href="" class="text js-overflow" data-lh="1.5" data-line="2" data-sp-line="1">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテ...</a>
-			<div class="more"><a href="" class="button _Btn-en"><span class="txt">VIEW MORE</span><span class="arrow"></span></a></div>
+			<div class="more"><a href="" class="button _Btn-en -right"><span class="txt">VIEW MORE</span><span class="arrow"></span></a></div>
 		</div>
 		<div class="scroll"></div>
 	</div>
@@ -150,14 +150,14 @@
 			<div class="cntTitle _Title-bg"><h1 class="ja">弁護士紹介</h1><small class="en">LAWYERS</small></div>
 			<div class="cntDiv">
 				<div class="cntBox-text">
-					<p class="_Catch">個性ある弁護士による幅広く柔軟な対応</p>
+					<p class="_Catch">個性ある弁護士による幅広く<span class="--d-ib">柔軟な対応</span></p>
 					<p class="cntText _Text">
 						ダイバーシティを重視して、個性ある弁護士が在籍しています。<br>
 						幅広い得意分野を掛け合わせ、粘り強くサポートいたします。
 					</p>
 					<a href="" class="cntBtn _Btn"><span class="txt">弁護士 一覧</span><span class="arrow"></span></a>
 				</div>
-				<div class="cntImg"><img src="./img/common/_noimage.png" alt=""></div>
+				<div class="cntBox-img"><div class="cntImg"><img src="./img/top/lawyers_img.jpg" class="--img-cover" alt=""></div></div>
 			</div>
 		</div>
 	</section>
@@ -167,9 +167,9 @@
 		<div class="cntInner _Inner">
 			<div class="cntTitle _Title-bg"><h1 class="ja">取扱業務</h1><small class="en">SERVICE</small></div>
 			<div class="cntDiv">
-				<div class="cntImg"><img src="./img/common/_noimage.png" alt=""></div>
+				<div class="cntBox-img"><div class="cntImg"><img src="./img/top//services_img.jpg" class="--img-cover" alt=""></div></div>
 				<div class="cntBox-text">
-					<p class="_Catch">社会のニーズに応えるため、幅広い分野に対応しています。</p>
+					<p class="_Catch">社会のニーズに応えるため、<span class="--d-ib">幅広い分野</span>に対応しています。</p>
 					<p class="cntText _Text">
 						愛知県を中心とする東海地区において、多様な業種の企業・法人・経営者様とお付き合いさせていただいています。その経験を活かしながら、その時々の社会のニーズをキャッチして、幅広い業務に対応しております。
 					</p>
@@ -184,38 +184,59 @@
 	</section>
 
 	<!-- Information -->
-	<section class="mainCntBox" id="_service">
+	<section class="mainCntBox" id="_info">
 		<div class="cntInner _Inner">
 			<div class="cntTitle _Title-bg"><h1 class="ja">新着情報</h1><small class="en">INFORMATION</small></div>
 			<ul class="cntList-nav">
-				<li class="item">すべて</li>
-				<li class="item">セミナー</li>
-				<li class="item">お知らせ</li>
-				<li class="item">トピックス</li>
+				<li class="item active" data-cat="all">すべて</li>
+				<li class="item" data-cat="seminar">セミナー</li>
+				<li class="item" data-cat="news">お知らせ</li>
+				<li class="item" data-cat="topics">トピックス</li>
 			</ul>
-			<div class="cntList">
+			<div class="cntList -all active">
 				<a href="" class="item">
-					<div class="category -topics">トピックス</div>
+					<div class="category _Category -topics">トピックス</div>
 					<time class="date" datetime="2021-06-21">2021.06.21</time>
-					<h3 class="title">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキ...</h3>
+					<h3 class="title js-overflow" data-line="1">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキ...</h3>
 				</a>
 				<a href="" class="item">
-					<div class="category -news">お知らせ</div>
+					<div class="category _Category -news">お知らせ</div>
 					<time class="date" datetime="2021-06-21">2021.06.21</time>
-					<h3 class="title">新型コロナウイルス感染症(COVID-19)に関する対策について ～令和3年6月21日更新～...</h3>
+					<h3 class="title js-overflow" data-line="1">新型コロナウイルス感染症(COVID-19)に関する対策について ～令和3年6月21日更新～...</h3>
 				</a>
 				<a href="" class="item">
-					<div class="category -topics">トピックス</div>
+					<div class="category _Category -topics">トピックス</div>
 					<time class="date" datetime="2021-06-21">2021.06.21</time>
-					<h3 class="title">新型コロナウイルス感染症(COVID-19)に関する対策について ～令和3年6月21日更新～...</h3>
+					<h3 class="title js-overflow" data-line="1">新型コロナウイルス感染症(COVID-19)に関する対策について ～令和3年6月21日更新～...</h3>
 				</a>
 				<a href="" class="item">
-					<div class="category -topics">トピックス</div>
+					<div class="category _Category -topics">トピックス</div>
 					<time class="date" datetime="2021-06-21">2021.06.21</time>
-					<h3 class="title">新型コロナウイルス感染症(COVID-19)に関する対策について ～令和3年6月21日更新～...</h3>
+					<h3 class="title js-overflow" data-line="1">新型コロナウイルス感染症(COVID-19)に関する対策について ～令和3年6月21日更新～...</h3>
 				</a>
 			</div>
-			<a href="" class="cntBtn _Btn-en"><span class="txt">VIEW MORE</span><span class="arrow"></span></a>
+			<div class="cntList -seminar">
+				<a href="" class="item">
+					<div class="category _Category -seminar">セミナー</div>
+					<time class="date" datetime="2021-06-21">2021.06.21</time>
+					<h3 class="title js-overflow" data-line="1">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキ...</h3>
+				</a>
+			</div>
+			<div class="cntList -news">
+				<a href="" class="item">
+					<div class="category _Category -news">お知らせ</div>
+					<time class="date" datetime="2021-06-21">2021.06.21</time>
+					<h3 class="title js-overflow" data-line="1">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキ...</h3>
+				</a>
+			</div>
+			<div class="cntList -topics">
+				<a href="" class="item">
+					<div class="category _Category -topics">トピックス</div>
+					<time class="date" datetime="2021-06-21">2021.06.21</time>
+					<h3 class="title js-overflow" data-line="1">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキ...</h3>
+				</a>
+			</div>
+			<a href="" class="cntBtn _Btn-en -right"><span class="txt">VIEW MORE</span><span class="arrow"></span></a>
 		</div>
 	</section>
 

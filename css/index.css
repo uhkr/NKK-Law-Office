@@ -42,6 +42,7 @@
   margin-top: 1.75vw;
   font-family: var(--ff-mincho);
   font-size: 1.90vw;
+  font-weight: 400;
   letter-spacing: .2em;
 }
 #mainVisual .cntBox-news{
@@ -55,8 +56,11 @@
   font-size: 1.3rem;
   line-height: 1.5;
 }
-#mainVisual .cntBox-news .more{
-  text-align: right;
+#mainVisual .cntBox-news .button{
+  font-size: 1.3rem;
+}
+#mainVisual .cntBox-news .button .arrow{
+  width: 1em;
 }
 #mainVisual .cntImg{
   width: 50%;
@@ -79,4 +83,164 @@
     grid-column: 1/4;
   }
   
+}
+
+/* About Us */
+#_about{
+  padding: 100px 50px;
+  background: url(../img/top/about_bg.jpg) center/cover no-repeat;
+}
+#_about .cntInner{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  max-width: 1035px;
+  padding: 82px 0;
+  z-index: 2;
+}
+#_about .cntInner::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: calc(100vw - 40px);
+  height: 100%;
+  max-width: 1200px;
+  background: #ffffffe6;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+#_about .cntBox-title{
+  max-width: 470px;
+}
+#_about .cntText{
+  margin-bottom: 48px;
+}
+#_about .cntBtn{
+  margin-top: 20px;
+}
+
+/* Lawyers */
+#_lawyers{
+  position: relative;
+  padding: 160px 30px 120px;
+  overflow: hidden;
+}
+#_lawyers::before,
+#_service::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 84.37vw;
+  height: 240px;
+  background: #F4F5F5;
+  z-index: -1;
+}
+#_lawyers .cntDiv,
+#_service .cntDiv{
+  display: flex;
+  justify-content: space-between;
+}
+#_lawyers .cntBox-text,
+#_service .cntBox-text{
+  width: 50%;
+  max-width: 529px;
+}
+#_lawyers .cntBox-text{
+  padding-right: 30px;
+}
+#_lawyers .cntText{
+  margin: 48px 0;
+}
+#_lawyers .cntBox-img,
+#_service .cntBox-img{
+  position: relative;
+  width: 50%;
+  min-height: 492px;
+}
+#_lawyers .cntImg,
+#_service .cntImg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 100%;
+  max-width: 960px;
+}
+/* TAB */
+@media screen and (max-width: 899px) {
+  #_lawyers::before,
+  #_service::before{
+    width: 92.67vw;
+  }
+}
+
+/* Service */
+#_service{
+  position: relative;
+  padding: 160px 30px 120px;
+  overflow: hidden;
+}
+#_service::before{
+  left: auto;
+  right: 0;
+}
+#_service .cntBox-text{
+  padding-left: 30px;
+}
+#_service .cntText{
+  margin: 32px 0 48px;
+}
+#_service .cntImg{
+  left: auto;
+  right: 0;
+}
+
+/* Information */
+#_info{
+  padding: 160px 30px;
+}
+#_info .cntTitle{
+  margin-bottom: 80px;
+}
+#_info .cntList-nav{
+  display: flex;
+  gap: 0 4px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid var(--c-base-btn);
+}
+#_info .cntList-nav .item{
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--c-base-btn);
+  border-bottom: 0;
+  font-family: var(--ff-mincho);
+  font-weight: 600;
+  letter-spacing: .1em;
+  transition: all .3s;
+  cursor: pointer;
+  text-align: center;
+}
+#_info .cntList-nav .item:hover,
+#_info .cntList-nav .item.active{
+  background: var(--c-base-btn);
+  color: #fff;
+}
+#_info .cntList{
+  margin-bottom: 25px;
+}
+#_info .cntList:not(.active){
+  display: none;
+}
+#_info .cntList .item{
+  display: grid;
+  grid-template-columns: 128px 85px 1fr;
+  justify-items: start;
+  align-items: center;
+  gap: 0 20px;
+  padding: 21px 0 20px;
+  border-bottom: 1px solid #CFD4D2;
+  font-size: 1.4rem;
 }
