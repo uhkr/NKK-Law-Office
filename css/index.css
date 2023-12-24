@@ -200,7 +200,7 @@
 
 /* Information */
 #_info{
-  padding: 160px 30px;
+  padding: 160px 30px 80px;
 }
 #_info .cntTitle{
   margin-bottom: 80px;
@@ -244,3 +244,48 @@
   border-bottom: 1px solid #CFD4D2;
   font-size: 1.4rem;
 }
+
+/* Recruit */
+#_recruit{
+  padding: 80px 30px;
+}
+#_recruit .cntInner{
+  position: relative;
+  padding: 67px 9.881%;
+}
+#_recruit .cntInner::before,
+#_recruit .cntInner::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#_recruit .cntInner::before{
+  background: var(--c-base-btn);
+  opacity: .3;
+  z-index: -1;
+}
+#_recruit .cntInner::after{
+  background: url(../img/top/recruit_bg.jpg) center/cover no-repeat;
+  z-index: -2;
+}
+#_recruit .cntBox{
+  max-width: 400px;
+  margin-left: auto;
+  text-align: center;
+}
+#_recruit .cntTitle{
+  margin-bottom: 18px;
+  color: #fff;
+}
+#_recruit .cntBtn{
+  border: 1px solid #fff;
+  background: none;
+}
+#_recruit .cntBtn:hover{
+  background: #fff;
+}
+
+/* Access */
