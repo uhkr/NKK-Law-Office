@@ -146,6 +146,28 @@ select{
 	bottom: 0;
 	right: 0;
 	z-index: 100;
+	width: 60px;
+	height: 60px;
+	background: #102916;
+}
+#top::before,
+#top::after{
+	content: "";
+	position: absolute;
+	width: 2px;
+	height: 9px;
+	background: #fff;
+	top: 26px;
+	/* left: 29px; */
+	transform-origin: top center;
+}
+#top::before{
+	transform: rotate(48deg);
+	left: 29px;
+}
+#top::after{
+	transform: rotate(-48deg);
+	left: 28px;
 }
 
 /* ヘッダー */
@@ -236,6 +258,127 @@ select{
 
 /* フッター */
 #footer{
+	background: #000;
+}
+#footer .cntInner{
+	max-width: 1239px;
+	width: 100%;
+	padding: 0 20px 60px;
+	color: #FFF;
+}
+#footer .cntList{
+	display: flex;
+	position: relative;
+	font-weight: 600;
+	justify-content: center;
+	padding: 35px 0;
+	margin-bottom: 41px;
+	flex-wrap: wrap;
+}
+#footer .cntList::after{
+	content: "";
+	position: absolute;
+	width: 100vw;
+	height: 1px;
+	background: #414141;
+	bottom: 0;
+	left: calc(50% - 50vw);
+}
+#footer .cntList li+li{
+	margin-left: 40px;
+}
+#footer .cntBottom{
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+#footer .cntText{
+	font-size: 1.3rem;
+	letter-spacing: .1em;
+	line-height: 2.1538;
+	font-family: var(--ff-mincho);
+	font-weight: 400;
+}
+#copyright{
+	font-size: 1.2rem;
+	letter-spacing: .1em;
+}
+#footerLogo{
+	font-size: 1.8rem;
+	font-family: var(--ff-mincho);
+	letter-spacing: .2em;
+	line-height: 2;
+	font-weight: 400;
+	margin-bottom: 34px;
+}
+#footerLogo .small{
+	font-size: 1.3rem;
+	font-family: var(--ff-mincho);
+	letter-spacing: .2em;
+	line-height: 2;
+}
+/* TAB */
+@media screen and (max-width: 899px){
+	#footer{
+		/* background: #000; */
+	}
+	#footer .cntInner{
+		max-width: 1239px;
+		width: 100%;
+		padding: 0 20px 60px;
+		color: #FFF;
+	}
+	#footer .cntList{
+		display: flex;
+		position: relative;
+		font-weight: 600;
+		justify-content: center;
+		padding: 35px 0;
+		margin-bottom: 41px;
+	}
+	#footer .cntList::after{
+		content: "";
+		position: absolute;
+		width: 100vw;
+		height: 1px;
+		background: #414141;
+		bottom: 0;
+		left: calc(50% - 50vw);
+	}
+	#footer .cntList li+li{
+		margin-left: 40px;
+	}
+	#footer .cntBottom{
+		display: flex;
+		justify-content: space-between;
+		align-items: end;
+	}
+	#footer .cntText{
+		font-size: 1.3rem;
+		letter-spacing: .1em;
+		line-height: 2.1538;
+		font-family: var(--ff-mincho);
+		font-weight: 400;
+	}
+	#copyright{
+		font-size: 1.2rem;
+		letter-spacing: .1em;
+	}
+	#footerLogo{
+		font-size: 1.8rem;
+		font-family: var(--ff-mincho);
+		letter-spacing: .2em;
+		line-height: 2;
+		font-weight: 400;
+		margin-bottom: 34px;
+	}
+	#footerLogo .small{
+		font-size: 1.3rem;
+		font-family: var(--ff-mincho);
+		letter-spacing: .2em;
+		line-height: 2;
+	}
+
 }
 
 /*パンくずリスト*/
