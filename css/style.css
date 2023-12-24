@@ -5,9 +5,10 @@
 *{ box-sizing: border-box; }
 body {
 	--max-width: 900px;
-  --c-base: #000;
-  --c-main: #000;
-  --c-accent: #262626;
+  --c-base: #262626;
+  --c-base-btn: #10291E;
+  --c-main: #A1D154;
+  --c-accent: #C69C2D;
   --ff-main: 'Noto Sans JP', "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 	--ff-mincho: 'Noto Serif JP', "游明朝", YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif;
   --ff-en: 'Cormorant', 'Fjalla One', 'Noto Serif JP', "游明朝", YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif;
@@ -153,6 +154,51 @@ select{
 #header{
 	background: #fff;
 	z-index: 100;
+	background: #FFF;
+	position: fixed;
+	height: 76px;
+	width: 100%;
+}
+#header .cntInner{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1920px;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+#header .cntBox{
+	display: flex;
+}
+#header .cntList-01{
+	display: flex;
+	padding-right: 168px;
+}
+#header .cntList-02 .item{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 120px;
+	height: 120px;
+	background: var(--c-main);
+	text-align: center;
+	padding-top: 33px;
+}
+#header .cntList-02 .icon{
+	display: block;
+	margin-bottom: 13px;
+}
+#header .cntList-02 .txt{
+	font-size: 1.3rem;
+	font-weight: 700;
+	font-family: var(--ff-mincho);
+	letter-spacing: .1em;
+}
+#headerLogo{
+	font-family: var(--ff-mincho);
+	letter-spacing: .2em;
+	line-height: 1.4;
 }
 #header .cntInner{
 	display: flex;
