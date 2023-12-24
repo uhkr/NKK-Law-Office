@@ -210,7 +210,6 @@ select{
 	position: fixed;
 	top: 0;
 	left: 0;
-	background: #fff;
 	z-index: 100;
 	background: #FFF;
 	width: 100%;
@@ -224,13 +223,8 @@ select{
 	width: 100%;
 	height: 100%;
 	position: relative;
-}
-#header .cntBox{
-	display: flex;
-}
-#header .cntList-01{
-	display: flex;
-	padding-right: 168px;
+	gap: 0 20px;
+	min-height: 76px;
 }
 #header .cntList-02 .item{
 	position: absolute;
@@ -251,19 +245,6 @@ select{
 	font-weight: 700;
 	font-family: var(--ff-mincho);
 	letter-spacing: .1em;
-}
-#headerLogo{
-	font-family: var(--ff-mincho);
-	letter-spacing: .2em;
-	line-height: 1.4;
-}
-#header .cntInner{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 0 20px;
-	max-width: 1920px;
-	min-height: 76px;
 }
 #headerLogo{
 	/* flex-shrink: 0; */
@@ -287,6 +268,7 @@ select{
 	display: flex;
 	font-weight: 700;
 	letter-spacing: .2em;
+	padding-right: 140px;
 }
 #header .cntList-01 > li{
 	position: relative;
@@ -330,8 +312,13 @@ select{
 	color: #10291E;
 }
 #headerBtn{
-	position: relative;
 	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 74px;
+	height: 74px;
+	background: var(--c-main);
 }
 #headerBtn span{
 	position: absolute;
@@ -340,6 +327,7 @@ select{
 	width: 30px;
 	height: 2px;
 	transition: all .5s;
+	background: var(--c-base-btn);
 }
 #headerBtn span:nth-of-type(1){
 	top: 27px;
@@ -361,8 +349,35 @@ select{
 	transform: translateY(-7px) rotate(-45deg);
 }
 @media screen and (max-width: 1366px) {
+	#header .cntList-01{
+		padding-right: 120px;
+	}
 	#header .cntList-01 > li > a{
 		padding: 0 2.04vw;
+	}
+}
+/* TAB */
+@media screen and (max-width: 899px){
+	#header{
+		/* position: fixed;
+		top: 0;
+		left: 0;
+		background: #fff;
+		z-index: 100;
+		background: #FFF;
+		width: 100%; */
+		min-height: 60px;
+	}
+	#header .cntInner{
+		/* display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 1920px;
+		width: 100%;
+		height: 100%;
+		position: relative; */
+	}
+	#headerLogo{
 	}
 }
 
