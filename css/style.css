@@ -856,5 +856,35 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 }
 /* TAB */
 @media screen and (max-width: 899px) {
-
+	#_contact{
+		padding: 60px 30px;
+	}
+	#_contact .cntTitle{
+		margin-bottom: 40px;
+	}
+	#_contact .cntText{
+		text-align: left;
+	}
+	#_contact .cntBtns{
+		display: block;
+		margin-top: 40px;
+	}
+	#_contact .cntBtn.-tel{
+		min-height: 109px;
+		margin-bottom: 20px;
+	}
+	#_contact .cntBtn.-email{
+		min-height: 70px;
+	}
+	#_contact .cntBtn.-tel .large{
+		font-size: 2.6rem;
+	}
+	#_contact .cntBtn.-email .large{
+		font-size: 1.6rem;
+	}
+	#_contact .cntBtn.-email .icon{
+		width: 20px;
+		height: 16px;
+		margin-right: 10px;
+	}
 }
