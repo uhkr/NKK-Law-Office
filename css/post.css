@@ -178,11 +178,12 @@
   margin-top: 20px;
   padding-left: 18px;
   font-weight: 700;
+  line-height: 1.8;
 }
 #_post .cntBox ul li::before{
   content: "";
   position: absolute;
-  top: .5em;
+  top: .7em;
   left: 0;
   display: block;
   width: 8px;
@@ -199,7 +200,7 @@
   padding-left: 1.8125em;
 }
 #_post .cntBox ul.is-style-checklist > li::before{
-  top: 0.05em;
+  top: 0.25em;
   width: 1.25em;
   height: 1.25em;
   background: url(../img/common/icon_checkbox.svg) left/contain no-repeat;
@@ -275,6 +276,7 @@
 #_post .cntBox ol li{
   padding-left: 1.875em;
   font-weight: 700;
+  line-height: 1.8;
 }
 #_post .cntBox ol li + li{
   margin-top: 20px;
@@ -393,6 +395,6 @@
     overflow-x: scroll;
   }
   #_post .cntBox .wp-block-flexible-table-block-table table{
-    min-width: 800px;
+    min-width: 754px;
   }
 }

@@ -1,0 +1,64 @@
+@import url(./post.css);
+
+#_post{
+  padding: 100px 30px 80px;
+}
+#_post .cntBox h1,
+#_post .cntBox h2,
+#_post .cntBox h3,
+#_post .cntBox h4,
+#_post .cntBox h5,
+#_post .cntBox h6{
+  font-weight: 600;
+}
+#_post .cntBox h1,
+#_post .cntBox h2{
+  margin-top: 100px;
+  font-size: 2.6rem;
+}
+#_post .cntBox ul,
+#_post .cntBox ol{
+  margin: 20px 0;
+}
+#_post .cntBox ul li,
+#_post .cntBox ol li{
+  font-weight: 400;
+}
+#_post .cntBox ul li + li,
+#_post .cntBox ol li + li{
+  margin-top: 10px;
+}
+#_post .cntBox ol li:before{
+  content: counter(item)'.';
+  font-family: var(--ff-main);
+  letter-spacing: 0;
+}
+#_post a.cntBtn-tel{
+  display: block;
+  max-width: 542px;
+  margin: 40px auto 100px;
+  padding: 21px 20px;
+  background: var(--c-base-btn);
+  color: #fff !important;
+  font-family: var(--ff-mincho);
+  font-size: 3.4rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-align: center;
+  text-decoration: none !important;
+}
+#_post .cntBtn-tel .small{
+  display: block;
+  margin-bottom: 4px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+}
+#_post .cntBtn-tel .detail{
+  display: block;
+  margin-top: 4px;
+  font-family: var(--ff-main);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
