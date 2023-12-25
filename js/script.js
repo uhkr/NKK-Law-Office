@@ -153,6 +153,7 @@ $(function(){
 $(function(){
   if(!$("#_info")) return;
 
+  var slick;
   var slick_seminar;
 
   $('#_info .cntList-nav .item').click(function(){
@@ -160,9 +161,32 @@ $(function(){
     $("#_info .cntList-nav .item").removeClass("active");
     $("#_info .cntList.-"+$(this).data("cat")).addClass("active");
     $(this).addClass("active");
-    if($(this).data("cat") == "seminar") slick_seminar.slick('setPosition');
+    if($(this).data("cat") == "seminar"){
+      slick_seminar.slick('setPosition');
+    }else{
+      slick.slick('setPosition');
+    }
   });
 
+  slick = $('#_info .cntList:not(.-seminar)').slick({
+    arrows: false,
+    dots: false,
+    draggable: false,
+    infinite: false,
+    speed: 300,
+    rows: 4,
+    centerMode: false,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: true,
+          draggable: true,
+          rows: 2,
+        }
+      }
+    ],
+  });
   slick_seminar = $('#_info .cntList.-seminar').slick({
     arrows: false,
     dots: false,

@@ -372,7 +372,7 @@
   display: none !important;
 }
 #_info .cntList .item{
-  display: grid;
+  display: grid !important;
   grid-template-columns: 128px 85px 1fr;
   justify-items: start;
   align-items: center;
@@ -386,7 +386,7 @@
   margin: 22px -24px 30px;
 }
 #_info .cntList.-seminar .item{
-  display: block;
+  display: block !important;
   padding: 0 24px;
   border: none;
 }
@@ -396,18 +396,21 @@
   margin-bottom: 18px;
   padding-top: 62.78%;
 }
+#_info .cntList .title{
+  width: 100%;
+  line-height: 1.5;
+}
 #_info .cntList.-seminar .title{
   margin-bottom: 10px;
   font-size: 1.6rem;
   font-weight: 700;
-  line-height: 1.5;
 }
 #_info .cntList.-seminar .date{
   font-size: 1.3rem;
   font-weight: 300;
   letter-spacing: .1em;
 }
-#_info .cntList.-seminar .slick-arrow{
+#_info .cntList .slick-arrow{
   position: absolute;
   top: calc(100% + 24px);
   width: 40px;
@@ -415,11 +418,17 @@
   background: #CFD4D2;
   font-size: 0;
 }
-#_info .cntList.-seminar .slick-arrow.slick-disabled{
+#_info .cntList .slick-arrow.slick-disabled{
   opacity: .3;
+}
+#_info .cntList .slick-prev{
+  left: 0;
 }
 #_info .cntList.-seminar .slick-prev{
   left: 10px;
+}
+#_info .cntList .slick-next{
+  left: 44px;
 }
 #_info .cntList.-seminar .slick-next{
   left: 54px;
@@ -451,7 +460,7 @@
     border-bottom: 1px solid var(--c-base-btn);
   }
   #_info .cntList .item{
-    display: block;
+    display: block !important;
     position: relative;
   }
   #_info .cntList .category{
@@ -472,6 +481,12 @@
   }
   #_info .cntList.-seminar .item{
     padding: 0 10px;
+  }
+}
+/* SP */
+@media screen and (max-width: 480px) {
+  #_info .cntList .item{
+    /* width: 100% !important; */
   }
 }
 
