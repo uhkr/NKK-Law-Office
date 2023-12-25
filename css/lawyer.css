@@ -1,0 +1,36 @@
+/* 主な取扱分野 */
+#_content-01{
+  padding: 60px 30px;
+  background: #F4F5F5;
+}
+#_content-01 .cntInner{
+  padding-right: 340px;
+}
+#_content-01 .cntTitle{
+  font-weight: 400;
+}
+#_content-01 .cntList .item + .item,
+#_content-02 .cntList .item + .item{
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #CFD4D2;
+}
+#_content-01 .cntList .title,
+#_content-02 .cntList .title{
+  margin-bottom: 13px;
+  font-size: 1.5rem;
+}
+
+/* その他 */
+#_content-02{
+  padding: 60px 30px 100px;
+}
+#_content-02 .cntInner{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 73px 6.66%;
+  max-width: 1000px;
+}
+#_content-02 .cntBox.-col2{
+  grid-column: 1/3;
+}
