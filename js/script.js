@@ -26,24 +26,6 @@ function is_sp(){
 $(window).on('load resize', function() {
   is_pc();
   is_sp();
-  if(IS_PC){ //size:pc
-    if($NAV) $NAV.removeClass("active");
-    if($NAV_BTN) $NAV_BTN.removeClass("active");
-    BOOL_NAV_ACTIVE = false;
-  }else{
-  }
-  if(IS_PC || !IS_SP){ //size:tablet~pc
-  }else{
-  }
-  if(!IS_PC || !IS_SP){ //size:tablet
-  }else{
-  }
-  if(!IS_PC || IS_SP){ //size:sp~tablet
-  }else{
-  }
-  if(IS_SP){ //size:sp
-  }else{
-  }
 });
 // ロード
 $(window).on('load', function (){
@@ -204,7 +186,31 @@ $(function(){
 
 // アコーディオン
 $(function(){
-  $("._Slider").click(function(){
+  $(window).on('load', function() {
+    $("._Slider").each(function(){
+      if($(this).hasClass("active")){
+        $(this).next().show();
+      }else{
+        $(this).next().hide();
+      }
+    });
+  });
+  $(window).on('load resize', function() {
+    var $sliders = $("._Slider-tabsp");
+    if(IS_PC){
+      $sliders.next().css("display","");
+    }else{
+      $sliders.each(function(){
+        if($(this).hasClass("active")){
+          $(this).next().show();
+        }else{
+          $(this).next().hide();
+        }
+      });
+    }
+  });
+  $("._Slider, ._Slider-tabsp").click(function(){
+    if(IS_PC && $(this).hasClass("_Slider-tabsp")) return;
     if($(this).hasClass("active")){
       $(this).next().slideUp();
       $(this).removeClass("active");
