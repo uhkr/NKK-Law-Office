@@ -280,6 +280,26 @@ select{
 ._Category.-topics{ background: #C69C2D; }
 ._Category.-news{ background: #A1D154; }
 ._Category.-seminar{ background: var(--c-base-btn); }
+/* TAB */
+@media screen and (max-width: 899px) {
+	._Title{
+		margin-bottom: 30px;
+		color: var(--c-base-btn);
+	}
+	._Title .en{
+		font-size: 3rem;
+	}
+	._Title .ja{
+		font-size: 1.3rem;
+	}
+	._Catch{
+		font-size: 2rem;
+	}
+	._Text{
+		font-size: 1.4rem;
+	}
+
+}
 
 /* ローディング */
 #loading{
