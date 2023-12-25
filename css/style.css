@@ -528,13 +528,17 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 	bottom: 27px;
 }
 #headerBtn.active span:nth-of-type(1){
-	transform: translateY(7px) rotate(45deg);
+	width: 42px;
+	left: 15px;
+	transform: translateY(9px) rotate(45deg);
 }
 #headerBtn.active span:nth-of-type(2){
 	opacity: 0;
 }
 #headerBtn.active span:nth-of-type(3){
-	transform: translateY(-7px) rotate(-45deg);
+	width: 42px;
+	left: 15px;
+	transform: translateY(-9px) rotate(-45deg);
 }
 @media screen and (max-width: 1366px) {
 	#header .cntList-01{
@@ -602,6 +606,84 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 }
 #nav .cntInner::-webkit-scrollbar{
 	display: none;
+}
+#nav .cntBtn{
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	background: var(--c-main);
+	padding: 24px 20px;
+	max-width: 540px;
+	width: calc(100% - 60px);
+	margin: 0 auto;
+}
+#nav .cntBtn .icon{
+	width: 20px;
+	height: 16px;
+}
+#nav .cntBtn .txt{
+	color: var(--c-base-btn);
+	letter-spacing: .1em;
+	font-family: var(--ff-mincho);
+	margin-left: 10px;
+}
+#navList-01{
+	margin-bottom: 15px;
+}
+#navList-01 .item{
+	display: block;
+	padding: 16px 30px;
+	letter-spacing: .2em;
+}
+#navList-01 > li > .item{
+	font-weight: 600;
+}
+#navList-01 li+li{
+	border-top: 1px solid #CFD4D2;
+}
+#navList-01 .child{
+	border-top: 1px solid #CFD4D2;
+}
+#navList-01 .child .item{
+	/* display: block; */
+	background: #F4F5F5;
+	font-weight: 400;
+}
+#navList-01 .small{
+	font-size: 1.2rem;
+}
+#navList-01 .item._Slider{
+	position: relative;
+}
+#navList-01 .item._Slider::before,
+#navList-01 .item._Slider::after{
+	position: absolute;
+	content: "";
+	width: 1px;
+	height: 11px;
+	background: var(--c-base-btn);
+	top: 24px;
+	transform-origin: top center;
+	transition: all .2s;
+}
+#navList-01 .item._Slider::before{
+	right: 30px;
+
+	transform: rotate(45deg);
+}
+#navList-01 .item._Slider::after{
+	right: 45px;
+	transform: rotate(-45deg);
+}
+#navList-01 .item._Slider.active::before,
+#navList-01 .item._Slider.active::after{
+	top: 28px;
+}
+#navList-01 .item._Slider.active::before{
+	transform: rotate(135deg);
+}
+#navList-01 .item._Slider.active::after{
+	transform: rotate(-135deg);
 }
 
 /* 下層ページタイトル */
