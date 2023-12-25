@@ -15,14 +15,12 @@
 #mainVisual .cntBox::before{
   content: "";
   position: absolute;
-  top: 50%;
+  bottom: calc(50% - 25px);
   left: 22px;
   display: block;
   width: 12px;
   height: 126px;
-  margin-bottom: 75px;
   background: url(../img/common/scroll.svg) left/contain no-repeat;
-  transform: translateY(-50%);
 }
 #mainVisual .cntTitle{
   display: flex;
@@ -158,6 +156,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 28px 0;
   max-width: 1035px;
   padding: 82px 0;
   z-index: 2;
@@ -192,9 +191,6 @@
   #_about .cntInner{
     grid-template-columns: 1fr;
     padding: 40px 30px;
-  }
-  #_about .cntBox-title{
-    margin-bottom: 28px;
   }
   #_about .cntText{
     margin-bottom: 29px;
