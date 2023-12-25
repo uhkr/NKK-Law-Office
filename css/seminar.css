@@ -42,3 +42,8 @@
     gap: 9px;
   }
 }
+
+/* ページネーション */
+#pagination .nav-links{
+	margin-top: 90px;
+}
