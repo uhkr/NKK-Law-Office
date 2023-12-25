@@ -322,9 +322,11 @@
   margin-bottom: 80px;
 }
 #_info .cntList-nav{
-  display: flex;
-  gap: 0 4px;
-  margin-bottom: 2px;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px 4px;
+  /* margin-bottom: 2px; */
   border-bottom: 1px solid var(--c-base-btn);
 }
 #_info .cntList-nav .item{
@@ -350,10 +352,6 @@
 #_info .cntList:not(.active){
   display: none !important;
 }
-#_info .cntList.-seminar{
-  position: relative;
-  margin: 22px -24px 30px;
-}
 #_info .cntList .item{
   display: grid;
   grid-template-columns: 128px 85px 1fr;
@@ -363,6 +361,10 @@
   padding: 21px 0 20px;
   border-bottom: 1px solid #CFD4D2;
   font-size: 1.4rem;
+}
+#_info .cntList.-seminar{
+  position: relative;
+  margin: 22px -24px 30px;
 }
 #_info .cntList.-seminar .item{
   display: block;
@@ -414,9 +416,40 @@
 }
 /* TAB */
 @media screen and (max-width: 899px) {
+  #_info{
+    padding: 80px 30px 120px;
+  }
+  #_info .cntTitle{
+    margin-bottom: 40px;
+  }
+  #_info .cntList-nav{
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: none;
+  }
+  #_info .cntList-nav .item{
+    padding: 14px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid var(--c-base-btn);
+  }
+  #_info .cntList .item{
+    display: block;
+    position: relative;
+  }
+  #_info .cntList .category{
+    margin-bottom: 10px;
+  }
+  #_info .cntList .date{
+    position: absolute;
+    right: 0;
+    top: 25px;
+  }
+  #_info .cntList .title{
+  }
   #_info .cntList.-seminar{
     margin-left: -10px;
     margin-right: -10px;
+    margin-top: 24px;
+    margin-bottom: 26px;
   }
   #_info .cntList.-seminar .item{
     padding: 0 10px;
@@ -465,4 +498,21 @@
 #_recruit .cntBtn:hover{
   background: #fff;
 }
-
+/* TAB */
+@media screen and (max-width: 899px) {
+  #_recruit{
+    padding: 0 30px 80px;
+  }
+  #_recruit .cntInner{
+    padding: 40px 16.825%;
+  }
+  #_recruit .cntBox{
+    margin: 0 auto;
+  }
+  #_recruit .cntTitle{
+    margin-bottom: 22px;
+  }
+  #_recruit .cntTitle .en{
+    font-size: 3.4rem;
+  }
+}
