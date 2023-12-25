@@ -498,4 +498,21 @@
 #_recruit .cntBtn:hover{
   background: #fff;
 }
-
+/* TAB */
+@media screen and (max-width: 899px) {
+  #_recruit{
+    padding: 0 30px 80px;
+  }
+  #_recruit .cntInner{
+    padding: 40px 16.825%;
+  }
+  #_recruit .cntBox{
+    margin: 0 auto;
+  }
+  #_recruit .cntTitle{
+    margin-bottom: 22px;
+  }
+  #_recruit .cntTitle .en{
+    font-size: 3.4rem;
+  }
+}
