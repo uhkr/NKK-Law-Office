@@ -1,0 +1,44 @@
+/* セミナー */
+#_archive-seminar{
+  padding: 100px 30px;
+}
+#_archive-seminar .cntList{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 81px 7%;
+}
+#_archive-seminar .cntList .image{
+  position: relative;
+  margin-bottom: 20px;
+  padding-top: 68.47%;
+}
+#_archive-seminar .cntList .title{
+  margin-bottom: 20px;
+  font-family: var(--ff-mincho);
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  line-height: 1.58;
+}
+#_archive-seminar .cntList .details{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  margin-top: 20px;
+}
+#_archive-seminar .cntList .dtitle{
+  margin-bottom: 7px;
+  padding: 6px 10px;
+  background: #CFD4D2;
+  color: var(--c-base-btn);
+  letter-spacing: .1em;
+}
+#_archive-seminar .cntList .button{
+  margin-top: 24px;
+}
+/* TAB */
+@media screen and (max-width: 899px) {
+  #_archive-seminar .cntList .details{
+    gap: 9px;
+  }
+}
