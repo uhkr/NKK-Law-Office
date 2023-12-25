@@ -295,6 +295,13 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 ._Btn-en .arrow::after{
 	transform: rotate(-45deg);
 }
+._Btn-en .blank{
+	display: inline-block;
+	width: 25px;
+	height: 15px;
+	margin-bottom: -1px;
+	background: url(../img/common/icon_blank.svg) right/contain no-repeat;
+}
 ._Category{
   display: inline-block;
   min-width: 116px;
@@ -843,6 +850,61 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 #pageHeading #breadcrumbs .cntList .item + .item::before,
 #pageHeading #breadcrumbs .cntList .item + .item::after{
 	background: #fff;
+}
+
+/* ページネーション */
+#pagination .nav-links{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 0 6px;
+	margin-top: 90px;
+	margin-bottom: -6px;
+}
+#pagination .page-numbers{
+	display: block;
+	width: 48px;
+	height: 48px;
+	margin-bottom: 6px;
+	line-height: 48px;
+	text-align: center;
+	font-family: var(--ff-en-2);
+	transition: background .3s;
+}
+#pagination .page-numbers.current{
+	margin: 0 20px;
+	background: #CFD4D2;
+}
+#pagination .page-numbers:hover{
+	background: #CFD4D2;
+}
+#pagination .page-numbers:first-child{
+	margin-left: 0 !important;
+}
+#pagination .page-numbers:last-child{
+	margin-right: 0 !important;
+}
+#pagination .page-numbers.prev,
+#pagination .page-numbers.next{
+	position: relative;
+	font-size: 0;
+}
+#pagination .page-numbers.prev::before,
+#pagination .page-numbers.next::before{
+	content: "";
+	position: absolute;
+	top: calc(50% - 6px);
+	right: calc(50% - 3px);
+	width: 11px;
+	height: 11px;
+	border-top: 1px solid var(--c-base);
+	border-right: 1px solid var(--c-base);
+	transform: rotate(45deg);
+}
+#pagination .page-numbers.prev::before{
+	left: calc(50% - 3px);
+	right: auto;
+	transform: rotate(-135deg);
 }
 
 /* Access */
