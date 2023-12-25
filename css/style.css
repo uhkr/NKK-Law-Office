@@ -294,6 +294,41 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 ._Category.-topics{ background: #C69C2D; }
 ._Category.-news{ background: #A1D154; }
 ._Category.-seminar{ background: var(--c-base-btn); }
+/* TAB */
+@media screen and (max-width: 899px) {
+	._Title{
+		margin-bottom: 28px;
+		color: var(--c-base-btn);
+	}
+	._Title .en{
+		font-size: 3rem;
+	}
+	._Title .ja{
+		font-size: 1.3rem;
+	}
+	._Title-bg{
+		margin-bottom: 40px;
+		padding: 5px 0;
+	}
+	._Title-bg .ja{
+		font-size: 2.2rem;
+	}
+	._Title-bg .en{
+		font-size: 4.4rem;
+	}
+	._Catch{
+		font-size: 2rem;
+	}
+	._Text{
+		font-size: 1.4rem;
+	}
+	._Btn{
+		padding: 18px 26px 16px 20px;
+	}
+	._Btn + ._Btn{
+		margin-top: 14px;
+	}
+}
 
 /* ローディング */
 #loading{

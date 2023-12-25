@@ -81,7 +81,8 @@
 /* TAB */
 @media screen and (max-width: 899px) {
   #mainVisual{
-    display: block;
+    /* display: block; */
+    flex-direction: column-reverse;
     height: auto;
     margin-top: 60px;
     min-height: auto;
@@ -124,7 +125,7 @@
   }
   #mainVisual .cntImg{
     width: 100%;
-    height: 251px;
+    /* height: 251px; */
   }
 }
 /* SP */
@@ -172,6 +173,22 @@
 #_about .cntBtn{
   margin-top: 20px;
 }
+/* TAB */
+@media screen and (max-width: 899px) {
+  #_about{
+    padding: 40px 20px;
+  }
+  #_about .cntInner{
+    grid-template-columns: 1fr;
+    padding: 40px 30px;
+  }
+  #_about .cntBox-title{
+    margin-bottom: 28px;
+  }
+  #_about .cntText{
+    margin-bottom: 29px;
+  }
+}
 
 /* Lawyers */
 #_lawyers{
@@ -199,6 +216,7 @@
 #_service .cntBox-text{
   width: 50%;
   max-width: 529px;
+  margin: 0 auto;
 }
 #_lawyers .cntBox-text{
   padding-right: 30px;
@@ -223,9 +241,37 @@
 }
 /* TAB */
 @media screen and (max-width: 899px) {
+  #_lawyers{
+    padding: 80px 30px 40px;
+  }
   #_lawyers::before,
   #_service::before{
-    width: 92.67vw;
+    height: 80px;
+  }
+  #_lawyers .cntDiv{
+    flex-direction: column-reverse;
+  }
+  #_lawyers .cntBox-text,
+  #_service .cntBox-text{
+    width: 100%;
+  }
+  #_lawyers .cntBox-text{
+    padding-right: 0;
+  }
+  #_lawyers .cntText{
+    margin: 28px 0;
+  }
+  #_lawyers .cntBox-img,
+  #_service .cntBox-img{
+    width: 100%;
+    min-height: auto;
+    padding-top: 62.9333%;
+    margin-bottom: 41px;
+  }
+  #_lawyers .cntImg,
+  #_service .cntImg{
+    left: -30px;
+    width: 100vw;
   }
 }
 
@@ -248,6 +294,24 @@
 #_service .cntImg{
   left: auto;
   right: 0;
+}
+/* TAB */
+@media screen and (max-width: 899px) {
+  #_service{
+    padding: 80px 30px 40px;
+  }
+  #_service .cntDiv{
+    flex-direction: column;
+  }
+  #_service .cntBox-text{
+    padding-left: 0;
+  }
+  #_service .cntText{
+    margin: 28px 0;
+  }
+  #_service .cntImg{
+    right: -30px;
+  }
 }
 
 /* Information */
