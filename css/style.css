@@ -487,6 +487,21 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 	transform: translateX(-50%);
 	font-size: 1.4rem;
 }
+#header .cntList-01 > li:hover{
+	position: relative;
+}
+#header .cntList-01 > li:hover::after{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 4px;
+	bottom: -2px;
+	left: 0;
+	background: var(--c-main);
+}
+#header .cntList-01 > li:hover > a{
+	color: var(--c-main);
+}
 #header .cntList-01 > li:hover > .child{
 	display: block;
 }
@@ -542,7 +557,7 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 }
 @media screen and (max-width: 1366px) {
 	#header .cntList-01{
-		padding-right: 120px;
+		padding-right: 130px;
 	}
 	#header .cntList-01 > li > a{
 		padding: 0 2.04vw;
