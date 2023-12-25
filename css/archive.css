@@ -1,0 +1,25 @@
+#_archive .cntList{
+  border-top: 1px solid #CFD4D2;
+}
+#_archive .cntList .item{
+  display: grid;
+  grid-template-columns: 128px 85px 1fr;
+  justify-items: start;
+  align-items: start;
+  gap: 0 20px;
+  padding: 27px 0 20px;
+  border-bottom: 1px solid #CFD4D2;
+  font-size: 1.4rem;
+}
+#_archive .cntList .category{
+  margin-top: -5px;
+}
+#_archive .cntList .title{
+  margin-top: 1px;
+}
+#_archive .cntList .col2{
+  grid-column: 2/4;
+}
+#_archive .cntList .text{
+  margin-bottom: 12px;
+}
