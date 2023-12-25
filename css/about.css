@@ -1,0 +1,137 @@
+/* Philosophy */
+#_philosophy{
+  position: relative;
+  padding: 140px 30px;
+}
+#_philosophy::before{
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 50px);
+  background: url(../img/about/philosophy_bg.jpg) center/cover no-repeat;
+  z-index: -1;
+}
+#_philosophy .cntTitle{
+  margin-bottom: 60px;
+  text-align: center;
+}
+#_philosophy .cntText{
+  font-family: var(--ff-mincho);
+  font-size: 2.6rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  line-height: 1.79;
+  text-align: center;
+}
+
+/* Policy */
+#_policy{
+  padding: 160px 30px;
+}
+#_policy .cntTitle{
+  margin-bottom: 100px;
+}
+#_policy .cntList .item + .item{
+  margin-top: 80px;
+}
+#_policy .cntList .head{
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  justify-items: start;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #CFD4D2;
+  font-weight: 600;
+}
+#_policy .cntList .count{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -0.7em;
+  color: var(--c-accent);
+  font-family: var(--ff-en);
+  font-size: 2rem;
+  letter-spacing: .1em;
+  line-height: 1.2;
+}
+#_policy .cntList .countnum{
+  font-size: 9rem;
+  letter-spacing: .05em;
+  line-height: 0.45em;
+}
+#_policy .cntList .title{
+  font-family: var(--ff-mincho);
+  font-size: 3.4rem;
+  letter-spacing: .1em;
+  line-height: 1.59;
+}
+
+/* About, History */
+#_about,
+#_history{
+  padding: 0 30px;
+  overflow: hidden;
+}
+#_about{
+  background: #F4F5F5;
+}
+#_about .cntInner,
+#_history .cntInner{
+  padding: 160px 0;
+}
+#_about .cntTitle,
+#_history .cntTitle{
+  margin-bottom: 80px;
+  text-align: center;
+}
+#_about .cntList .item,
+#_history .cntList .item{
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: center;
+  padding-top: 20px;
+}
+#_history .cntList .item{
+  grid-template-columns: 176px 1fr;
+}
+#_about .cntList .item + .item,
+#_history .cntList .item + .item{
+  margin-top: 20px;
+  border-top: 1px solid #CFD4D2;
+}
+#_about .cntList .title,
+#_history .cntList .title{
+  padding-right: 10px;
+}
+#_history .cntImg{
+  width: calc(100% + 60px);
+  height: 29.28vw;
+  margin-left: -30px;
+}
+
+/* Access */
+#_about-access{
+  padding: 160px 30px 80px;
+}
+#_about-access .cntTitle{
+  margin-bottom: 100px;
+}
+#_about-access .cntBox-iframe{
+  position: relative;
+  height: 460px;
+  margin-bottom: 40px;
+}
+#_about-access .cntBox-iframe iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#_about-access .cntBtn{
+  max-width: 400px;
+  margin: 60px auto 0;
+}
