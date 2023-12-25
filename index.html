@@ -32,13 +32,16 @@
 	
 	<!-- フォント -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Fjalla+One&family=Noto+Sans+JP:wght@100;400;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Fjalla+One&family=Noto+Sans+JP:wght@100;400;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 	<link rel="stylesheet" href="./css/reset.css">
 	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="./css/index.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -193,7 +196,7 @@
 				<li class="item" data-cat="news">お知らせ</li>
 				<li class="item" data-cat="topics">トピックス</li>
 			</ul>
-			<div class="cntList -all active">
+			<div class="cntList -all --h-opacity active">
 				<a href="" class="item">
 					<div class="category _Category -topics">トピックス</div>
 					<time class="date" datetime="2021-06-21">2021.06.21</time>
@@ -215,21 +218,36 @@
 					<h3 class="title js-overflow" data-line="1">新型コロナウイルス感染症(COVID-19)に関する対策について ～令和3年6月21日更新～...</h3>
 				</a>
 			</div>
-			<div class="cntList -seminar">
-				<a href="" class="item">
-					<div class="category _Category -seminar">セミナー</div>
-					<time class="date" datetime="2021-06-21">2021.06.21</time>
-					<h3 class="title js-overflow" data-line="1">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキ...</h3>
+			<div class="cntList -seminar --h-opacity">
+				<a href="" class="item --d-b">
+					<div class="image"><img src="./img/seminar/seminar_img.jpg" class="--img-cover --absolute" alt=""></div>
+					<h3 class="title">セミナータイトルが入りますセミナータイトルが入ります</h3>
+					<time class="date" datetime="2021-06-21">2021年6月21日</time>
+				</a>
+				<a href="" class="item --d-b">
+					<div class="image"><img src="./img/seminar/seminar_img.jpg" class="--img-cover --absolute" alt=""></div>
+					<h3 class="title">セミナータイトルが入りますセミナータイトルが入ります</h3>
+					<time class="date" datetime="2021-06-21">2021年6月21日</time>
+				</a>
+				<a href="" class="item --d-b">
+					<div class="image"><img src="./img/seminar/seminar_img.jpg" class="--img-cover --absolute" alt=""></div>
+					<h3 class="title">セミナータイトルが入りますセミナータイトルが入ります</h3>
+					<time class="date" datetime="2021-06-21">2021年6月21日</time>
+				</a>
+				<a href="" class="item --d-b">
+					<div class="image"><img src="./img/seminar/seminar_img.jpg" class="--img-cover --absolute" alt=""></div>
+					<h3 class="title">セミナータイトルが入りますセミナータイトルが入ります</h3>
+					<time class="date" datetime="2021-06-21">2021年6月21日</time>
 				</a>
 			</div>
-			<div class="cntList -news">
+			<div class="cntList -news --h-opacity">
 				<a href="" class="item">
 					<div class="category _Category -news">お知らせ</div>
 					<time class="date" datetime="2021-06-21">2021.06.21</time>
 					<h3 class="title js-overflow" data-line="1">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキ...</h3>
 				</a>
 			</div>
-			<div class="cntList -topics">
+			<div class="cntList -topics --h-opacity">
 				<a href="" class="item">
 					<div class="category _Category -topics">トピックス</div>
 					<time class="date" datetime="2021-06-21">2021.06.21</time>
@@ -272,17 +290,17 @@
 	<!-- Contact -->
 	<section class="mainCntBox" id="_contact">
 		<div class="cntInner _Inner">
-			<div class="cntTitle _Title-bg"><h1 class="ja">お問い合わせ</h1><small class="en">CONTACT</small></div>
+			<div class="cntTitle _Title-bg -white"><h1 class="ja">お問い合わせ</h1><small class="en">CONTACT</small></div>
 			<p class="cntText _Text">
-				弁護士法人GROWTH　南舘・北川・木村法律事務所へのご意見・ご質問等を含む全てのお問い合わせを受け付けております。<br>
+				弁護士法人GROWTH　南舘・北川・木村法律事務所へのご意見・ご質問等を含む全てのお問い合わせを<span class="--d-ib">受け付けております。</span><br>
 					お気軽にお問い合わせ下さい。
 			</p>
-			<div class="cntBtns">
+			<div class="cntBtns --h-opacity">
 				<a href="tel:0522218450" class="cntBtn -tel">
 					<div class="large">TEL 052-221-8450</div>
 					<small class="small">受付時間　平日9:15～18:30</small>
 				</a>
-				<a href="" class="cntBtn -email"><span class="icon"><img src="./img/common/icon_email-bk.svg" alt=""></span><span class="txt">メールでのお問い合わせ</span></a>
+				<a href="" class="cntBtn -email"><div><span class="icon"><img src="./img/common/icon_email-bk.svg" class="--img-contain" alt="✉"></span><span class="large">メールでのお問い合わせ</span></div></a>
 			</div>
 		</div>
 	</section>
@@ -292,7 +310,7 @@
 <!-- フッター -->
 <footer id="footer">
 	<div class="cntInner">
-		<ul class="cntList">
+		<ul class="cntList --h-opacity">
 			<li><a href=""><span class="txt">事務所概要</span></a></li>
 			<li><a href=""><span class="txt">弁護士紹介</span></a></li>
 			<li><a href=""><span class="txt">取扱業務</span></a></li>

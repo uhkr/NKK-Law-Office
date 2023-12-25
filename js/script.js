@@ -169,8 +169,35 @@ $(function(){
 
 // 新着情報
 $(function(){
+  if(!$("#_info")) return;
+
+  var slick_seminar;
+
   $('#_info .cntList-nav .item').click(function(){
     $("#_info .cntList").removeClass("active");
+    $("#_info .cntList-nav .item").removeClass("active");
     $("#_info .cntList.-"+$(this).data("cat")).addClass("active");
+    $(this).addClass("active");
+    if($(this).data("cat") == "seminar") slick_seminar.slick('setPosition');
+  });
+
+  slick_seminar = $('#_info .cntList.-seminar').slick({
+    arrows: false,
+    dots: false,
+    draggable: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 4,
+    centerMode: false,
+    responsive: [
+      {
+        breakpoint: 899,
+        settings: {
+          arrows: true,
+          draggable: true,
+          slidesToShow: 2,
+        }
+      }
+    ],
   });
 });
