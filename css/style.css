@@ -1070,7 +1070,7 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 82px 0;
+  padding: 82px 30px;
 }
 #_access .cntImg iframe{
   position: absolute;
@@ -1089,6 +1089,28 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 }
 #_access .cntText{
   margin-bottom: 19px;
+}
+/* TAB */
+@media screen and (max-width: 899px) {
+	#_access{
+		padding-top: 0;
+	}
+	#_access .cntInner{
+		grid-template-columns: 1fr;
+		padding: 243px 30px 40px;
+	}
+	#_access .cntImg iframe{
+	}
+	#_access .cntBox{
+		padding: 40px;
+		margin: 0 auto;
+	}
+	#_access .cntTitle .en{
+		font-size: 3.9rem;
+	}
+	#_access .cntTitle .ja{
+		font-size: 1.6rem;
+	}
 }
 
 /* Contact */
