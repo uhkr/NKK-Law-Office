@@ -545,6 +545,42 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 /* スマホナビ */
 #nav{
 	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	padding-top: 74px;
+	z-index: 100;
+}
+#nav::before,
+#nav::after{
+	content: "";
+	position: fixed;
+	left: 0;
+	width: 100%;
+}
+#nav::before{
+	top: 74px;
+	height: calc(100% + 100px);
+	background: #fff;
+	z-index: -1;
+}
+#nav::after{
+	top: 0;
+	height: 100px;
+	background: #CFD4D2;
+	z-index: -2;
+}
+#nav .cntInner{
+	height: 100%;
+	padding-bottom: 32px;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+#nav .cntInner::-webkit-scrollbar{
+	display: none;
 }
 
 /* フッター */
