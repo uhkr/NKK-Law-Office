@@ -275,10 +275,19 @@
   #_lawyers .cntBox-img,
   #_service .cntBox-img{
     width: 100%;
-    min-height: auto;
-    padding-top: 62.9333%;
-    margin-bottom: 41px;
+    max-width: 529px;
+    height: 235px;
+    min-height: 0;
+    /* padding-top: 62.9333%; */
+    margin: 0 auto 41px;
   }
+  #_lawyers .cntImg,
+  #_service .cntImg{
+    width: 100%;
+  }
+}
+/* SP */
+@media screen and (max-width: 480px) {
   #_lawyers .cntImg,
   #_service .cntImg{
     left: -30px;
@@ -320,6 +329,9 @@
   #_service .cntText{
     margin: 28px 0;
   }
+}
+/* SP */
+@media screen and (max-width: 480px) {
   #_service .cntImg{
     right: -30px;
   }
