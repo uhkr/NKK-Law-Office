@@ -81,40 +81,38 @@
 /* TAB */
 @media screen and (max-width: 899px) {
   #mainVisual{
-    /* display: block; */
-    flex-direction: column-reverse;
-    height: auto;
+    position: relative;
+    /* flex-direction: column-reverse; */
+    /* height: auto; */
+    height: calc(100vh - 60px);
+    min-height: 55vw;
+    max-height: 100vw;
     margin-top: 60px;
-    min-height: auto;
+    /* min-height: 600px; */
+    padding-bottom: 84px;
   }
   #mainVisual .cntBox{
-    /* position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center; */
-    width: 100%;
-    /* background: #10291E; */
+    position: static;
+    /* width: 100%; */
   }
   #mainVisual .cntBox::before{
     display: none;
   }
   #mainVisual .cntTitle{
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%; */
-    /* height: 274px; */
-    padding: 36px;
-    /* color: #fff; */
+    padding: 36px 10px;
+  }
+  #mainVisual .cntTitle .large{
+    font-size: 6.2vw;
+  }
+  #mainVisual .cntTitle .small{
+    font-size: 2.3vw;
   }
   #mainVisual .cntBox-news{
-    /* display: grid; */
-    /* grid-template-columns: 48px 66px 1fr 82px; */
-    /* align-items: center; */
-    /* gap: 20px; */
-    /* width: 100%; */
-    padding: 18px 20px;
-    /* background: #fff; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px 20px;
     font-size: 1.2rem;
     grid-template-columns: 52px 1fr 100px;
     gap: 7px 10px;
@@ -123,18 +121,31 @@
     order: 4;
     grid-column: 1/4;
   }
-  #mainVisual .cntImg{
-    width: 100%;
-    /* height: 251px; */
-  }
 }
 /* SP */
 @media screen and (max-width: 480px) {
+  #mainVisual{
+    flex-direction: column-reverse;
+    min-height: 666px;
+    max-height: 1000px;
+  }
+  #mainVisual .cntTitle{
+    height: auto;
+    background: #10291E;
+    align-items: center;
+  }
   #mainVisual .cntTitle .large{
-    font-size: 12.26vw;
+    /* font-size: 12.26vw; */
+    font-size: 4.6rem;
   }
   #mainVisual .cntTitle .small{
-    font-size: 4.533vw;
+    /* font-size: 4.533vw; */
+    font-size: 1.7rem;
+  }
+  #mainVisual .cntImg{
+    width: 100%;
+    height: 100%;
+    min-height: 0;
   }
 }
 
