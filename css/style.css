@@ -645,7 +645,6 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 	border-top: 1px solid #CFD4D2;
 }
 #navList-01 .child .item{
-	/* display: block; */
 	background: #F4F5F5;
 	font-weight: 400;
 }
