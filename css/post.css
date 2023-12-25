@@ -105,6 +105,9 @@
 }
 
 /* 投稿 */
+#_post{
+  margin-bottom: -20px;
+}
 #_post .cntBox h1,
 #_post .cntBox h2,
 #_post .cntBox h3,
@@ -202,6 +205,67 @@
   background: url(../img/common/icon_checkbox.svg) left/contain no-repeat;
   border: none;
   border-radius: 0;
+}
+#_post .cntBox ul.is-style-linklist li{
+  padding-left: 20px;
+}
+#_post .cntBox ul.is-style-linklist li::before{
+  top: .4em;
+  width: 10px;
+  height: 10px;
+  background: none;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0;
+  transform: rotate(45deg);
+}
+#_post .cntBox ul.is-style-linklist a{
+  font-weight: 400;
+}
+#_post .cntBox ul.is-style-linklist a:visited{
+  color: inherit;
+}
+#_post .cntBox ul.is-style-linklist li a[target="_blank"]::after{
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 15px;
+  margin-bottom: -2px;
+  margin-left: 20px;
+  background: url(../img/common/icon_blank.svg) center/contain no-repeat;
+}
+#_post .cntBox ul.is-style-linklist li a[href*="youtube.com/"]::after,
+#_post .cntBox ul.is-style-linklist li a[href*="youtu.be/"]::after{
+  content: "YouTube";
+  width: auto;
+  height: auto;
+  margin: 0 0 0 22px;
+}
+#_post .cntBox ul.is-style-linklist .txt::after,
+#_post .cntBox ul.is-style-linklist li a[href*="youtube.com/"]::after,
+#_post .cntBox ul.is-style-linklist li a[href*="youtu.be/"]::after{
+  display: inline-block;
+  margin: 0 22px 0 14px;
+  padding: 4px 8px 1px;
+  background: var(--c-base-btn);
+  color: #fff;
+  font-family: var(--ff-en-2);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: .08em;
+}
+#_post .cntBox ul.is-style-linklist li a[href$=".pdf"] .txt::after{ content: "PDF"; }
+#_post .cntBox ul.is-style-linklist li a[href$=".doc"] .txt::after,
+#_post .cntBox ul.is-style-linklist li a[href$=".docx"] .txt::after{ content: "WORD"; }
+#_post .cntBox ul.is-style-linklist li a[href$=".xls"] .txt::after,
+#_post .cntBox ul.is-style-linklist li a[href$=".xlsx"] .txt::after{ content: "EXCEL"; }
+#_post .cntBox ul.is-style-linklist .size,
+#_post .cntBox ul.is-style-linklist .date{
+  display: inline-block;
+  text-decoration: none;
+}
+#_post .cntBox ul.is-style-linklist .size{
+  margin-right: 14px;
 }
 #_post .cntBox ol{
   counter-reset: item;
@@ -306,6 +370,20 @@
   padding: 25px 24px;
   border: 1px solid #CFD4D2;
   line-height: 1.6;
+}
+
+#_post .cntBox-bottom{
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid #CFD4D2;
+}
+#_post .cntBox-bottom .items{
+  display: flex;
+  justify-content: space-between;
+}
+#_post .cntBox-bottom .button{
+  max-width: 496px;
+  margin: 100px auto 0;
 }
 /* TAB */
 @media screen and (max-width: 899px) {
