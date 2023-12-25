@@ -177,37 +177,16 @@
 @media screen and (max-width: 899px) {
   #_about{
     padding: 40px 20px;
-    /* background: url(../img/top/about_bg.jpg) center/cover no-repeat; */
   }
   #_about .cntInner{
-    /* position: relative;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    max-width: 1035px; */
+    grid-template-columns: 1fr;
     padding: 40px 30px;
-    /* z-index: 2; */
-  }
-  #_about .cntInner::before{
-    /* content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    display: block;
-    width: calc(100vw - 40px);
-    height: 100%;
-    max-width: 1200px;
-    background: #ffffffe6;
-    transform: translateX(-50%);
-    z-index: -1; */
   }
   #_about .cntBox-title{
-    /* max-width: 470px; */
+    margin-bottom: 28px;
   }
   #_about .cntText{
     margin-bottom: 29px;
-  }
-  #_about .cntBtn{
-    /* margin-top: 20px; */
   }
 }
 
@@ -237,6 +216,7 @@
 #_service .cntBox-text{
   width: 50%;
   max-width: 529px;
+  margin: 0 auto;
 }
 #_lawyers .cntBox-text{
   padding-right: 30px;
@@ -261,9 +241,37 @@
 }
 /* TAB */
 @media screen and (max-width: 899px) {
+  #_lawyers{
+    padding: 80px 30px 40px;
+  }
   #_lawyers::before,
   #_service::before{
-    width: 92.67vw;
+    height: 80px;
+  }
+  #_lawyers .cntDiv{
+    flex-direction: column-reverse;
+  }
+  #_lawyers .cntBox-text,
+  #_service .cntBox-text{
+    width: 100%;
+  }
+  #_lawyers .cntBox-text{
+    padding-right: 0;
+  }
+  #_lawyers .cntText{
+    margin: 28px 0;
+  }
+  #_lawyers .cntBox-img,
+  #_service .cntBox-img{
+    width: 100%;
+    min-height: auto;
+    padding-top: 62.9333%;
+    margin-bottom: 41px;
+  }
+  #_lawyers .cntImg,
+  #_service .cntImg{
+    left: -30px;
+    width: 100vw;
   }
 }
 
@@ -286,6 +294,24 @@
 #_service .cntImg{
   left: auto;
   right: 0;
+}
+/* TAB */
+@media screen and (max-width: 899px) {
+  #_service{
+    padding: 80px 30px 40px;
+  }
+  #_service .cntDiv{
+    flex-direction: column;
+  }
+  #_service .cntBox-text{
+    padding-left: 0;
+  }
+  #_service .cntText{
+    margin: 28px 0;
+  }
+  #_service .cntImg{
+    right: -30px;
+  }
 }
 
 /* Information */
