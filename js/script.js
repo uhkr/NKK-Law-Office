@@ -201,3 +201,16 @@ $(function(){
     ],
   });
 });
+
+// アコーディオン
+$(function(){
+  $("._Slider").click(function(){
+    if($(this).hasClass("active")){
+      $(this).next().slideUp();
+      $(this).removeClass("active");
+    }else{
+      $(this).next().slideDown();
+      $(this).addClass("active");
+    }
+  });
+});

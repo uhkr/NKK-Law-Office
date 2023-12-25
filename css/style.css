@@ -294,6 +294,8 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 ._Category.-topics{ background: #C69C2D; }
 ._Category.-news{ background: #A1D154; }
 ._Category.-seminar{ background: var(--c-base-btn); }
+._Slider{ cursor: pointer; }
+._Slider:not(.active) + *{ display: none; }
 /* TAB */
 @media screen and (max-width: 899px) {
 	._Title{
