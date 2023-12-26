@@ -25,6 +25,18 @@
   line-height: 1.79;
   text-align: center;
 }
+/* TAB */
+@media screen and (max-width: 899px) {
+  #_philosophy{
+    padding: 68px 30px;
+  }
+  #_philosophy .cntTitle{
+    margin-bottom: 40px;
+  }
+  #_philosophy .cntText{
+    font-size: 1.6rem;
+  }
+}
 
 /* Policy */
 #_policy{
@@ -67,6 +79,61 @@
   font-size: 3.4rem;
   letter-spacing: .1em;
   line-height: 1.59;
+}
+/* TAB */
+@media screen and (max-width: 899px) {
+  #_policy{
+    padding: 80px 30px;
+  }
+  #_policy .cntTitle{
+    margin-bottom: 40px;
+  }
+  #_policy .cntList .item + .item{
+    margin-top: 40px;
+  }
+  #_policy .cntList .head{
+    /* display: grid; */
+    grid-template-columns: 1fr;
+    /* justify-items: start;
+    align-items: center; */
+    /* margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #CFD4D2;
+    font-weight: 600; */
+  }
+  #_policy .cntList .count{
+    /* display: flex; */
+    /* display: inline-block; */
+    flex-direction: row;
+    align-items: baseline;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* margin-top: 0; */
+    color: #fff;
+    background: var(--c-accent);
+    font-size: 1.5rem;
+
+    /* font-family: var(--ff-en); */
+    /* font-size: 2rem;
+    letter-spacing: .1em;
+    line-height: 1.2; */
+    padding: 6px 11px 4px;
+    margin: 0 auto 20px;
+  }
+  #_policy .cntList .countnum{
+    font-size: 3.3rem;
+    line-height: .2;
+    margin-left: 4px;
+    /* font-size: 9rem;
+    letter-spacing: .05em;
+    line-height: 0.45em; */
+  }
+  #_policy .cntList .title{
+    /* font-family: var(--ff-mincho); */
+    font-size: 2.2rem;
+    /* letter-spacing: .1em;
+    line-height: 1.59; */
+  }
 }
 
 /* About, History */
