@@ -1,0 +1,10 @@
+@import url(./contact.css);
+
+#_contact-form .cntText{
+  margin-bottom: 40px;
+}
+#_contact-form .cntBtn-complete{
+  width: 100%;
+  max-width: 546px;
+  margin: 0 auto;
+}

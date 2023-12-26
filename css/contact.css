@@ -1,0 +1,214 @@
+@import url(./privacy.css);
+#_post{
+  margin: 0;
+  padding: 0;
+}
+
+/* MW WP Form */
+.mwform-checkbox-field label{
+  cursor: pointer;
+}
+.mwform-checkbox-field input[type="checkbox"]{
+  display: none !important;
+}
+.mwform-checkbox-field .mwform-checkbox-field-text{
+  position: relative;
+  display: block;
+  padding-left: 40px;
+}
+.mwform-checkbox-field .mwform-checkbox-field-text::before{
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--c-base);
+}
+.mwform-checkbox-field input[type="checkbox"]:checked + .mwform-checkbox-field-text::after{
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  display: block;
+  width: 12px;
+  height: 6px;
+  border-left: 2px solid var(--c-base);
+  border-bottom: 2px solid var(--c-base);
+  transform: rotate(-43deg);
+}
+
+/* メールフォームに関するお問い合わせ注意事項 */
+#_contact-check{
+  padding: 100px 30px 80px;
+}
+#_contact-check .cntText{
+  margin-bottom: 60px;
+  text-align: center;
+}
+#_contact-check .cntBox{
+  position: relative;
+  max-width: 1000px;
+  height: 248px;
+  margin: 0 auto 40px;
+  padding: 27px 42px 25px;
+  border: 1px solid #959997;
+  overflow-y: scroll;
+}
+#_contact-check .cntBox h1,
+#_contact-check .cntBox h2{
+  margin-top: 40px;
+}
+#_contact-check .cntBox .address{
+  margin-top: 40px;
+}
+#_contact-check .cntBox-check{
+  display: flex;
+  justify-content: center;
+  margin: 0 0 40px;
+}
+#_contact-check .cntBtn{
+  width: 100%;
+  max-width: 546px;
+  margin: 0 auto;
+}
+
+/* お問い合わせ */
+#_contact-form{
+  padding: 100px 30px 80px;
+}
+#_contact-form .cntInner{
+  max-width: 1000px;
+}
+#_contact-form .cntText{
+  margin-bottom: 100px;
+  text-align: center;
+}
+#_contact-form .cntList{
+  display: flex;
+  max-width: 381px;
+  margin: 0 auto 80px;
+}
+#_contact-form .cntList .item{
+  position: relative;
+  width: 100%;
+  padding-top: 22px;
+  font-size: 1.3rem;
+  letter-spacing: .1em;
+  text-align: center;
+}
+#_contact-form .cntList .item::before,
+#_contact-form .cntList .item::after{
+  content: "";
+  position: absolute;
+  display: block;
+}
+#_contact-form .cntList .item::before{
+  top: 0;
+  left: calc(50% - 5px);
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #CFD4D2;
+}
+#_contact-form .cntList .item.active::before{
+  background: var(--c-base-btn);
+}
+#_contact-form .cntList .item + .item::after{
+  top: 5px;
+  right: 50%;
+  width: 100%;
+  height: 1px;
+  background: #CFD4D2;
+  z-index: -1;
+}
+#_contact-form .cntItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 22px 0;
+  border-top: 1px solid #CFD4D2;
+  border-bottom: 1px solid #CFD4D2;
+}
+#_contact-form .cntItem + .cntItem{
+  margin-top: -1px;
+}
+#_contact-form .cntItem .title{
+  position: relative;
+  width: 32.4%;
+  margin-top: 12px;
+  padding-right: 88px;
+}
+#_contact-form .cntItem .title.required::after{
+  content: "必須";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 78px;
+  background: var(--c-accent);
+  color: #fff;
+  font-size: 1.3rem;
+  letter-spacing: .2em;
+  line-height: 25px;
+  text-align: center;
+}
+#_contact-form .cntItem .titsmall{
+  display: block;
+  margin-top: 8px;
+  font-size: 1.2rem;
+}
+#_contact-form .cntItem .inputs{
+  width: 58%;
+}
+#_contact-form .cntItem input,
+#_contact-form .cntItem textarea{
+  display: block;
+  width: 100%;
+  padding: 15px 10px;
+  border: 1px solid var(--c-base);
+  border-radius: 0;
+  background: #fff;
+  font-size: 16px;
+  outline: none;
+}
+#_contact-form .cntBtns{
+  display: flex;
+  justify-content: center;
+  gap: 0 4%;
+  margin: 100px auto -20px;
+}
+#_contact-form .cntBtn{
+  width: 100%;
+  max-width: 546px;
+  margin: 0 auto 20px;
+}
+#_contact-form .cntBtn.-prev{
+  border-color: #CFD4D2;
+  background: #CFD4D2;
+}
+#_contact-form .cntBtn.-prev:hover{
+  background: #fff;
+  border-color: var(--c-base-btn);
+}
+
+#_form-ctype .inputs{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+#_form-cway .inputs{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 60px;
+}
+#_form-cway .container{
+  margin-top: 20px;
+  transform: translateY(-10px);
+}
+/* SP */
+@media screen and (max-width: 480px) {
+  #_contact-form .cntBtns{
+    display: block !important;
+  }
+}

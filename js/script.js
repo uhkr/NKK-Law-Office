@@ -50,22 +50,28 @@ $(function(){
 
 // ヘッダー
 $(function(){
+  var pos = 0;
   $NAV = $("#nav");
   $NAV_BTN = $("#headerBtn");
   $NAV_BTN.click(function(){
-   if(BOOL_NAV_ACTIVE){
-     $(this).removeClass("active");
-     $NAV.removeClass("active");
-     $NAV.fadeOut();
-     BOOL_NAV_ACTIVE = false;
-   }else{
-     $(this).addClass("active");
-     $NAV.addClass("active");
-     $NAV.fadeIn();
-     BOOL_NAV_ACTIVE = true;
-   }
+    if(BOOL_NAV_ACTIVE){
+      $('body').removeClass('-fixed').css({'top': ""});
+      $(window).scrollTop(pos);
+      $(this).removeClass("active");
+      $NAV.removeClass("active");
+      $NAV.fadeOut();
+      BOOL_NAV_ACTIVE = false;
+    }else{
+      pos = $(window).scrollTop();
+      $('body').addClass('-fixed').css({'top': -pos});
+      $(this).addClass("active");
+      $NAV.addClass("active");
+      $NAV.fadeIn();
+      BOOL_NAV_ACTIVE = true;
+    }
   });
   $NAV.find("a").click(function(){
+    $('body').removeClass('-fixed').css({'top': ""});
     setTimeout(function(){
       $NAV_BTN.removeClass("active");
       $NAV.removeClass("active");
@@ -241,6 +247,26 @@ $(function(){
     }else{
       $(this).next().slideDown();
       $(this).addClass("active");
+    }
+  });
+});
+
+// お問い合わせ
+$(window).on('load onpageshow', function (){
+  const $check = $("#input-privacy[type='checkbox']");
+  if(!$check.length) return;
+  if($check.prop("checked") == true){
+    $("#_contact-check").hide();
+    $("#_contact-form").show();
+  }else{
+    $("#_contact-check").show();
+    $("#_contact-form").hide();
+  }
+  $("#button-privacy").click(function(){
+    if($check.prop("checked") == true){
+      $("#_contact-check").hide();
+      $("#_contact-form").show();
+      $(window).scrollTop(0)
     }
   });
 });

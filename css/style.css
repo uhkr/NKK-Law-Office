@@ -28,6 +28,12 @@ body {
 	line-height: 1.4;
   -webkit-text-size-adjust: 100%;
 }
+body.-fixed{
+	position: fixed;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 /* IE表示用のCSS　*/
 @media all and (-ms-high-contrast:none){
 	body {font-family: "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans",sans-serif;}
