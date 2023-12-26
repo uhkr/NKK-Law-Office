@@ -756,6 +756,26 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 	font-family: var(--ff-mincho);
 	letter-spacing: .1em;
 }
+/* TAB */
+@media screen and (max-width: 899px) {
+	#pageHeading{
+		margin-top: 60px;
+		padding: 42px 30px;
+	}
+	#pageHeading .cntTitle .en{
+		font-size: 3rem;
+	}
+	#pageHeading .cntTitle .ja{
+		font-size: 1.3rem;
+	}
+}
+/* SP */
+@media screen and (max-width: 480px) {
+	#pageHeading .cntTitle .en{
+		font-size: 2.4rem;
+		letter-spacing: .1em;
+	}
+}
 
 /* フッター */
 #footer{
