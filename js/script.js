@@ -189,6 +189,7 @@ $(function(){
           arrows: true,
           draggable: true,
           rows: 2,
+          adaptiveHeight: true,
         }
       }
     ],
@@ -208,6 +209,7 @@ $(function(){
           arrows: true,
           draggable: true,
           slidesToShow: 2,
+          adaptiveHeight: true,
         }
       }
     ],
