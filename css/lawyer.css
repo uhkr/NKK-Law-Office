@@ -1,7 +1,10 @@
 #breadcrumbs .cntInner{
-  max-width: 1099px !important;
+  /* max-width: 1099px !important; */
+  max-width: 1000px !important;
 }
-
+#pageHeading{
+	/* padding-right: 60px; */
+}
 #pageHeading .cntInner.-lawyer{
 	position: relative;
 	max-width: 900px;
@@ -50,6 +53,69 @@
 	background: url(../img/lawyer/decoration-01.svg) center/contain no-repeat;
 	z-index: -1;
 }
+/* TAB */
+@media screen and (max-width: 899px){
+	#pageHeading #breadcrumbs .cntInner{
+		display: flex;
+		align-items: center;
+		justify-content: left;
+		background: #CFD4D2;
+		height: 50px;
+		width: calc(100% - 30px);
+		position: absolute;
+		left: 0;
+		top: -317px;
+		padding-left: 30px;
+	}
+	#pageHeading{
+		margin-top: 377px;
+		height: 206px;
+		position: relative;
+	}
+	
+	#pageHeading .cntInner.-lawyer{
+		/* position: relative;
+		max-width: 900px; */
+		/* margin-top: 35px; */
+		padding-top: 76px;
+		/* padding-right: 20px; */
+	}
+	#pageHeading .cntTitle-lawyer{
+		margin: 0 auto;
+		/* color: #fff; */
+	}
+	#pageHeading .cntTitle-lawyer .text{
+		margin-bottom: 11px;
+		font-size: 1.2rem;
+	}
+	#pageHeading .cntTitle-lawyer .title{
+		/* font-size: 3.2rem; */
+		font-size: 2.6rem;
+	}
+	#pageHeading .cntTitle-lawyer .en{
+		margin-top: 10px;
+	}
+	#pageHeading .cntImg-lawyer{
+		top: -227px;
+		/* right: auto; */
+		/* left: 30px; */
+		right: 120px;
+		width: 224px;
+		height: 272px;
+	}
+	#pageHeading .cntImg-lawyer::before{
+		/* content: "";
+		position: absolute; */
+		top: auto;
+		bottom: -96px;
+		right: -88px;
+		/* width: 200px;
+		height: 200px;
+		background: url(../img/lawyer/decoration-01.svg) center/contain no-repeat;
+		z-index: -1; */
+	}
+
+}
 
 /* 主な取扱分野 */
 #_content-01{
@@ -61,6 +127,7 @@
 }
 #_content-01 .cntTitle{
   font-weight: 400;
+	letter-spacing: .2em;
 }
 #_content-01 .cntList .item + .item,
 #_content-02 .cntList .item + .item{
@@ -72,6 +139,27 @@
 #_content-02 .cntList .title{
   margin-bottom: 13px;
   font-size: 1.5rem;
+}
+/* TAB */
+@media screen and (max-width: 899px){
+	#_content-01{
+		padding: 40px 30px;
+	}
+	#_content-01 .cntInner{
+		padding-right: 0;
+	}
+	#_content-01 .cntTitle{
+		font-size: 2.1rem;
+	}
+	#_content-01 .cntList .title,
+	#_content-02 .cntList .title{
+		margin-bottom: 12px;
+		font-size: 1.4rem;
+	}
+	#_content-01 .cntList .text,
+	#_content-02 .cntList .text{
+		font-size: 1.4rem;
+	}
 }
 
 /* その他 */
@@ -86,4 +174,17 @@
 }
 #_content-02 .cntBox.-col2{
   grid-column: 1/3;
+}
+/* TAB */
+@media screen and (max-width: 899px){
+	#_content-02{
+		padding: 40px 30px 80px;
+	}
+	#_content-02 .cntInner{
+		grid-template-columns: 1fr;
+		gap: 60px 0;
+	}
+	#_content-02 .cntBox.-col2{
+		grid-column: auto;
+	}
 }

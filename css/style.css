@@ -198,7 +198,7 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 	font-family: var(--ff-mincho);
 	font-size: 2.6rem;
 	font-weight: 600;
-	letter-spacing: .2em;
+	letter-spacing: .1em;
 }
 ._Catch{
 	color: var(--c-base-btn);
@@ -356,6 +356,9 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 	}
 	._Title-bg .en{
 		font-size: 6rem;
+	}
+	._Title-underline{
+		font-size: 2rem;
 	}
 	._Catch{
 		font-size: 2rem;
