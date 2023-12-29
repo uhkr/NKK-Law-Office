@@ -1212,27 +1212,27 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 		width: 1px;
 		height: 13px;
 		background: var(--c-base-btn);
-		top: 25px;
+		top: 27px;
 		transform-origin: top center;
 		transition: all .2s;
 	}
 	#sidebar .cntTitle::before{
 		right: 20px;
-		transform: rotate(45deg);
+		transform: rotate(49deg);
 	}
 	#sidebar .cntTitle::after{
-		right: 38px;
-		transform: rotate(-45deg);
+		right: 39px;
+		transform: rotate(-49deg);
 	}
 	#sidebar .cntTitle.active::before,
 	#sidebar .cntTitle.active::after{
 		top: 33px;
 	}
 	#sidebar .cntTitle.active::before{
-		transform: rotate(135deg);
+		transform: rotate(131deg);
 	}
 	#sidebar .cntTitle.active::after{
-		transform: rotate(-135deg);
+		transform: rotate(-131deg);
 	}
 	#sidebar .cntTitle.-en{
 		font-family: var(--ff-en);
