@@ -32,6 +32,36 @@
   font-size: 3rem;
   line-height: 1.6;
 }
+/* TAB */
+@media screen and (max-width: 899px) {
+  #pageHeading .cntInner.-post{
+    margin-top: 40px;
+  }
+  #pageHeading .cntTitle-post{
+    padding-bottom: 0;
+    position: relative;
+  }
+  #pageHeading .cntTitle-post .category{
+    padding: 0 28px;
+    font-size: 1.2rem;
+    line-height: 30px;
+  }
+  #pageHeading .cntTitle-post .date{
+    position: absolute;
+    right: 0;
+    top: 5px;
+  }
+  #pageHeading .cntTitle-post .title{
+    margin-top: 20px;
+    font-size: 2.5rem;
+  }
+}
+/* SP */
+@media screen and (max-width: 480px) {
+  #pageHeading .cntTitle-post .title{
+    font-size: 2rem;
+  }
+}
 
 /* 目次 */
 #toc_container{
@@ -66,6 +96,7 @@
   display: block;
   padding: 7px 0;
   text-decoration: underline;
+  text-underline-offset: 2px;
 }
 #toc_container .toc_list > li > a{
   font-weight: 700;
@@ -83,6 +114,29 @@
 }
 #toc_container .toc_list > li > a .num{
   display: none;
+}
+/* TAB */
+@media screen and (max-width: 899px) {
+  #toc_container{
+    margin-bottom: 40px;
+  }
+  #toc_container .toc_title{
+    padding: 10px 20px;
+    font-size: 1.6rem;
+  }
+  #toc_container .toc_list{
+    font-size: 1.4rem;
+    padding: 15px 20px;
+  }
+  #toc_container .toc_list > li > a{
+    padding-bottom: 6px;
+  }
+  #toc_container .toc_list > li::before{
+    top: 9px;
+  }
+  #toc_container .toc_list >li:nth-child(n+2){
+    margin-top: 6px;
+  }
 }
 
 /* 投稿 */
@@ -376,6 +430,50 @@
 }
 /* TAB */
 @media screen and (max-width: 899px) {
+  #_post{
+    margin-bottom: 0;
+  }
+  #_post .cntBox h1,
+  #_post .cntBox h2,
+  #_post .cntBox h3,
+  #_post .cntBox h4,
+  #_post .cntBox h5,
+  #_post .cntBox h6{
+    margin: 20px 0;
+  }
+  #_post .cntBox h1,
+  #_post .cntBox h2{
+    font-size: 2rem;
+    /* font-size: 2.8rem; */
+  }
+  #_post .cntBox h3{
+    /* font-size: 2.8rem; */
+    font-size: 2rem;
+  }
+  #_post .cntBox h4{
+    font-size: 1.8rem;
+    /* font-size: 2.6rem; */
+  }
+  #_post .cntBox h5{
+    font-size: 1.6rem;
+    /* font-size: 2.4rem; */
+  }
+  #_post .cntBox h6{
+    font-size: 1.4rem;
+    /* font-size: 2.2rem; */
+  }
+  #_post .cntBox .is-style-numbered{
+    --pl: 34px;
+  }
+  #_post .cntBox h1.is-style-numbered,
+  #_post .cntBox h2.is-style-numbered{
+    --pl: 40px;
+  }
+  #_post .cntBox p{
+    font-size: 1.4rem;
+  }
+
+
   #_post .cntBox .wp-block-flexible-table-block-table{
     width: 100px;
     min-width: 100%;
