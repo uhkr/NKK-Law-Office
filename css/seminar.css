@@ -39,12 +39,39 @@
 }
 /* TAB */
 @media screen and (max-width: 899px) {
+  #_archive-seminar{
+    padding: 42px 30px 80px;
+  }
+  #_archive-seminar .cntList{
+    gap: 42px 4%;
+  }
+  #_archive-seminar .cntList .item{
+    max-width: 342px;
+    margin: 0 auto;
+  }
+  #_archive-seminar .cntList .image{
+    margin-bottom: 16px;
+  }
+  #_archive-seminar .cntList .title{
+    margin-bottom: 16px;
+    font-size: 2rem;
+  }
   #_archive-seminar .cntList .details{
+    margin-top: 16px;
     gap: 9px;
+  }
+  #_archive-seminar .cntList .button{
+    margin-top: 20px;
   }
 }
 
 /* ページネーション */
 #pagination .nav-links{
 	margin-top: 90px;
+}
+/* TAB */
+@media screen and (max-width: 899px) {
+  #pagination .nav-links{
+    margin-top: 83px;
+  }
 }
