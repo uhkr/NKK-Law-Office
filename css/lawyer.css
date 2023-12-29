@@ -64,13 +64,14 @@
 		width: calc(100% - 30px);
 		position: absolute;
 		left: 0;
-		top: -317px;
+		top: -302px;
 		padding-left: 30px;
 	}
 	#pageHeading{
-		margin-top: 377px;
+		margin-top: 362px;
 		height: 206px;
 		position: relative;
+		padding-right: 30px;
 	}	
 	#pageHeading .cntInner.-lawyer{
 		padding-top: 76px;
@@ -98,16 +99,23 @@
 	}
 	#pageHeading .cntImg-lawyer::before{
 		top: auto;
-		bottom: -96px;
+		bottom: -100px;
 		right: -88px;
 	}
 }
 /* SP */
 @media screen and (max-width: 480px) {
 	#pageHeading .cntImg-lawyer{
-		right: auto; 
-		left: 40%;
-		transform: translateX(-50%);
+		width: 100%;
+		right: auto;
+		left: 0;
+	}
+	#pageHeading .cntImg-lawyer img{
+		width: 224px;
+		height: auto;
+	}
+	#pageHeading .cntImg-lawyer::before{
+		right: 0;
 	}
 }
 
