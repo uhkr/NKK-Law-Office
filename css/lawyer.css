@@ -3,11 +3,11 @@
   max-width: 1000px !important;
 }
 #pageHeading{
-	/* padding-right: 60px; */
+	padding-right: 60px;
 }
 #pageHeading .cntInner.-lawyer{
 	position: relative;
-	max-width: 900px;
+	max-width: 870px;
 	margin-top: 35px;
 	padding-top: 24px;
 	padding-right: 228px;
@@ -71,25 +71,20 @@
 		margin-top: 377px;
 		height: 206px;
 		position: relative;
-	}
-	
+	}	
 	#pageHeading .cntInner.-lawyer{
-		/* position: relative;
-		max-width: 900px; */
-		/* margin-top: 35px; */
 		padding-top: 76px;
-		/* padding-right: 20px; */
+		padding-right: 0;
+		max-width: 560px;
 	}
 	#pageHeading .cntTitle-lawyer{
 		margin: 0 auto;
-		/* color: #fff; */
 	}
 	#pageHeading .cntTitle-lawyer .text{
 		margin-bottom: 11px;
 		font-size: 1.2rem;
 	}
 	#pageHeading .cntTitle-lawyer .title{
-		/* font-size: 3.2rem; */
 		font-size: 2.6rem;
 	}
 	#pageHeading .cntTitle-lawyer .en{
@@ -97,24 +92,23 @@
 	}
 	#pageHeading .cntImg-lawyer{
 		top: -227px;
-		/* right: auto; */
-		/* left: 30px; */
-		right: 120px;
+		right: 90px;
 		width: 224px;
 		height: 272px;
 	}
 	#pageHeading .cntImg-lawyer::before{
-		/* content: "";
-		position: absolute; */
 		top: auto;
 		bottom: -96px;
 		right: -88px;
-		/* width: 200px;
-		height: 200px;
-		background: url(../img/lawyer/decoration-01.svg) center/contain no-repeat;
-		z-index: -1; */
 	}
-
+}
+/* SP */
+@media screen and (max-width: 480px) {
+	#pageHeading .cntImg-lawyer{
+		right: auto; 
+		left: 40%;
+		transform: translateX(-50%);
+	}
 }
 
 /* 主な取扱分野 */
@@ -147,6 +141,7 @@
 	}
 	#_content-01 .cntInner{
 		padding-right: 0;
+		max-width: 560px;
 	}
 	#_content-01 .cntTitle{
 		font-size: 2.1rem;
