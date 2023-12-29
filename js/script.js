@@ -23,7 +23,7 @@ function is_sp(){
 }
 
 // ロード、リサイズ
-$(window).on('load resize', function() {
+$(window).on('load resize', function(e) {
   is_pc();
   is_sp();
 });
@@ -271,4 +271,42 @@ $(window).on('load onpageshow', function (){
       $(window).scrollTop(0)
     }
   });
+});
+
+// 取扱業務
+var $SERVICE_LIST;
+var $SERVICE_TITLE;
+$(window).on('load resize', function(e) {
+
+  if(e.type == "load"){
+    $SERVICE_LIST = $("#_services .cntList");
+    if(!$SERVICE_LIST.length) return;
+    $SERVICE_TITLE = $SERVICE_LIST.find(".js-htit");
+  }
+
+  if(IS_PC){
+    $SERVICE_LIST.each(function(){
+      var $titles = $(this).find(".js-htit");
+      $titles.each(function(index){
+        var height = $(this).children(".txt").height();
+        var fsize = $(this).css("font-size").replace("px", "");
+        if(height > (fsize * 2)){
+          if(index % 2 === 0){
+            $titles.eq(index + 1).css("height", height);
+          }else{
+            $titles.eq(index - 1).css("height", height);
+          }
+        }else{
+          if(index % 2 === 0){
+            $titles.eq(index + 1).css("height", "");
+          }else{
+            $titles.eq(index - 1).css("height", "");
+          }
+        }
+        index++;
+      });
+    });
+  }else{
+    $SERVICE_TITLE.css("height", "");
+  }
 });

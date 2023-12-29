@@ -1,0 +1,84 @@
+#pageHeading .cntTitle.-service{
+  padding-top: 57px;
+  padding-bottom: 54px;
+}
+#pageHeading .cntTitle.-service .en{
+  font-size: 1.6rem;
+}
+#pageHeading .cntTitle.-service .ja{
+  margin-top: 10px;
+  font-size: 3.4rem;
+  letter-spacing: .05em;
+}
+#pageHeading .cntImg-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+#pageHeading .cntImg-bg::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--c-base-btn);
+  opacity: .3;
+}
+#pageHeading .cntImg-bg img{
+  position: relative;
+  z-index: -1;
+}
+
+#breadcrumbs .cntInner::before{
+  background: var(--c-base-btn);
+}
+#breadcrumbs .cntList{
+  color: #fff;
+}
+#breadcrumbs .cntList .item + .item::before,
+#breadcrumbs .cntList .item + .item::after{
+  background: #fff;
+}
+
+/* サイドバー */
+#withSidebar{
+  padding-bottom: 80px;
+}
+/* TAB */
+@media screen and (max-width: 899px) {
+  #withSidebar{
+    padding: 0;
+  }
+  #sidebar{
+    order: 2;
+  }
+}
+
+/* 目次 */
+#toc_container .toc_list > li > a .num{
+  display: inline-block;
+}
+
+/* 本文 */
+#_post{
+  margin: 0;
+  padding: 0;
+}
+#_post .cntBox h1:first-child,
+#_post .cntBox h2:first-child{
+  margin-top: 0;
+}
+#_post .cntBox h1,
+#_post .cntBox h2{
+  margin-top: 80px;
+}
+/* TAB */
+@media screen and (max-width: 899px) {
+  #_post{
+    padding: 0 30px;
+  }
+}
