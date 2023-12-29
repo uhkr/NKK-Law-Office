@@ -752,6 +752,10 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 	padding: 85px 30px;
 	background: var(--c-base-btn);
 }
+#pageHeading.-bgimg{
+  padding-top: 142px;
+  padding-bottom: 139px;
+}
 #pageHeading .cntInner{
 	position: relative;
 	z-index: 2;
@@ -765,10 +769,40 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 	font-size: 3.6rem;
 	letter-spacing: .2em;
 }
+#pageHeading.-bgimg .cntTitle .en{
+  font-size: 1.6rem;
+}
 #pageHeading .cntTitle .ja{
 	margin-top: 8px;
 	font-family: var(--ff-mincho);
 	letter-spacing: .1em;
+}
+#pageHeading.-bgimg .cntTitle .ja{
+  margin-top: 10px;
+  font-size: 3.4rem;
+  letter-spacing: .05em;
+}
+#pageHeading.-bgimg .cntImg-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+#pageHeading.-bgimg .cntImg-bg::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--c-base-btn);
+  opacity: .3;
+}
+#pageHeading.-bgimg .cntImg-bg img{
+  position: relative;
+  z-index: -1;
 }
 /* TAB */
 @media screen and (max-width: 899px) {
