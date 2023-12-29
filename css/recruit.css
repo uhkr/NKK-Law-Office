@@ -42,6 +42,9 @@
 }
 /* TAB */
 @media screen and (max-width: 899px) {
+  #_recruit{
+    padding-bottom: 0;
+  }
   #_recruit .cntBox + .cntBox{
     margin-top: 82px;
   }

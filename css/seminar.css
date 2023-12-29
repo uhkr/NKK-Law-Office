@@ -64,6 +64,12 @@
     margin-top: 20px;
   }
 }
+/* SP */
+@media screen and (max-width: 480px) {
+  #_archive-seminar .cntList{
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ページネーション */
 #pagination .nav-links{
