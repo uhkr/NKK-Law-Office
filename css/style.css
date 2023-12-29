@@ -744,9 +744,14 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 
 /* 下層ページタイトル */
 #pageHeading{
+	position: relative;
 	margin-top: 76px;
 	padding: 85px 30px;
 	background: var(--c-base-btn);
+}
+#pageHeading .cntInner{
+	position: relative;
+	z-index: 2;
 }
 #pageHeading .cntTitle{
 	color: #fff;
@@ -1079,6 +1084,11 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 	transform: rotate(45deg);
 	border-right: 1px solid var(--c-base-btn);
 	border-bottom: 1px solid var(--c-base-btn);
+}
+#sidebar .cntList .link.-right::before{
+	top: calc(50% - 3px);
+	right: 8px;
+	transform: rotate(-45deg);
 }
 #sidebar .cntList .link::after{
 	top: calc(50% - 10px);

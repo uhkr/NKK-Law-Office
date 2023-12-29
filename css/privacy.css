@@ -16,11 +16,22 @@
   margin-top: 100px;
   font-size: 2.6rem;
 }
+#_post .cntBox h3{
+  font-size: 2.4rem;
+}
+#_post .cntBox h4{
+  font-size: 2.2rem;
+}
+#_post .cntBox h5{
+  font-size: 2rem;
+}
+#_post .cntBox h6{
+  font-size: 1.8rem;
+}
 #_post .cntBox ul,
 #_post .cntBox ol{
   margin: 20px 0;
 }
-#_post .cntBox ul li,
 #_post .cntBox ol li{
   font-weight: 400;
 }
@@ -32,6 +43,9 @@
   content: counter(item)'.';
   font-family: var(--ff-main);
   letter-spacing: 0;
+}
+#_post .cntBox hr{
+  margin: 40px auto;
 }
 #_post a.cntBtn-tel{
   display: block;
