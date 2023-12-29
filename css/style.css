@@ -194,14 +194,17 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 	margin-bottom: 20px;
 	padding-bottom: 20px;
 	border-bottom: 1px solid #959997;
+	color: var(--c-base-btn);
 	font-family: var(--ff-mincho);
 	font-size: 2.6rem;
 	font-weight: 600;
 	letter-spacing: .2em;
 }
 ._Catch{
+	color: var(--c-base-btn);
 	font-family: var(--ff-mincho);
 	font-size: 3.2rem;
+	font-weight: 600;
 	letter-spacing: .1em;
 	line-height: 1.8;
 }
@@ -1330,6 +1333,9 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 }
 #_archive .cntList .category{
   margin-top: -5px;
+}
+#_archive .cntList .date{
+	line-height: 1.5;
 }
 #_archive .cntList .title{
   width: 100%;

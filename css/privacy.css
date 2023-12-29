@@ -9,6 +9,7 @@
 #_post .cntBox h4,
 #_post .cntBox h5,
 #_post .cntBox h6{
+  color: var(--c-base-btn);
   font-weight: 600;
 }
 #_post .cntBox h1,

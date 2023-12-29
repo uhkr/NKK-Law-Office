@@ -14,6 +14,7 @@
 }
 #_archive-seminar .cntList .title{
   margin-bottom: 20px;
+  color: var(--c-base-btn);
   font-family: var(--ff-mincho);
   font-size: 2.4rem;
   font-weight: 600;

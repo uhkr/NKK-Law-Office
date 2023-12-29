@@ -5,9 +5,6 @@
 #_archive .cntList{
   border-top: 1px solid #CFD4D2;
 }
-#_archive .cntList .title{
-  margin-top: 1px;
-}
 
 /*  */
 #pageHeading .cntInner.-post{
@@ -358,6 +355,10 @@
   padding: 25px 24px;
   border: 1px solid #CFD4D2;
   line-height: 1.6;
+  text-align: left;
+}
+#_post .cntBox table th{
+  background: #FAFAFA;
 }
 
 #_post .cntBox-bottom{
