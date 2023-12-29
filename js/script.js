@@ -81,18 +81,6 @@ $(function(){
   });
 });
 
-// ページ内リンク
-$(function(){
-  $('a[href^="#"]').click(function(){
-    var speed = 500;
-    var href= $(this).attr("href");
-    var target = $(href == "#" || href == "" ? 'html' : href);
-    var position = target.offset().top;
-    $("html, body").animate({scrollTop:position}, speed, "swing");
-    return false;
-  });
-});
-
 // デバイス判定
 $(function(){
   const ua = navigator.userAgent;
@@ -273,6 +261,86 @@ $(window).on('load onpageshow', function (){
   });
 });
 
+// 投稿タイトル・目次
+$(function(){
+  const $cntBox = $("#_post .cntBox");
+  const $toc = $("#toc_container .toc_list");
+  if(!$cntBox) return;
+  var h1_index = 0;
+  var h3_index = 0;
+  var h4_index = 0;
+  var h5_index = 0;
+  var h6_index = 0;
+  var hierarchy = 0;
+  var index = 0;
+  var html = "";
+  $cntBox.find("h1, h2, h3, h4, h5, h6").each(function(){
+    var localName = $(this).prop("localName");
+    var num = ('00' + index).slice(-2);
+    $(this).prop("id", "title-" + num);
+    if($(this).hasClass("is-style-numbered")){
+      var h = "";
+      switch(localName){
+        case "h1":
+        case "h2":
+          h1_index++;
+          h = '<span class="num">' + ('00' + h1_index).slice(-2) + ".</span>" + $(this).html();
+          break;
+        case "h3":
+          h3_index++;
+          h = '<span class="num">' + ('00' + h3_index).slice(-2) + ".</span>" + $(this).html();
+          break;
+        case "h4":
+          h4_index++;
+          h = '<span class="num">' + ('00' + h4_index).slice(-2) + ".</span>" + $(this).html();
+          break;
+        case "h5":
+          h5_index++;
+          h = '<span class="num">' + ('00' + h5_index).slice(-2) + ".</span>" + $(this).html();
+          break;
+        case "h6":
+          h6_index++;
+          h = '<span class="num">' + ('00' + h6_index).slice(-2) + ".</span>" + $(this).html();
+          break;
+      }
+      $(this).html(h)
+    }
+    if(localName == "h1" || localName == "h2"){
+      if(hierarchy > 0){
+        hierarchy = 0;
+        h3_index = 0;
+        h4_index = 0;
+        h5_index = 0;
+        h6_index = 0;
+        html += "</ul>";
+      }
+      html += '<li><a class="js-offset-100" href="#title-'+ num +'">'+ $(this).html() +'</a>';
+    }else if(localName == "h3" || localName == "h4" || localName == "h5"){
+      if(hierarchy === 0){
+        html += "<ul>";
+      }else if(localName == "h3" && hierarchy > 3){
+        h4_index = 0;
+        h5_index = 0;
+      }else if(localName == "h4" && hierarchy > 4){
+        h5_index = 0;
+      }
+      h6_index = 0;
+      hierarchy = Number((localName).slice(-1));
+      html += '<li><a class="js-offset-100" href="#title-'+ num +'">'+ $(this).html() +'</a></li>';
+    }
+    index++;
+  });
+  if(hierarchy > 0){
+    hierarchy = 0;
+    html += "</ul>";
+  }
+  html += "</li>";
+  $toc.html(html);
+  if(index < 3){
+    $("#toc_container").hide();
+  }
+});
+
 // 取扱業務
 var $SERVICE_LIST;
 var $SERVICE_TITLE;
@@ -309,4 +377,17 @@ $(window).on('load resize', function(e) {
   }else{
     $SERVICE_TITLE.css("height", "");
   }
+});
+
+// ページ内リンク
+$(function(){
+  $('a[href^="#"]').click(function(){
+    var speed = 500;
+    var href= $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top;
+    if($(this).hasClass("js-offset-100")) position -= 100;
+    $("html, body").animate({scrollTop:position}, speed, "swing");
+    return false;
+  });
 });
