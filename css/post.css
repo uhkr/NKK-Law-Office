@@ -448,23 +448,18 @@
   #_post .cntBox h1,
   #_post .cntBox h2{
     font-size: 2rem;
-    /* font-size: 2.8rem; */
   }
   #_post .cntBox h3{
-    /* font-size: 2.8rem; */
     font-size: 2rem;
   }
   #_post .cntBox h4{
     font-size: 1.8rem;
-    /* font-size: 2.6rem; */
   }
   #_post .cntBox h5{
     font-size: 1.6rem;
-    /* font-size: 2.4rem; */
   }
   #_post .cntBox h6{
     font-size: 1.4rem;
-    /* font-size: 2.2rem; */
   }
   #_post .cntBox .is-style-numbered{
     --pl: 34px;
@@ -482,156 +477,42 @@
   #_post .cntBox .wp-block-button .wp-block-button__link{
     padding: 19px 47px 16px 18px;
   }
-
-
-  #_post .cntBox ul{
-    /* margin-bottom: 20px; */
-  }
   #_post .cntBox ul li{
-    /* position: relative; */
     margin-top: 14px;
-    /* padding-left: 18px;
-    font-weight: 700;
-    line-height: 1.8; */
-  }
-  #_post .cntBox ul li::before{
-    /* content: "";
-    position: absolute;
-    top: .7em;
-    left: 0;
-    display: block;
-    width: 8px;
-    height: 8px;
-    background: var(--c-base-btn);
-    border: 1px solid var(--c-base-btn);
-    border-radius: 50%;
-    box-sizing: border-box; */
   }
   #_post .cntBox ul ul li::before{
-    /* background: #fff; */
   }
   #_post .cntBox ul.is-style-checklist > li{
-    /* padding-left: 1.8125em; */
     font-size: 1.4rem;
   }
-  #_post .cntBox ul.is-style-checklist > li::before{
-    /* top: 0.25em; */
-    /* width: 1.06em;
-    height: 1.06em; */
-    /* background: url(../img/common/icon_checkbox.svg) left/contain no-repeat;
-    border: none;
-    border-radius: 0; */
-  }
   #_post .cntBox ul.is-style-linklist li{
-    /* padding-left: 20px; */
     font-size: 1.4rem;
   }
   #_post .cntBox ul.is-style-linklist li::before{
     top: .6em;
     width: 9px;
     height: 9px;
-    /* background: none;
-    border-left: none;
-    border-bottom: none;
-    border-radius: 0;
-    transform: rotate(45deg); */
-  }
-  #_post .cntBox ul.is-style-linklist a{
-    /* font-weight: 400; */
-  }
-  #_post .cntBox ul.is-style-linklist a:visited{
-    /* color: inherit; */
   }
   #_post .cntBox ul.is-style-linklist li a[target="_blank"]::after{
-    /* content: "";
-    display: inline-block;
-    width: 17px;
-    height: 15px;
-    margin-bottom: -2px; */
     margin-left: 10px;
-    /* background: url(../img/common/icon_blank.svg) center/contain no-repeat; */
-  }
-  #_post .cntBox ul.is-style-linklist li a[href*="youtube.com/"]::after,
-  #_post .cntBox ul.is-style-linklist li a[href*="youtu.be/"]::after{
-    /* content: "YouTube";
-    width: auto;
-    height: auto;
-    margin: 0 0 0 22px; */
   }
   #_post .cntBox ul.is-style-linklist .txt::after,
   #_post .cntBox ul.is-style-linklist li a[href*="youtube.com/"]::after,
   #_post .cntBox ul.is-style-linklist li a[href*="youtu.be/"]::after{
-    /* display: inline-block; */
     margin: 0 10px;
     padding: 0 8px;
-    /* background: var(--c-base-btn);
-    color: #fff;
-    font-family: var(--ff-en-2); */
     font-size: 1rem;
-    /* font-weight: 400;
-    letter-spacing: .08em; */
-  }
-  /* #_post .cntBox ul.is-style-linklist li a[href$=".pdf"] .txt::after{ content: "PDF"; }
-  #_post .cntBox ul.is-style-linklist li a[href$=".doc"] .txt::after,
-  #_post .cntBox ul.is-style-linklist li a[href$=".docx"] .txt::after{ content: "WORD"; }
-  #_post .cntBox ul.is-style-linklist li a[href$=".xls"] .txt::after,
-  #_post .cntBox ul.is-style-linklist li a[href$=".xlsx"] .txt::after{ content: "EXCEL"; }
-  #_post .cntBox ul.is-style-linklist .size,
-  #_post .cntBox ul.is-style-linklist .date{
-    display: inline-block;
-    text-decoration: none;
-  } */
-  #_post .cntBox ul.is-style-linklist .size{
-    /* margin-right: 14px; */
-  }
-
-  #_post .cntBox ol{
-    /* counter-reset: item;
-    list-style-type: none;
-    margin-bottom: 20px; */
   }
   #_post .cntBox ol li{
     font-size: 1.4rem;
-    /* padding-left: 1.875em;
-    font-weight: 700;
-    line-height: 1.8; */
     margin-top: 14px;
   }
-  #_post .cntBox ol li + li{
-    /* margin-top: 14px; */
-  }
-  #_post .cntBox ol > li::before{
-    /* counter-increment: item; */
-  }
-  #_post .cntBox ol li:before{
-    /* content: counter(item, decimal-leading-zero)'.';
-    position: static;
-    display: inline-block;
-    width: 1.875em;
-    height: auto;
-    margin-left: -1.875em;
-    background: none;
-    border: none;
-    border-radius: 0;
-    font-family: var(--ff-en-2);
-    font-weight: 400;
-    letter-spacing: .1em; */
-  }
-  #_post .cntBox ol ul{
-    /* padding: 0; */
-  }
-  #_post .cntBox ol ul li{
-    /* margin-left: -0.625em; */
-  }
-
   #_post .cntBox table th,
   #_post .cntBox table td{
     font-size: 1.4rem;
     padding: 22px 24px;
     width: 252px;
   }
-
-
   #_post .cntBox .wp-block-flexible-table-block-table{
     width: 100px;
     min-width: 100%;
@@ -639,5 +520,12 @@
   }
   #_post .cntBox .wp-block-flexible-table-block-table table{
     min-width: 754px;
+  }
+  #_post .cntBox-bottom{
+    margin-top: 60px;
+    padding-top: 20px;
+  }
+  #_post .cntBox-bottom .button{
+    margin-top: 60px;
   }
 }
