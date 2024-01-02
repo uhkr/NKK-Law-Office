@@ -22,7 +22,7 @@
 <body <?php body_class(); ?>>
 
 <!-- ロード -->
-<div id="loading"></div>
+<!-- <div id="loading"></div> -->
 
 <!-- スマホメニュー -->
 <div id="nav">
@@ -30,8 +30,12 @@
 	<nav class="cntInner">
 		<div class="cntBox --h-opacity">
 			<ul id="navList-01" class="cntList">
-				<li><a href="#" class="item"><span class="txt">事務所概要</span></a></li>
-				<li><a href="#" class="item"><span class="txt">弁護士紹介</span></a></li>
+				<?php $url = get_page_url("about"); if($url): ?>
+				<li><a href="<?php echo $url; ?>" class="item"><span class="txt">事務所概要</span></a></li>
+				<?php endif; ?>
+				<?php $url = get_page_url("lawyers"); if($url): ?>
+				<li><a href="<?php echo $url; ?>" class="item"><span class="txt">弁護士紹介</span></a></li>
+				<?php endif; ?>
 				<li><div class="item _Slider"><a href="" class="txt">取扱業務</a></div>
 					<ul class="child">
 						<li><a href="" class="item"><span class="txt">企業法務 一覧</span></a></li>
@@ -43,7 +47,9 @@
 				</li>
 				<li><a href="" class="item"><span class="txt">新着情報</span></a></li>
 				<li><a href="" class="item"><span class="txt">アクセス</span></a></li>
-				<li><a href="" class="item"><span class="txt small">プライバシーポリシー</span></a></li>
+				<?php $url = get_page_url("privacy"); if($url): ?>
+				<li><a href="<?php echo $url; ?>" class="item"><span class="txt small">プライバシーポリシー</span></a></li>
+				<?php endif; ?>
 			</ul>
 			<a href="" class="cntBtn"><span class="icon"><img src="<?php echo img_url(); ?>/common/icon_email-bk.svg" alt=""></span><span class="txt">メールでのお問い合わせ</span></a>
 		</div>
@@ -53,12 +59,14 @@
 <!-- ヘッダー -->
 <header id="header">
 	<div class="cntInner">
-		<a id="headerLogo" href="" class="--h-opacity"><h1>弁護士法人GROWTH<br>南舘・北川・木村法律事務所</h1></a>
+		<a id="headerLogo" href="<?php echo home_url(); ?>" class="--h-opacity"><h1>弁護士法人GROWTH<br>南舘・北川・木村法律事務所</h1></a>
 		<!-- ナビメニュー -->
 		<div class="cntBox">
 			<ul class="cntList-01 --pc">
-				<li><a href=""><span class="txt">事務所概要</span></a></li>
-				<li><a href=""><span class="txt">弁護士紹介</span></a></li>
+				<?php $url = get_page_url("about"); if($url): ?>
+				<li><a href="<?php echo $url; ?>"><span class="txt">事務所概要</span></a></li>
+				<?php endif; ?>
+				<li><a href="<?php echo home_url("lawyer"); ?>"><span class="txt">弁護士紹介</span></a></li>
 				<li><a href=""><span class="txt">取扱業務</span></a>
 					<ul class="child --h-opacity">
 						<li><a href=""><span class="txt">企業法務 一覧</span></a></li>

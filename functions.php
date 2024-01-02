@@ -110,14 +110,18 @@ function nkk_scripts() {
 
 		wp_enqueue_style( 'page-top-style', get_template_directory_uri() . '/css/index.css', array(), get_filemtime(get_template_directory()."/css/top.css") );
 
-	}elseif(is_single() || is_archive() || is_category() || is_page() || is_search()){
+	}elseif(is_single() || is_singular() || is_archive() || is_category() || is_page() || is_search()){
 
 		if(is_page_template("")) {
 		}else{
 			wp_enqueue_style( 'post-style', get_template_directory_uri() . '/css/post.css', array(), get_filemtime(get_template_directory()."/css/post.css") );
 		}
 
-		if(is_archive() || is_category()){
+		if(is_singular("lawyer")){
+			wp_enqueue_style( 'lawyer-style', get_template_directory_uri() . '/css/lawyer.css', array(), get_filemtime(get_template_directory()."/css/lawyer.css") );
+		}elseif(is_archive("lawyer")){
+			wp_enqueue_style( 'lawyer-style', get_template_directory_uri() . '/css/lawyers.css', array(), get_filemtime(get_template_directory()."/css/lawyers.css") );
+		}elseif(is_archive() || is_category()){
 			wp_enqueue_style( 'post-style', get_template_directory_uri() . '/css/post.css', array(), get_filemtime(get_template_directory()."/css/post.css") );
 			// wp_enqueue_style( 'archive-style', get_template_directory_uri() . '/css/archive.css', array(), get_filemtime(get_template_directory()."/css/archive.css") );
 		}
@@ -434,7 +438,7 @@ function create_post_type() {
 		'menu_position' => 5,
 		'show_in_rest' => true,
 	]);
-	remove_post_type_support( 'faq', 'editor' );
+	remove_post_type_support( 'lawyer', 'editor' );
 
 	global $wp_post_types;
   $name = '新着情報';

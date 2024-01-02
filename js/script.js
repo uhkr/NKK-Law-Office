@@ -348,9 +348,9 @@ $(window).on('load resize', function(e) {
 
   if(e.type == "load"){
     $SERVICE_LIST = $("#_services .cntList");
-    if(!$SERVICE_LIST.length) return;
     $SERVICE_TITLE = $SERVICE_LIST.find(".js-htit");
   }
+  if(!$SERVICE_LIST.length) return;
 
   if(IS_PC){
     $SERVICE_LIST.each(function(){

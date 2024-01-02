@@ -43,6 +43,7 @@
 	right: 0;
 	width: 228px;
 	height: 276px;
+  background: #959996;
 	z-index: 2;
 }
 #pageHeading .cntImg-lawyer::before{
