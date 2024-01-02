@@ -90,7 +90,7 @@
     font-size: 2rem;
   }
   #_post .cntBox h3{
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   #_post .cntBox h4{
     font-size: 1.6rem;
@@ -99,11 +99,14 @@
     font-size: 1.4rem;
   }
   #_post .cntBox h6{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   #_post .cntBox ul,
   #_post .cntBox ol{
     margin: 10px 0;
+  }
+  #_post .cntBox hr{
+    margin: 30px auto;
   }
   #_post a.cntBtn-tel{
     margin-bottom: 60px;
