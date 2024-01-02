@@ -131,12 +131,19 @@
 
 /* Corporate */
 #_corporate{
-  padding: 100px 30px 160px
+  padding: 100px 30px 160px;
 }
 /* TAB */
 @media screen and (max-width: 899px) {
   #_corporate{
-    padding: 40px 30px 80px
+    padding: 120px 30px 80px;
+    margin-top: -50px;
+  }
+}
+/* SP */
+@media screen and (max-width: 480px) {
+  #_corporate{
+    padding-top: 90px;
   }
 }
 
@@ -158,4 +165,46 @@
 /* Access */
 #_access{
   padding-top: 0;
+}
+
+/* Anchor */
+#_anchor{
+  width: 100%;
+  padding: 40px 30px 0;
+}
+#_anchor .cntInner{
+  display: flex;
+  justify-content: center;
+  gap: 0 3px;
+  max-width: 315px;
+  width: 100%;
+  margin: 0 auto;
+}
+#_anchor .cntBtn{
+  flex-basis: 50%;
+  color: #fff;
+  font-size: 1.4rem;
+  letter-spacing: .1em;
+  font-weight: 600;
+  font-family: var(--ff-mincho);
+  background: var(--c-base-btn);
+  padding: 14px 30px 14px 20px;
+  position: relative;
+}
+#_anchor .cntBtn::before,
+#_anchor .cntBtn::after{
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 1px;
+  background: #fff;
+  top: calc(50% - 2px);
+  right: 23px;
+  transform-origin: bottom center;
+}
+#_anchor .cntBtn::before{
+  transform: rotate(50deg);
+}
+#_anchor .cntBtn::after{
+  transform: rotate(-50deg);
 }
