@@ -16,8 +16,6 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  /* height: 100%; */
-  /* max-height: 80px; */
   margin-bottom: 30px;
   padding-bottom: 12px;
   border-bottom: 1px solid #959997;
@@ -50,6 +48,7 @@
 }
 #_services .cntItem .text a{
   text-decoration: underline;
+  text-underline-offset: 2px;
 }
 #_services .cntItem .list{
   counter-reset: item;
@@ -67,6 +66,7 @@
 #_services .cntItem .list a{
   line-height: 1.6;
   text-decoration: underline;
+  text-underline-offset: 2px;
 }
 #_services .cntItem .button{
   margin-top: 30px;
@@ -81,17 +81,63 @@
 }
 /* TAB */
 @media screen and (max-width: 899px) {
+  #_services .cntItem .box-texts{
+    max-width: 100%;
+  }
+  #_services .cntTitle{
+    margin-bottom: 40px;
+  }
   #_services .cntList{
     grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  #_services .cntItem{
+    max-width: 551px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  #_services .cntItem .title{
+    font-size: 2rem;
+  }
+  #_services .cntItem .box{
+    flex-direction: column;
+  }
+  #_services .cntItem .box-img{
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  #_services .cntItem .image{
+    padding-top: 31.74%;
   }
   #_services .cntItem .box-texts{
     max-width: 100%;
+    padding-left: 0;
+  }
+  #_services .cntItem .text{
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
+  #_services .cntItem .text a{
+    font-size: 1.4rem;
+  }
+  #_services .cntItem .list a{
+    line-height: 1.8;
+    font-size: 1.4rem;
+  }
+  #_services .cntItem .button{
+    font-size: 1.4rem;
   }
 }
 
 /* Corporate */
 #_corporate{
   padding: 100px 30px 160px
+}
+/* TAB */
+@media screen and (max-width: 899px) {
+  #_corporate{
+    padding: 40px 30px 80px
+  }
 }
 
 /* Individual */
@@ -101,6 +147,12 @@
 }
 #_individual .cntTitle{
   text-align: center;
+}
+/* TAB */
+@media screen and (max-width: 899px) {
+  #_individual{
+    padding: 80px 30px;
+  }
 }
 
 /* Access */
