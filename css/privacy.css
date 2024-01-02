@@ -68,6 +68,7 @@
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: .2em;
+  line-height: 1.6;
 }
 #_post .cntBtn-tel .detail{
   display: block;
@@ -76,4 +77,37 @@
   font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: 0;
+}
+
+/* TAB */
+@media screen and (max-width: 899px) {
+  #_post{
+    padding-top: 51px;
+  }
+  #_post .cntBox h1,
+  #_post .cntBox h2{
+    margin-top: 60px;
+    font-size: 2rem;
+  }
+  #_post .cntBox h3{
+    font-size: 1.8rem;
+  }
+  #_post .cntBox h4{
+    font-size: 1.6rem;
+  }
+  #_post .cntBox h5{
+    font-size: 1.4rem;
+  }
+  #_post .cntBox h6{
+    font-size: 1.2rem;
+  }
+  #_post .cntBox ul,
+  #_post .cntBox ol{
+    margin: 10px 0;
+  }
+  #_post a.cntBtn-tel{
+    margin-bottom: 60px;
+    padding: 25px 20px;
+    font-size: 2.6rem;
+  }
 }
