@@ -1,11 +1,13 @@
 <?php 
 $title_ja = get_the_title();
-$title_en = get_post_meta(get_the_ID(), 'pageHeading_en')[0];
+$title_en = get_post_meta(get_the_ID(), 'pageHeading_en');
+if(isset($title_en[0])){ $title_en = $title_en[0];
+}else{ $title_en = null; }
+
 $pageHeading_img = get_post_meta(get_the_ID(), 'pageHeading_img');
-$pageHeading_img_url = wp_get_attachment_url($pageHeading_img[0]);
-if(!$pageHeading_img_url){
-	$pageHeading_img_url = get_template_directory_uri() . "/img/common/pageHeading.jpg";
-}
+if(isset($pageHeading_img[0])){ $pageHeading_img_url = wp_get_attachment_url($pageHeading_img[0]);
+}else{ $pageHeading_img_url = null; }
+if(!$pageHeading_img_url) $pageHeading_img_url = get_template_directory_uri() . "/img/common/pageHeading.jpg";
 
 $wp_obj = get_queried_object();
 if(is_post_type_archive()){

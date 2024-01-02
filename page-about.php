@@ -1,13 +1,5 @@
 <?php get_header(); ?>
 
-<div id="pageHeading">
-	<div class="cntInner _Inner">
-		<div class="cntTitle">
-			<small class="en">ABOUT US</small>
-			<h2 class="ja">事務所概要</h2>
-		</div>
-	</div>
-</div>
 <?php get_template_part( 'content', 'pageheading' ); ?>
 <?php get_template_part( 'content', 'breadcrumbs' ); ?>
 
@@ -196,7 +188,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="cntImg"><img src="<?php echo img_url(); ?>/img/about/history_img.jpg" class="--img-cover" alt=""></div>
+		<div class="cntImg"><img src="<?php echo img_url(); ?>/about/history_img.jpg" class="--img-cover" alt=""></div>
 	</section>
 
 	<!-- Access -->

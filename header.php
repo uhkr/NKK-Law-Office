@@ -45,7 +45,7 @@
 				<li><a href="" class="item"><span class="txt">アクセス</span></a></li>
 				<li><a href="" class="item"><span class="txt small">プライバシーポリシー</span></a></li>
 			</ul>
-			<a href="" class="cntBtn"><span class="icon"><img src="<?php echo img_url(); ?>/img/common/icon_email-bk.svg" alt=""></span><span class="txt">メールでのお問い合わせ</span></a>
+			<a href="" class="cntBtn"><span class="icon"><img src="<?php echo img_url(); ?>/common/icon_email-bk.svg" alt=""></span><span class="txt">メールでのお問い合わせ</span></a>
 		</div>
 	</nav>
 </div>
@@ -72,7 +72,7 @@
 				<li><a href=""><span class="txt">アクセス</span></a></li>
 			</ul>
 			<ul class="cntList-02">
-				<li class="--pc"><a href="" class="item"><span class="icon"><img src="<?php echo img_url(); ?>/img/common/icon_email-bk.svg" alt=""></span><span class="txt">お問い合わせ</span></a></li>
+				<li class="--pc"><a href="" class="item"><span class="icon"><img src="<?php echo img_url(); ?>/common/icon_email-bk.svg" alt=""></span><span class="txt">お問い合わせ</span></a></li>
 				<li id="headerBtn" class="--tab-sp"><span></span><span></span><span></span></li>
 			</ul>
 		</div>

@@ -80,8 +80,8 @@ function write_setup() {
 	) );
 
 	// This theme styles the visual editor to resemble the theme style.
-	add_theme_support( 'editor-styles' );
-	add_editor_style( array( 'css/editor-style.css' ) );
+	// add_theme_support( 'editor-styles' );
+	// add_editor_style( array( 'css/editor-style.css' ) );
 }
 endif; // write_setup
 add_action( 'after_setup_theme', 'write_setup' );
@@ -154,11 +154,11 @@ add_action('admin_enqueue_scripts', function(){
 });
 
 add_action( 'enqueue_block_editor_assets', function(){
-	wp_enqueue_script( 'block-script', get_stylesheet_directory_uri().'/js/editor-block.js',array("wp-blocks"), "", true);
+	// wp_enqueue_script( 'block-script', get_stylesheet_directory_uri().'/js/editor-block.js',array("wp-blocks"), "", true);
 });
 add_action( 'enqueue_block_assets', function(){
 	if(is_admin()){
-		wp_enqueue_style( 'block-style', get_stylesheet_directory_uri().'/css/editor-block.css' );
+		// wp_enqueue_style( 'block-style', get_stylesheet_directory_uri().'/css/editor-block.css' );
 	}
 });
 
