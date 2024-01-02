@@ -8,3 +8,13 @@
   max-width: 546px;
   margin: 0 auto;
 }
+/* TAB */
+@media screen and (max-width: 899px) {
+  #_contact-form .cntText{
+    margin-bottom: 60px;
+    
+  }
+  #_contact-form .cntBtn-complete{
+    margin-top: 80px;
+  }
+}

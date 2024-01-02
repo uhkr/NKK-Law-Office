@@ -467,6 +467,7 @@
   #_post .cntBox h1.is-style-numbered,
   #_post .cntBox h2.is-style-numbered{
     --pl: 40px;
+    margin-top: 40px;
   }
   #_post .cntBox p{
     font-size: 1.4rem;
@@ -479,6 +480,8 @@
   }
   #_post .cntBox ul li{
     margin-top: 14px;
+    font-size: 1.4rem;
+    letter-spacing: .05em;
   }
   #_post .cntBox ul ul li::before{
   }

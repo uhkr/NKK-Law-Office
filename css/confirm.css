@@ -19,6 +19,10 @@
 }
 /* TAB */
 @media screen and (max-width: 899px) {
+  #_contact-form .cntItem .inputs{
+    font-size: 1.4rem;
+  }
+
   #_contact-form .cntBtns{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
