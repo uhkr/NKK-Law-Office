@@ -7,8 +7,14 @@
 }
 
 /*  */
-#pageHeading .cntInner.-post{
-  margin-top: 53px;
+#pageHeading{
+  height: 322px;
+  position: relative;
+}
+#pageHeading #breadcrumbs{
+  position: absolute;
+  top: 78px;
+  left: 30px;
 }
 #pageHeading .cntTitle-post{
   padding-bottom: 5px;
@@ -34,8 +40,13 @@
 }
 /* TAB */
 @media screen and (max-width: 899px) {
-  #pageHeading .cntInner.-post{
-    margin-top: 40px;
+  #pageHeading{
+    height: auto;
+    padding-top: 73px;
+    padding-bottom: 41px;
+  }
+  #pageHeading #breadcrumbs{
+    top: 43px;
   }
   #pageHeading .cntTitle-post{
     padding-bottom: 0;
