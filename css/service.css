@@ -88,3 +88,19 @@
     margin-top: 14px;
   }
 }
+
+#pageHeading{
+  height: 360px;
+}
+/* TAB */
+@media screen and (max-width: 899px) {
+  #pageHeading{
+    height: 280px;
+  }
+}
+/* SP */
+@media screen and (max-width: 480px) {
+  #pageHeading{
+    height: 200px;
+  }
+}
