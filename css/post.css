@@ -8,13 +8,15 @@
 
 /*  */
 #pageHeading{
-  height: 322px;
   position: relative;
+  height: 322px;
 }
 #pageHeading #breadcrumbs{
   position: absolute;
   top: 78px;
   left: 30px;
+  width: calc(100% - 60px);
+  overflow: hidden;
 }
 #pageHeading .cntTitle-post{
   padding-bottom: 5px;
@@ -201,8 +203,13 @@
   letter-spacing: .1em;
 }
 #_post .cntBox p{
-  min-height: 1.8em;
+  /* min-height: 1.8em; */
+  min-height: 1em;
   line-height: 1.8;
+}
+#_post .cntBox strong,
+#_post .cntBox b{
+  font-weight: 700;
 }
 #_post .cntBox hr{
   width: 100%;
@@ -416,6 +423,20 @@
 #_post .cntBox .wp-block-button .wp-block-button__link::after{
 	transform: rotate(-45deg);
 }
+#_post .cntBox > .wp-block-image,
+#_post .cntBox > .wp-block-video,
+#_post .cntBox > .wp-block-columns,
+#_post .cntBox > .wp-block-gallery,
+#_post .cntBox > .wp-block-flexible-table-block-table{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+#_post .cntBox > .wp-block-columns{
+  gap: 40px;
+}
+#_post .cntBox > .wp-block-gallery{
+  --gallery-block--gutter-size: 24px;
+}
 #_post .cntBox table{
   width: 100%;
 }
@@ -478,7 +499,7 @@
   #_post .cntBox h1.is-style-numbered,
   #_post .cntBox h2.is-style-numbered{
     --pl: 40px;
-    margin-top: 40px;
+    /* margin-top: 40px; */
   }
   #_post .cntBox p{
     font-size: 1.4rem;
@@ -521,6 +542,21 @@
     font-size: 1.4rem;
     margin-top: 14px;
   }
+  #_post .cntBox > .wp-block-image,
+  #_post .cntBox > .wp-block-video,
+  #_post .cntBox > .wp-block-gallery,
+  #_post .cntBox > .wp-block-flexible-table-block-table{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  #_post .cntBox > .wp-block-columns{
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  #_post .cntBox > .wp-block-gallery{
+    --gallery-block--gutter-size: 15px;
+  }
   #_post .cntBox table th,
   #_post .cntBox table td{
     font-size: 1.4rem;
@@ -541,5 +577,12 @@
   }
   #_post .cntBox-bottom .button{
     margin-top: 60px;
+  }
+}
+/* SP */
+@media screen and (max-width: 480px) {
+  
+  #_post .cntBox > .wp-block-columns.is-style-col-reverse{
+    flex-direction: column-reverse;
   }
 }

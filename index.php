@@ -6,12 +6,21 @@
 			<p class="large --ff-en">YOUR<br>LEGAL<br>NAVIGATOR</p>
 			<p class="small --ff-mincho">未来への成長をナビゲートします</p>
 		</div>
+		<?php
+		$_posts = get_posts(array(
+			'posts_per_page' => 1,
+		));
+		if($_posts):
+		?>
 		<div class="cntBox-news">
 			<h2 class="title">NEWS</h2>
-			<time class="date" datetime="2021-06-21">2021.06.21</time>
-			<a href="" class="text js-overflow" data-lh="1.5" data-line="2" data-sp-line="1">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテ...</a>
-			<div class="more"><a href="" class="button _Btn-en -right"><span class="txt">VIEW MORE</span><span class="arrow"></span></a></div>
+			<?php foreach($_posts as $post): setup_postdata($post); ?>
+			<time class="date" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m.d'); ?></time>
+			<a href="<?php the_permalink(); ?>" class="text js-overflow" data-lh="1.5" data-line="2" data-sp-line="1"><?php the_title(); ?></a>
+			<?php endforeach; ?>
+			<div class="more"><a href="<?php echo home_url("information"); ?>" class="button _Btn-en -right"><span class="txt">VIEW MORE</span><span class="arrow"></span></a></div>
 		</div>
+		<?php endif; wp_reset_postdata(); ?>
 		<div class="scroll"></div>
 	</div>
 	<div class="cntImg">
@@ -39,9 +48,11 @@
 					私どもは、人や企業、社会が、法の力により問題を解決し、未来に向かって成長することをミッションとしています。そのミッションのために、時に、道なきところに道を作り、橋を架け、チームを作り、ナビゲーターとして成長のためのリーガルサービスを提供しています。<br>
 					戦略的にナビゲートすることが、私どもの強みです。
 				</p>
-				<a href="" class="cntBtn _Btn"><span class="txt">理念と指針</span><span class="arrow"></span></a>
-				<a href="" class="cntBtn _Btn"><span class="txt">事務所概要</span><span class="arrow"></span></a>
-				<a href="" class="cntBtn _Btn"><span class="txt">沿革</span><span class="arrow"></span></a>
+				<?php $url = get_page_url("about"); if($url): ?>
+				<a href="<?php echo $url."#_philosophy"; ?>" class="cntBtn _Btn"><span class="txt">理念と指針</span><span class="arrow"></span></a>
+				<a href="<?php echo $url."#_about"; ?>" class="cntBtn _Btn"><span class="txt">事務所概要</span><span class="arrow"></span></a>
+				<a href="<?php echo $url."#_history"; ?>" class="cntBtn _Btn"><span class="txt">沿革</span><span class="arrow"></span></a>
+				<?php endif; ?>
 			</div>
 		</div>
 	</section>
@@ -57,7 +68,7 @@
 						ダイバーシティを重視して、個性ある弁護士が在籍しています。<br>
 						幅広い得意分野を掛け合わせ、粘り強くサポートいたします。
 					</p>
-					<a href="" class="cntBtn _Btn"><span class="txt">弁護士 一覧</span><span class="arrow"></span></a>
+					<a href="<?php echo home_url("lawyer"); ?>" class="cntBtn _Btn"><span class="txt">弁護士 一覧</span><span class="arrow"></span></a>
 				</div>
 				<div class="cntBox-img"><div class="cntImg"><img src="<?php echo img_url(); ?>/top/lawyers_img.jpg" class="--img-cover" alt=""></div></div>
 			</div>
@@ -86,6 +97,13 @@
 	</section>
 
 	<!-- Information -->
+	<?php
+	$_posts = get_posts(array(
+		'post_type' => array('post', 'seminar'),
+		'posts_per_page' => 4,
+	));
+	if($_posts):
+	?>
 	<section class="mainCntBox" id="_info">
 		<div class="cntInner _Inner">
 			<div class="cntTitle _Title-bg"><h1 class="ja">新着情報</h1><small class="en">INFORMATION</small></div>
@@ -97,77 +115,112 @@
 					<li class="item" data-cat="topics">トピックス</li>
 				</ul>
 				<div class="cntList -all --h-opacity active">
-					<a href="" class="item">
-						<div class="category _Category -topics">トピックス</div>
-						<time class="date" datetime="2021-06-21">2021.06.21</time>
-						<h3 class="title js-overflow" data-line="1" data-lh="1.5" data-sp-line="3">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキ...</h3>
-					</a>
-					<a href="" class="item">
-						<div class="category _Category -news">お知らせ</div>
-						<time class="date" datetime="2021-06-21">2021.06.21</time>
-						<h3 class="title js-overflow" data-line="1" data-lh="1.5" data-sp-line="3">新型コロナウイルス感染症(COVID-19)に関する対策について ～令和3年6月21日更新～...</h3>
-					</a>
-					<a href="" class="item">
+					<?php foreach($_posts as $post): setup_postdata($post); ?>
+					<?php 
+					$post_type = get_post_type();
+					if($post_type == "seminar"):
+					$data = get_post_meta($id, 'seminar_url');
+					$data = isset($data[0]) ?  $data[0] : "";
+					?>
+					<a href="<?php echo $data; ?>" class="item">
 						<div class="category _Category -seminar">セミナー</div>
 						<div class="col2">
-							<p class="text">開催日：○○年○○月○○日</p>
-							<p class="text">受講料：X,XXX円</p>
-							<h3 class="title js-overflow" data-line="1" data-lh="1.5" data-sp-line="3">セミナータイトルが入りますセミナータイトルが入りますセミナータイトルが入りますセミナータイト...</h3>
+							<?php $data = get_post_meta($id, 'seminar_date'); if(isset($data[0])): ?>
+							<p class="text">開催日：<?php echo date('Y年m月d日', strtotime($data[0])); ?></p>
+							<?php endif; ?>
+							<?php $data = get_post_meta($id, 'seminar_fee'); if(isset($data[0])): ?>
+							<p class="text">受講料：<?php echo $data[0]; ?></p>
+							<?php endif; ?>
+							<h3 class="title js-overflow" data-line="1" data-lh="1.5" data-sp-line="3"><?php the_title(); ?></h3>
 						</div>
 					</a>
-					<a href="" class="item">
-						<div class="category _Category -topics">トピックス</div>
-						<time class="date" datetime="2021-06-21">2021.06.21</time>
-						<h3 class="title js-overflow" data-line="1" data-lh="1.5" data-sp-line="3">新型コロナウイルス感染症(COVID-19)に関する対策について ～令和3年6月21日更新～...</h3>
+					<?php else: ?>
+					<a href="<?php the_permalink(); ?>" class="item">
+						<?php $categories = get_the_category(); ?>
+						<div class="category _Category <?php if(isset($categories[0])) echo "-".$categories[0]->slug; ?>"><?php echo $categories[0]->name; ?></div>
+						<time class="date" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m.d'); ?></time>
+						<h3 class="title js-overflow" data-line="1" data-lh="1.5" data-sp-line="3"><?php the_title(); ?></h3>
 					</a>
+					<?php endif; ?>
+					<?php endforeach; wp_reset_postdata(); ?>
 				</div>
+				<?php
+				$_posts = get_posts(array(
+					'post_type' => 'seminar',
+					'posts_per_page' => 4,
+				));
+				if($_posts):
+				?>
 				<div class="cntList -seminar --h-opacity">
-					<a href="" class="item --d-b">
-						<div class="image"><img src="<?php echo img_url(); ?>/seminar/seminar_img.jpg" class="--img-cover --absolute" alt=""></div>
-						<h3 class="title">セミナータイトルが入りますセミナータイトルが入ります</h3>
-						<time class="date" datetime="2021-06-21">2021年6月21日</time>
+					<?php foreach($_posts as $post): setup_postdata($post); $id = get_the_ID(); ?>
+					<?php 
+					$data = get_post_meta($id, 'seminar_url');
+					$data = isset($data[0]) ?  $data[0] : "";
+					?>
+					<a href="<?php echo $data; ?>" class="item --d-b">
+						<div class="image">
+							<?php 
+							$data = get_post_meta($id, 'seminar_img');
+							$data_url = wp_get_attachment_url($data[0]);
+							if($data_url): ?>
+							<img src="<?php echo $data_url; ?>" class="--img-cover --absolute" alt="<?php the_title(); ?>">
+							<?php else: ?>
+							<img src="<?php echo img_url(); ?>/seminar/seminar_img.jpg" class="--img-cover --absolute" alt="<?php the_title(); ?>">
+							<?php endif; ?>
+						</div>
+						<h3 class="title"><?php the_title(); ?></h3>
+						<?php $data = get_post_meta($id, 'seminar_date'); if(isset($data[0])): ?>
+						<time class="date" datetime="<?php echo date('Y-m-d', strtotime($data[0])); ?>"><?php echo date('Y年n月j日', strtotime($data[0])); ?></time>
+						<?php endif; ?>
 					</a>
-					<a href="" class="item --d-b">
-						<div class="image"><img src="<?php echo img_url(); ?>/seminar/seminar_img.jpg" class="--img-cover --absolute" alt=""></div>
-						<h3 class="title">セミナータイトルが入りますセミナータイトルが入ります</h3>
-						<time class="date" datetime="2021-06-21">2021年6月21日</time>
-					</a>
-					<a href="" class="item --d-b">
-						<div class="image"><img src="<?php echo img_url(); ?>/seminar/seminar_img.jpg" class="--img-cover --absolute" alt=""></div>
-						<h3 class="title">セミナータイトルが入りますセミナータイトルが入ります</h3>
-						<time class="date" datetime="2021-06-21">2021年6月21日</time>
-					</a>
-					<a href="" class="item --d-b">
-						<div class="image"><img src="<?php echo img_url(); ?>/seminar/seminar_img.jpg" class="--img-cover --absolute" alt=""></div>
-						<h3 class="title">セミナータイトルが入りますセミナータイトルが入ります</h3>
-						<time class="date" datetime="2021-06-21">2021年6月21日</time>
-					</a>
+					<?php endforeach; ?>
 				</div>
+				<?php endif; ?>
+				<?php
+				$_posts = get_posts(array(
+					'posts_per_page' => 4,
+					'category_name' => 'news'
+				));
+				?>
 				<div class="cntList -news --h-opacity">
-					<a href="" class="item">
-						<div class="category _Category -news">お知らせ</div>
-						<time class="date" datetime="2021-06-21">2021.06.21</time>
-						<h3 class="title js-overflow" data-line="1" data-lh="1.5" data-sp-line="3">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキ...</h3>
+					<?php if($_posts): foreach($_posts as $post): setup_postdata($post); ?>
+					<a href="<?php the_permalink(); ?>" class="item">
+						<?php $categories = get_the_category(); ?>
+						<div class="category _Category <?php if(isset($categories[0])) echo "-".$categories[0]->slug; ?>"><?php echo $categories[0]->name; ?></div>
+						<time class="date" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m.d'); ?></time>
+						<h3 class="title js-overflow" data-line="1" data-lh="1.5" data-sp-line="3"><?php the_title(); ?></h3>
 					</a>
+					<?php endforeach; endif; ?>
 				</div>
+				<?php
+				$_posts = get_posts(array(
+					'posts_per_page' => 4,
+					'category_name' => 'topics'
+				));
+				?>
 				<div class="cntList -topics --h-opacity">
-					<a href="" class="item">
-						<div class="category _Category -topics">トピックス</div>
-						<time class="date" datetime="2021-06-21">2021.06.21</time>
-						<h3 class="title js-overflow" data-line="1" data-lh="1.5" data-sp-line="3">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキ...</h3>
+					<?php if($_posts): foreach($_posts as $post): setup_postdata($post); ?>
+					<a href="<?php the_permalink(); ?>" class="item">
+						<div class="category _Category <?php if(isset($categories[0])) echo "-".$categories[0]->slug; ?>"><?php echo $categories[0]->name; ?></div>
+						<time class="date" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m.d'); ?></time>
+						<h3 class="title js-overflow" data-line="1" data-lh="1.5" data-sp-line="3"><?php the_title(); ?></h3>
 					</a>
+					<?php endforeach; endif; ?>
 				</div>
-				<a href="" class="cntBtn _Btn-en -right"><span class="txt">VIEW MORE</span><span class="arrow"></span></a>
+				<a href="<?php echo home_url("information"); ?>" class="cntBtn _Btn-en -right"><span class="txt">VIEW MORE</span><span class="arrow"></span></a>
 			</div>
 		</div>
 	</section>
+	<?php endif; ?>
 
 	<!-- Recruit -->
 	<section class="mainCntBox" id="_recruit">
 		<div class="cntInner _Inner">
 			<div class="cntBox">
 				<div class="cntTitle _Title"><h2 class="en">RECRUIT</h2></div>
-				<a href="" class="cntBtn _Btn"><span class="txt">採用情報</span><span class="arrow"></span></a>
+				<?php $url = get_page_url("recruit"); if($url): ?>
+				<a href="<?php echo $url; ?>" class="cntBtn _Btn"><span class="txt">採用情報</span><span class="arrow"></span></a>
+				<?php endif; ?>
 			</div>
 		</div>
 	</section>

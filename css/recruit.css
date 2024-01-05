@@ -22,7 +22,7 @@
   padding-bottom: 80px;
 }
 #_recruit .cntBox + .cntBox{
-  margin-top: 100px;
+  padding-top: 100px;
 }
 #_recruit .cntList .item{
   display: flex;
@@ -46,7 +46,7 @@
     padding-bottom: 0;
   }
   #_recruit .cntBox + .cntBox{
-    margin-top: 82px;
+    padding-top: 82px;
   }
   #_recruit .cntList .item{
     flex-direction: column;

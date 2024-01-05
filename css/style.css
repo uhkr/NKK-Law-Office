@@ -989,10 +989,12 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 }
 #breadcrumbs .cntList{
 	display: flex;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
+	overflow: hidden;
 	color: var(--c-base-btn);
 	font-size: 1rem;
 	font-weight: 300;
+	white-space: nowrap;
 }
 #pageHeading #breadcrumbs .cntList{
 	color: #fff;
@@ -1004,6 +1006,10 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 }
 #breadcrumbs .cntList .item + .item{
 	padding-left: 14px;
+}
+#breadcrumbs .cntList .item:last-child{
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 #breadcrumbs .cntList .item + .item::before,
 #breadcrumbs .cntList .item + .item::after{
@@ -1135,18 +1141,18 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 	padding-top: 20px;
 	border-top: 1px solid #CFD4D2;
 }
-#sidebar .cntList .link{
+#sidebar .cntList > li > a{
 	position: relative;
 	display: block;
 	padding-right: 25px;
 	z-index: 2;
 }
-#sidebar .cntList .link::before,
-#sidebar .cntList .link::after{
+#sidebar .cntList > li > a::before,
+#sidebar .cntList > li > a::after{
 	content: "";
 	position: absolute;
 }
-#sidebar .cntList .link::before{
+#sidebar .cntList > li > a::before{
 	top: calc(50% - 4px);
 	right: 7px;
 	width: 5px;
@@ -1155,12 +1161,12 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 	border-right: 1px solid var(--c-base-btn);
 	border-bottom: 1px solid var(--c-base-btn);
 }
-#sidebar .cntList .link.-right::before{
+#sidebar .cntList > li > a.-right::before{
 	top: calc(50% - 3px);
 	right: 8px;
 	transform: rotate(-45deg);
 }
-#sidebar .cntList .link::after{
+#sidebar .cntList > li > a::after{
 	top: calc(50% - 10px);
 	right: 0;
 	display: block;
@@ -1281,15 +1287,15 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 		margin-top: 0;
 		padding-top: 0;
 	}
-	#sidebar .cntList .link{
+	#sidebar .cntList > li > a{
 		padding: 20px;
 	}
-	#sidebar .cntList .link::before{
+	#sidebar .cntList > li > a::before{
 		top: calc(50% - 3px);
 		right: 28px;
 		transform: rotate(-45deg);
 	}
-	#sidebar .cntList .link::after{
+	#sidebar .cntList > li > a::after{
 		right: 20px;
 	}
 	#sidebar .cntBox .title{

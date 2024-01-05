@@ -13,12 +13,18 @@ wp_reset_postdata();
 <footer id="footer">
 	<div class="cntInner">
 		<ul class="cntList --h-opacity">
-			<li><a href=""><span class="txt">事務所概要</span></a></li>
-			<li><a href=""><span class="txt">弁護士紹介</span></a></li>
+			<?php $url = get_page_url("about"); if($url): ?>
+			<li><a href="<?php echo $url; ?>"><span class="txt">事務所概要</span></a></li>
+			<?php endif; ?>
+			<li><a href="<?php echo home_url("lawyer"); ?>"><span class="txt">弁護士紹介</span></a></li>
 			<li><a href=""><span class="txt">取扱業務</span></a></li>
-			<li><a href=""><span class="txt">新着情報</span></a></li>
-			<li><a href=""><span class="txt">アクセス</span></a></li>
-			<li><a href=""><span class="txt shrink">プライバシーポリシー</span></a></li>
+			<li><a href="<?php echo home_url("information"); ?>"><span class="txt">新着情報</span></a></li>
+			<?php $url = get_page_url("about"); if($url): ?>
+			<li><a href="<?php echo $url."#_about-access"; ?>"><span class="txt">アクセス</span></a></li>
+			<?php endif; ?>
+			<?php $url = get_page_url("privacy"); if($url): ?>
+			<li><a href="<?php echo $url; ?>"><span class="txt shrink">プライバシーポリシー</span></a></li>
+			<?php endif; ?>
 		</ul>
 		<div id="footerLogo">弁護士法人GROWTH<br>南舘・北川・木村法律事務所<br><small class="small">（愛知県弁護士会）</small></div>
 		<div class="cntBottom">

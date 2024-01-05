@@ -1,5 +1,7 @@
 <?php
 $wp_obj = get_queried_object();
+$post_label = "当事務所からのお知らせ";
+$post_link = home_url("information");
 
 $class = "";
 if(isset($args) && isset($args["class"])){
@@ -53,68 +55,78 @@ if ( is_attachment() ) {
             '<span class="txt">'. $post_type_label .'</span>'.
           '</a>'.
         '</li>';
+        
+  } else {
+    
+    $post_type_link = $post_link;
+    $post_type_label = $post_label;
 
-    } else {
+    //カスタム投稿タイプ名の表示
+    echo '<li class="item">'.
+          '<a href="'. $post_type_link .'">'.
+            '<span class="txt">'. $post_type_label .'</span>'.
+          '</a>'.
+        '</li>';
 
-      $the_tax = 'category';  //通常の投稿の場合、カテゴリーを表示
+    $the_tax = 'category';  //通常の投稿の場合、カテゴリーを表示
 
-    }
+  }
 
-    // 投稿に紐づくタームを全て取得
-    $terms = get_the_terms( $post_id, $the_tax );
+  // // 投稿に紐づくタームを全て取得
+  // $terms = get_the_terms( $post_id, $the_tax );
 
-    // タクソノミーが紐づいていれば表示
-    if ( $terms !== false ) {
+  // // タクソノミーが紐づいていれば表示
+  // if ( $terms !== false ) {
 
-      $child_terms  = array();  // 子を持たないタームだけを集める配列
-      $parents_list = array();  // 子を持つタームだけを集める配列
+  //   $child_terms  = array();  // 子を持たないタームだけを集める配列
+  //   $parents_list = array();  // 子を持つタームだけを集める配列
 
-      //全タームの親IDを取得
-      foreach ( $terms as $term ) {
-        if ( $term->parent !== 0 ) {
-          $parents_list[] = $term->parent;
-        }
-      }
+  //   //全タームの親IDを取得
+  //   foreach ( $terms as $term ) {
+  //     if ( $term->parent !== 0 ) {
+  //       $parents_list[] = $term->parent;
+  //     }
+  //   }
 
-      //親リストに含まれないタームのみ取得
-      foreach ( $terms as $term ) {
-        if ( ! in_array( $term->term_id, $parents_list ) ) {
-          $child_terms[] = $term;
-        }
-      }
+  //   //親リストに含まれないタームのみ取得
+  //   foreach ( $terms as $term ) {
+  //     if ( ! in_array( $term->term_id, $parents_list ) ) {
+  //       $child_terms[] = $term;
+  //     }
+  //   }
 
-      // 最下層のターム配列から一つだけ取得
-      $term = $child_terms[0];
+  //   // 最下層のターム配列から一つだけ取得
+  //   $term = $child_terms[0];
 
-      if ( $term->parent !== 0 ) {
+  //   if ( $term->parent !== 0 ) {
 
-        // 親タームのIDリストを取得
-        $parent_array = array_reverse( get_ancestors( $term->term_id, $the_tax ) );
+  //     // 親タームのIDリストを取得
+  //     $parent_array = array_reverse( get_ancestors( $term->term_id, $the_tax ) );
 
-        foreach ( $parent_array as $parent_id ) {
-          $parent_term = get_term( $parent_id, $the_tax );
-          $parent_link = esc_url( get_term_link( $parent_id, $the_tax ) );
-          $parent_name = esc_html( $parent_term->name );
-          echo '<li class="item">'.
-                '<a href="'. $parent_link .'">'.
-                  '<span class="txt">'. $parent_name .'</span>'.
-                '</a>'.
-              '</li>';
-        }
-      }
+  //     foreach ( $parent_array as $parent_id ) {
+  //       $parent_term = get_term( $parent_id, $the_tax );
+  //       $parent_link = esc_url( get_term_link( $parent_id, $the_tax ) );
+  //       $parent_name = esc_html( $parent_term->name );
+  //       echo '<li class="item">'.
+  //             '<a href="'. $parent_link .'">'.
+  //               '<span class="txt">'. $parent_name .'</span>'.
+  //             '</a>'.
+  //           '</li>';
+  //     }
+  //   }
 
-      $term_link = esc_url( get_term_link( $term->term_id, $the_tax ) );
-      $term_name = esc_html( $term->name );
-      // 最下層のタームを表示
-      echo '<li class="item">'.
-            '<a href="'. $term_link .'">'.
-              '<span class="txt">'. $term_name .'</span>'.
-            '</a>'.
-          '</li>';
-    }
+  //   $term_link = esc_url( get_term_link( $term->term_id, $the_tax ) );
+  //   $term_name = esc_html( $term->name );
+  //   // 最下層のタームを表示
+  //   echo '<li class="item">'.
+  //         '<a href="'. $term_link .'">'.
+  //           '<span class="txt">'. $term_name .'</span>'.
+  //         '</a>'.
+  //       '</li>';
+  // }
 
-    // 投稿自身の表示
-    // echo '<li class="item"><span class="txt">'. esc_html( strip_tags( $post_title ) ) .'</span></li>';
+  // 投稿自身の表示
+  echo '<li class="item"><span class="txt">'. esc_html( strip_tags( $post_title ) ) .'</span></li>';
 
 } elseif ( is_page() || is_home() ) {
 
@@ -146,7 +158,7 @@ if ( is_attachment() ) {
    * 投稿タイプアーカイブページ ( $wp_obj : WP_Post_Type )
    */
   $label = $wp_obj->label;
-  if($label === "投稿") $label = "新着情報";
+  if($label === "投稿") $label = $post_label;
   echo '<li class="item"><span class="txt">'. esc_html( $label ) .'</span></li>';
 
 } elseif ( is_date() ) {

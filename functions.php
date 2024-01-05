@@ -119,8 +119,10 @@ function nkk_scripts() {
 
 		if(is_singular("lawyer")){
 			wp_enqueue_style( 'lawyer-style', get_template_directory_uri() . '/css/lawyer.css', array(), get_filemtime(get_template_directory()."/css/lawyer.css") );
-		}elseif(is_archive("lawyer")){
+		}elseif(is_post_type_archive("lawyer")){
 			wp_enqueue_style( 'lawyer-style', get_template_directory_uri() . '/css/lawyers.css', array(), get_filemtime(get_template_directory()."/css/lawyers.css") );
+		}elseif(is_post_type_archive("seminar")){
+			wp_enqueue_style( 'seminar-style', get_template_directory_uri() . '/css/seminar.css', array(), get_filemtime(get_template_directory()."/css/seminar.css") );
 		}elseif(is_archive() || is_category()){
 			wp_enqueue_style( 'post-style', get_template_directory_uri() . '/css/post.css', array(), get_filemtime(get_template_directory()."/css/post.css") );
 			// wp_enqueue_style( 'archive-style', get_template_directory_uri() . '/css/archive.css', array(), get_filemtime(get_template_directory()."/css/archive.css") );
@@ -158,11 +160,11 @@ add_action('admin_enqueue_scripts', function(){
 });
 
 add_action( 'enqueue_block_editor_assets', function(){
-	// wp_enqueue_script( 'block-script', get_stylesheet_directory_uri().'/js/editor-block.js',array("wp-blocks"), "", true);
+	wp_enqueue_script( 'block-script', get_stylesheet_directory_uri().'/js/editor-block.js',array("wp-blocks"), "", true);
 });
 add_action( 'enqueue_block_assets', function(){
 	if(is_admin()){
-		// wp_enqueue_style( 'block-style', get_stylesheet_directory_uri().'/css/editor-block.css' );
+		wp_enqueue_style( 'block-style', get_stylesheet_directory_uri().'/css/editor-block.css' );
 	}
 });
 
@@ -406,6 +408,18 @@ add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
  * カスタム投稿タイプ追加
  */
 function create_post_type() {
+	register_post_type( 'seminar', [
+		'labels' => [
+			'name' => 'セミナー',
+		],
+		'public' => false,
+		'publicly_queryable' => true, /* アーカイブページあり、詳細ページ無し */
+		'show_ui' => true,
+		'has_archive' => true,
+		'menu_position' => 5,
+		'show_in_rest' => true,
+	]);
+	remove_post_type_support( 'seminar', 'editor' );
 	register_post_type( 'service', [
 		'labels' => [
 			'name' => '取扱業務',
@@ -456,8 +470,7 @@ function create_post_type() {
 }
 add_action( 'init', 'create_post_type' );
 
-add_filter('works-cat_rewrite_rules', '__return_empty_array');
-add_filter('faq_rewrite_rules', '__return_empty_array');
+add_filter( 'seminar_rewrite_rules', '__return_empty_array');
 
 function admin_menu_change_label() {
   global $menu;
@@ -465,7 +478,7 @@ function admin_menu_change_label() {
   $name = '新着情報';
   $menu[5][0] = $name;
   $submenu['edit.php'][5][0] = $name.'一覧';
-  $submenu['edit.php'][10][0] = '新規'.$name.'投稿';
+  $submenu['edit.php'][10][0] = $name.'投稿';
 }
 add_action( 'admin_menu', 'admin_menu_change_label' );
 
@@ -480,6 +493,35 @@ function post_has_archive( $args, $post_type ) {
 	return $args;
 }
 add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
+
+/**
+ * アーカイブ設定
+ */
+function pre_get_posts_custom( $query ) {
+	if ( is_admin() || !$query->is_main_query() ) { return; }
+	// 投稿アーカイブにセミナー（カスタム投稿）を追加
+	// if ( $query->is_post_type_archive( 'post' ) && !$query->is_search() ){
+	if ( $query->is_post_type_archive( 'post' ) || $query->is_date() ){
+    $query->set( 'post_type', array( 'post', 'seminar' ) );
+    return;
+	}
+	// カスタム投稿アーカイブの表示件数
+  if ( $query->is_post_type_archive('seminar') ) {
+    $query->set( 'posts_per_page', '9' );
+    return;
+  }
+}
+add_action( 'pre_get_posts', 'pre_get_posts_custom' );
+
+/**
+ * シングルページ：前の記事・次の記事リンクにクラスを追加
+ */
+add_filter( 'previous_post_link', function ($output) {
+  return str_replace('<a href=', '<a class="_Btn-en -prev --h-opacity" href=', $output); //前の記事リンク
+});
+add_filter( 'next_post_link', function ($output) {
+  return str_replace('<a href=', '<a class="_Btn-en --h-opacity" href=', $output); //次の記事リンク
+});
 
 /**
 * スラッグの日本語禁止

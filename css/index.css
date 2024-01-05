@@ -2,7 +2,8 @@
   display: flex;
   height: calc(100vh - 76px);
   margin-top: 76px;
-  min-height: 30vw;
+  /* min-height: 30vw; */
+  min-height: 42vw;
 }
 #mainVisual .cntBox{
   position: relative;

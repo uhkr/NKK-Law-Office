@@ -1,0 +1,82 @@
+h1, h2{
+  padding-bottom: 0.71em;
+  border-bottom: 1px solid var(--c-main);
+}
+.is-style-decoration-colored{
+  color: var(--c-main);
+}
+.is-style-numbered{
+  --pl: 48px;
+  padding-left: var(--pl);
+}
+h1.is-style-numbered,
+h2.is-style-numbered{
+  --pl: 55px;
+  padding-left: var(--pl);
+}
+.is-style-numbered .num,
+.is-style-decoration-numbered .num{
+  display: inline-block;
+  min-width: var(--pl);
+  margin-left: calc(-1 * var(--pl));
+}
+
+ul{
+  padding: 0;
+}
+ul li::marker{
+  font-size: 0;
+}
+ul.is-style-checklist li{
+  padding-left: 28px;
+}
+ul.is-style-checklist ul li{
+  padding-left: 18px;
+}
+ul.is-style-checklist li::before{
+  content: "";
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  background: url(../img/common/icon_checkbox.svg) left/contain no-repeat;
+  border: none;
+  border-radius: 0;
+}
+ul.is-style-checklist ul li::before{
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  background: none;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+ul.is-style-linklist li{
+  padding-left: 19px;
+}
+ul.is-style-linklist li + li{
+  margin-top: 16px;
+}
+ul.is-style-linklist li a{
+  color: var(--c-main);
+  text-decoration: underline;
+}
+ul.is-style-linklist li::before,
+ul.is-style-linklist li::after{
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: -2px;
+  display: block;
+	width: 10px;
+	height: 2px;
+  background: #000;
+  border: none;
+  border-radius: 5px;
+  transform-origin: right;
+}
+ul.is-style-linklist li::before{
+  transform: rotate(45deg);
+}
+ul.is-style-linklist li::after{
+  transform: rotate(-45deg);
+}

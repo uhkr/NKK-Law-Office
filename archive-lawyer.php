@@ -28,17 +28,17 @@
             <div class="image">
               <?php 
               $data = get_post_meta($id, 'lawyer_img');
-              $data_url = wp_get_attachment_url($data[0]);
+              $data_url = isset($data[0]) ? wp_get_attachment_url($data[0]) : false;
               if($data_url): ?>
               <img src="<?php echo $data_url; ?>" class="--img-cover --absolute" alt="<?php the_title(); ?>">
               <?php endif; ?>
             </div>
-            <?php $data = get_post_meta($id, 'lawyer_position')[0]; if($data): ?>
-            <p class="text"><?php echo $data; ?></p>
+            <?php $data = get_post_meta($id, 'lawyer_position'); if(isset($data[0])): ?>
+            <p class="text"><?php echo $data[0]; ?></p>
             <?php endif; ?>
             <h3 class="title"><?php the_title(); ?></h3>
-            <?php $data = get_post_meta($id, 'lawyer_en')[0]; if($data): ?>
-            <p class="en"><?php echo $data; ?></p>
+            <?php $data = get_post_meta($id, 'lawyer_en'); if(isset($data[0])): ?>
+            <p class="en"><?php echo $data[0]; ?></p>
             <?php endif; ?>
           </a>
 				</li>

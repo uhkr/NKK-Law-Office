@@ -7,12 +7,12 @@
 
 	<div class="cntInner -lawyer">
 		<div class="cntTitle-lawyer">
-			<?php $data = get_post_meta($id, 'lawyer_position')[0]; if($data): ?>
-			<p class="text"><?php echo $data; ?></p>
+			<?php $data = get_post_meta($id, 'lawyer_position'); if(isset($data[0])): ?>
+			<p class="text"><?php echo $data[0]; ?></p>
 			<?php endif; ?>
 			<h2 class="title"><?php the_title(); ?></h2>
-			<?php $data = get_post_meta($id, 'lawyer_en')[0]; if($data): ?>
-			<p class="en"><?php echo $data; ?></p>
+			<?php $data = get_post_meta($id, 'lawyer_en'); if(isset($data[0])): ?>
+			<p class="en"><?php echo $data[0]; ?></p>
 			<?php endif; ?>
 		</div>
 		<div class="cntImg-lawyer">
@@ -33,16 +33,16 @@
 		<div class="cntInner _Inner-s">
 			<h2 class="cntTitle _Title-underline">主な取扱分野</h2>
 			<ul class="cntList">
-				<?php $data = get_post_meta($id, 'lawyer_service_corporate')[0]; if($data): ?>
+				<?php $data = get_post_meta($id, 'lawyer_service_corporate'); if(isset($data[0])): ?>
 				<li class="item">
 					<h3 class="title">企業法務</h3>
-					<p class="text _Text"><?php echo $data; ?></p>
+					<p class="text _Text"><?php echo $data[0]; ?></p>
 				</li>
 				<?php endif; ?>
-				<?php $data = get_post_meta($id, 'lawyer_service_individual')[0]; if($data): ?>
+				<?php $data = get_post_meta($id, 'lawyer_service_individual'); if(isset($data[0])): ?>
 				<li class="item">
 					<h3 class="title">個人法務</h3>
-					<p class="text _Text"><?php echo $data; ?></p>
+					<p class="text _Text"><?php echo $data[0]; ?></p>
 				</li>
 				<?php endif; ?>
 			</ul>
