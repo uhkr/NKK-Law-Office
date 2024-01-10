@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php $args = ["title_en" => "404", "title_ja" => "ページが見つかりませんでした"]; get_template_part( 'content', 'pageheading', $args ); ?>
+<?php get_template_part( 'content', 'pageheading' ); ?>
 <?php get_template_part( 'content', 'breadcrumbs' ); ?>
 
 <!-- コンテンツ -->

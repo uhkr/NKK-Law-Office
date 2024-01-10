@@ -13,7 +13,7 @@
 				愛知県名古屋市中区錦1-11-20<br>
 				平和不動産名古屋伏見ビル（旧 大永ビル）9階
 			</p>
-			<a href="" class="cntBtn _Btn-en -right"><span class="txt">Google Map</span><span class="arrow"></span></a>
+			<a href="https://maps.app.goo.gl/g7e4Du5aQ3JHYXU96" class="cntBtn _Btn-en -right"><span class="txt">Google Map</span><span class="arrow"></span></a>
 		</div>
 	</div>
 </section>

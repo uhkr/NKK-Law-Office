@@ -80,8 +80,8 @@ function write_setup() {
 	) );
 
 	// This theme styles the visual editor to resemble the theme style.
-	// add_theme_support( 'editor-styles' );
-	// add_editor_style( array( 'css/editor-style.css' ) );
+	add_theme_support( 'editor-styles' );
+	add_editor_style( array( 'css/editor-style.css' ) );
 }
 endif; // write_setup
 add_action( 'after_setup_theme', 'write_setup' );
@@ -100,10 +100,12 @@ function get_filemtime($filename){
 function nkk_scripts() {
 	wp_deregister_script('jquery-core');
 	wp_enqueue_script('jquery-core', "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js", array(),false,false);
+	if(is_home() || is_front_page()){
 	wp_enqueue_script('script-slick', "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", array(),false,false);
+	wp_enqueue_style( 'slick-style', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array() );
+	}
 
 	wp_enqueue_style( 'reset', get_template_directory_uri() . '/css/reset.css', array() );
-	wp_enqueue_style( 'slick-style', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array() );
 	wp_enqueue_style( 'nkk-style', get_stylesheet_uri(), array(), get_filemtime(get_template_directory()."/style.css") );
 
 	if(is_home() || is_front_page()){
@@ -120,9 +122,13 @@ function nkk_scripts() {
 		if(is_singular("lawyer")){
 			wp_enqueue_style( 'lawyer-style', get_template_directory_uri() . '/css/lawyer.css', array(), get_filemtime(get_template_directory()."/css/lawyer.css") );
 		}elseif(is_post_type_archive("lawyer")){
-			wp_enqueue_style( 'lawyer-style', get_template_directory_uri() . '/css/lawyers.css', array(), get_filemtime(get_template_directory()."/css/lawyers.css") );
+			wp_enqueue_style( 'lawyers-style', get_template_directory_uri() . '/css/lawyers.css', array(), get_filemtime(get_template_directory()."/css/lawyers.css") );
 		}elseif(is_post_type_archive("seminar")){
 			wp_enqueue_style( 'seminar-style', get_template_directory_uri() . '/css/seminar.css', array(), get_filemtime(get_template_directory()."/css/seminar.css") );
+		}elseif(is_singular("service")){
+			wp_enqueue_style( 'service-style', get_template_directory_uri() . '/css/service.css', array(), get_filemtime(get_template_directory()."/css/service.css") );
+		}elseif(is_post_type_archive("service")){
+			wp_enqueue_style( 'services-style', get_template_directory_uri() . '/css/services.css', array(), get_filemtime(get_template_directory()."/css/services.css") );
 		}elseif(is_archive() || is_category()){
 			wp_enqueue_style( 'post-style', get_template_directory_uri() . '/css/post.css', array(), get_filemtime(get_template_directory()."/css/post.css") );
 			// wp_enqueue_style( 'archive-style', get_template_directory_uri() . '/css/archive.css', array(), get_filemtime(get_template_directory()."/css/archive.css") );
@@ -356,13 +362,15 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 remove_filter('the_excerpt', 'wpautop'); // 本文抜粋のpタグ削除
 
 /**
- * the_content　ファイルリンク
+ * the_content
  */
-function disp_filesize($content) {
+function custom_the_content($content) {
 	if(!is_single()) return $content; 
+
+	// ファイルリンク
 	global $post;
 	$pattern = "/<a(.*?)href=('|\")([\w\/:%#\$&\?\(\)~\.=\+\-]+?).(pdf|doc|docx|xls|xlsx|rtf)('|\")(.*?)>(.*?)<\/a>/";
-// 	echo preg_replace_callback(
+	// echo preg_replace_callback(
 	return preg_replace_callback(
 			$pattern,
 			function ( $matches ) {
@@ -376,7 +384,7 @@ function disp_filesize($content) {
 			$content
 	);
 }
-add_filter('the_content', 'disp_filesize');
+add_filter('the_content', 'custom_the_content');
 
 /**
  * 記事の最初の画像を取得
@@ -425,22 +433,21 @@ function create_post_type() {
 			'name' => '取扱業務',
 		],
 		'public' => true,
-		'has_archive' => false,
+		'has_archive' => true,
 		'menu_position' => 5,
 		'show_in_rest' => true,
 	]);
-	remove_post_type_support( 'service', 'editor' );
 	register_taxonomy(
 		'service-cat',
 		'service',
 		array(
-			'hierarchical'          => false,
+			'hierarchical'          => true,
 			'update_count_callback' => '_update_post_term_count',
 			'label'                 => 'カテゴリー',
 			'public'                => true,
 			'has_archive'						=> false,
 			'show_in_rest'          => true,
-			'rewrite' => array('slug'=>'', 'with_front'=>false,),
+			// 'rewrite' => array('slug'=>'', 'with_front'=>false,),
 		),
 	);
 	register_post_type( 'lawyer', [

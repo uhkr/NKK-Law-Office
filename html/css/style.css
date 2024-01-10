@@ -990,7 +990,7 @@ a.--h-opacity:hover, .--h-opacity a:hover{ opacity: .7; }
 #breadcrumbs .cntList{
 	display: flex;
 	/* flex-wrap: wrap; */
-	overflow: hidden;
+	/* overflow: hidden; */
 	color: var(--c-base-btn);
 	font-size: 1rem;
 	font-weight: 300;

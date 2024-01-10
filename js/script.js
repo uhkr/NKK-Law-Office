@@ -245,18 +245,24 @@ $(function(){
 $(window).on('load onpageshow', function (){
   const $check = $("#input-privacy[type='checkbox']");
   if(!$check.length) return;
-  if($check.prop("checked") == true){
-    $("#_contact-check").hide();
-    $("#_contact-form").show();
+  const $items_check = $(".js-contact-check");
+  const $items_form = $(".js-contact-form");
+  const $hidden = $("#_form-privacy-hidden input[type='checkbox']");
+  if($hidden.prop("checked") == true){
+    $items_check.hide();
+    $items_form.show();
   }else{
-    $("#_contact-check").show();
-    $("#_contact-form").hide();
+    $items_check.show();
+    $items_form.hide();
   }
   $("#button-privacy").click(function(){
     if($check.prop("checked") == true){
-      $("#_contact-check").hide();
-      $("#_contact-form").show();
-      $(window).scrollTop(0)
+      $items_check.hide();
+      $items_form.show();
+      $(window).scrollTop(0);
+      $hidden.attr("checked", true).prop("checked", true).change();
+    }else{
+      $("#error-privacy").show();
     }
   });
 });
@@ -339,10 +345,17 @@ $(function(){
   if(index < 3){
     $("#toc_container").hide();
   }
+  const hash = location.hash;
+  if(hash && hash.startsWith("#title-")){
+    const $target = $(hash);
+    if($target){
+      $("html, body").animate({scrollTop:$target.offset().top - 100}, 500, "swing");
+    }
+  }
 });
 
 // 取扱業務
-var $SERVICE_LIST;
+var $SERVICE_LIST = [];
 var $SERVICE_TITLE;
 $(window).on('load resize', function(e) {
 

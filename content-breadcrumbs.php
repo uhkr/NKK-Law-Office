@@ -4,8 +4,14 @@ $post_label = "当事務所からのお知らせ";
 $post_link = home_url("information");
 
 $class = "";
-if(isset($args) && isset($args["class"])){
-  $class = $args["class"];
+$current_tit = "";
+if(isset($args)){
+  if(isset($args["class"])){
+    $class = $args["class"];
+  }
+  if(isset($args["current"])){
+    $current_tit = $args["current"];
+  }
 }
 
 echo '<nav id="breadcrumbs" class="'.$class.'">'.
@@ -21,7 +27,11 @@ if ( is_attachment() ) {
    * ※ 添付ファイルページでは is_single() も true になるので先に分岐
    */
   $post_title = apply_filters( 'the_title', $wp_obj->post_title );
-  echo '<li class="item"><span class="txt">'. esc_html( $post_title ) .'</span></li>';
+  if($current_tit == ""){
+    echo '<li class="item"><span class="txt">'. esc_html( $post_title ) .'</span></li>';
+  }else{
+    echo '<li class="item"><span class="txt">'. $current_tit .'</span></li>';
+  }
 
 } elseif ( is_single() ) {
 
@@ -126,7 +136,11 @@ if ( is_attachment() ) {
   // }
 
   // 投稿自身の表示
-  echo '<li class="item"><span class="txt">'. esc_html( strip_tags( $post_title ) ) .'</span></li>';
+  if($current_tit == ""){
+    echo '<li class="item"><span class="txt">'. esc_html( strip_tags( $post_title ) ) .'</span></li>';
+  }else{
+    echo '<li class="item"><span class="txt">'. $current_tit .'</span></li>';
+  }
 
 } elseif ( is_page() || is_home() ) {
 
@@ -150,7 +164,11 @@ if ( is_attachment() ) {
     }
   }
   // 投稿自身の表示
-  echo '<li class="item"><span class="txt">'. esc_html( strip_tags( $page_title ) ) .'</span></li>';
+  if($current_tit == ""){
+    echo '<li class="item"><span class="txt">'. esc_html( strip_tags( $page_title ) ) .'</span></li>';
+  }else{
+    echo '<li class="item"><span class="txt">'. $current_tit .'</span></li>';
+  }
 
 } elseif ( is_post_type_archive() ) {
 
@@ -159,7 +177,11 @@ if ( is_attachment() ) {
    */
   $label = $wp_obj->label;
   if($label === "投稿") $label = $post_label;
-  echo '<li class="item"><span class="txt">'. esc_html( $label ) .'</span></li>';
+  if($current_tit == ""){
+    echo '<li class="item"><span class="txt">'. esc_html( $label ) .'</span></li>';
+  }else{
+    echo '<li class="item"><span class="txt">'. $current_tit .'</span></li>';
+  }
 
 } elseif ( is_date() ) {
 
@@ -202,7 +224,11 @@ if ( is_attachment() ) {
   /**
    * 投稿者アーカイブ ( $wp_obj : WP_User )
    */
-  echo '<li class="item"><span class="txt">'. esc_html( $wp_obj->display_name ) .' の執筆記事</span></li>';
+  if($current_tit == ""){
+    echo '<li class="item"><span class="txt">'. esc_html( $wp_obj->display_name ) .' の執筆記事</span></li>';
+  }else{
+    echo '<li class="item"><span class="txt">'. $current_tit .'</span></li>';
+  }
 
 } elseif ( is_archive() ) {
 
@@ -232,9 +258,13 @@ if ( is_attachment() ) {
   }
 
   // ターム自身の表示
-  echo '<li class="item">'.
-        '<span class="txt">'. esc_html( $term_name ) .'</span>'.
-      '</li>';
+  if($current_tit == ""){
+    echo '<li class="item">'.
+          '<span class="txt">'. esc_html( $term_name ) .'</span>'.
+        '</li>';
+  }else{
+    echo '<li class="item"><span class="txt">'. $current_tit .'</span></li>';
+  }
 
 
 } elseif ( is_search() ) {
@@ -242,7 +272,11 @@ if ( is_attachment() ) {
   /**
    * 検索結果ページ
    */
-  echo '<li class="item"><span class="txt">「'. esc_html( get_search_query() ) .'」の検索結果</span></li>';
+  if($current_tit == ""){
+    echo '<li class="item"><span class="txt">「'. esc_html( get_search_query() ) .'」の検索結果</span></li>';
+  }else{
+    echo '<li class="item"><span class="txt">'. $current_tit .'</span></li>';
+  }
 
 
 } elseif ( is_404() ) {
@@ -250,14 +284,22 @@ if ( is_attachment() ) {
   /**
    * 404ページ
    */
-  echo '<li class="item"><span class="txt">ページが見つかりませんでした。</span></li>';
+  if($current_tit == ""){
+    echo '<li class="item"><span class="txt">ページが見つかりませんでした。</span></li>';
+  }else{
+    echo '<li class="item"><span class="txt">'. $current_tit .'</span></li>';
+  }
 
 } else {
 
   /**
    * その他のページ
    */
-  echo '<li class="item"><span class="txt">'. esc_html( get_the_title() ) .'</span></li>';
+  if($current_tit == ""){
+    echo '<li class="item"><span class="txt">'. esc_html( get_the_title() ) .'</span></li>';
+  }else{
+    echo '<li class="item"><span class="txt">'. $current_tit .'</span></li>';
+  }
 
 }
 

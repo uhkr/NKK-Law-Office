@@ -89,18 +89,27 @@
   }
 }
 
-#pageHeading{
-  height: 360px;
+#pageHeading .cntTitle .en{
+  font-size: 1.6rem;
+}
+
+#pageHeading .cntTitle .ja{
+  margin-top: 10px;
+  font-size: 3.4rem;
+  letter-spacing: .05em;
 }
 /* TAB */
 @media screen and (max-width: 899px) {
-  #pageHeading{
-    height: 280px;
-  }
+	#pageHeading .cntTitle .ja{
+		font-size: 2.8rem;
+	}
+	#pageHeading .cntTitle .en{
+		font-size: 1.3rem;
+	}
 }
 /* SP */
 @media screen and (max-width: 480px) {
-  #pageHeading{
-    height: 200px;
-  }
+	#pageHeading .cntTitle .ja{
+		font-size: 2.2rem;
+	}
 }

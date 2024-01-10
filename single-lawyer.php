@@ -19,7 +19,7 @@
 			<?php $data = get_post_meta($id, 'lawyer_img');
 			$data_url = wp_get_attachment_url($data[0]);
 			if($data_url): ?>
-			<img src="<?php echo $data_url; ?>" class="--img-cover" alt="<?php the_title(); ?>">
+			<img loading="lazy" src="<?php echo $data_url; ?>" class="--img-cover" alt="<?php the_title(); ?>">
 			<?php endif; ?>
 		</div>
 	</div>

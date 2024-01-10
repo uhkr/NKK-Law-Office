@@ -1,0 +1,353 @@
+/*
+Theme Name: nkk
+Description: Used to style the editor.
+*/
+
+
+.block-editor-iframe__body{
+  background: #fff;
+}
+/* Entry-Title */
+/* .editor-post-title__block .editor-post-title__input {
+	color: #000;
+	font-size: 30px;
+	font-weight: 400;
+	line-height: 1.2;
+} */
+
+.wp-block-post-title.editor-post-title__input {
+  padding-bottom: 20px;
+  border: none;
+	font-size: 30px;
+}
+
+/* Base */
+body {
+  --c-main: #10291E;
+
+	font-family: 'Noto Sans JP', sans-serif;
+	color: #000;
+	font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Heading */
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+  font-weight: 600;
+  box-sizing: border-box;
+	font-family: 'Noto Serif JP', sans-serif;
+  font-weight: 700;
+}
+h1, h2, h3, h4, h5 {
+	margin-top: 30px !important;
+  margin-bottom: 30px !important;
+}
+h1, h2 {
+  font-size: 28px;
+  padding-bottom: 0.71em;
+  border-bottom: 1px solid #959997;
+}
+h3{
+  font-size: 28px;
+}
+h4 {
+  font-size: 26px;
+}
+h5 {
+  font-size: 24px;
+}
+h6 {
+  font-size: 22px;
+}
+
+/* Link */
+a {
+	text-decoration: underline !important;
+  color: var(--c-main) !important;
+}
+
+/* Text */
+ul{
+  margin: 20px 0;
+  padding: 0;
+}
+ul li{
+  position: relative;
+  padding-left: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+ul li + li{
+  margin-top: 20px;
+}
+ul li::marker{
+  display: none;
+  font-size: 0;
+}
+ul li::before{
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: var(--c-main);
+  border: 1px solid var(--c-main);
+  border-radius: 50%;
+}
+ul ul li::before{
+  background: #fff;
+}
+ol{
+  counter-reset: item;
+  list-style-type: none;
+  margin: 20px 0;
+  padding-left: 0;
+  font-weight: 700;
+}
+ol li{
+  padding-left: 1.875em;
+}
+ol li + li{
+  margin-top: 20px;
+}
+ol > li::before{
+  counter-increment: item;
+}
+ol li:before{
+  content: counter(item, decimal-leading-zero)'.';
+  position: static;
+  display: inline-block;
+  width: 1.875em;
+  height: auto;
+  margin-left: -1.875em;
+  background: none;
+  border: none;
+  border-radius: 0;
+  float: left;
+}
+p {
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
+	line-height: 1.6;
+}
+b, strong {
+	font-weight: 700;
+}
+hr{
+  width: 100%;
+  height: 1px;
+  margin: 30px 0;
+  background: #CFD4D2;
+  border: none;
+}
+dfn, q, cite, em, i {
+	font-style: italic !important;
+}
+q {
+	quotes: "" "";
+}
+cite {
+	border-bottom: dotted 1px #777;
+}
+code, kbd, tt, var {
+	color: #777;
+	border-bottom: solid 1px #ddd;
+	font-family: Consolas, 'Courier New', monospace;
+	font-size: 81.3%;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #777;
+	cursor: help;
+}
+mark, ins {
+	background-color: #ede9df;
+	text-decoration: none;
+}
+
+/* Table */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-top: solid 1px #ccc;
+	/* margin: 0 0 1.6em; */
+	width: 100%;
+}
+caption {
+	margin-bottom: 0.6em;
+}
+table th, table td {
+	border-bottom: solid 1px #ccc;
+	padding: 25px 24px;
+  font-weight: 400;
+}
+
+/* Elements */
+blockquote {
+	border: none !important;
+	color: #777;
+	font-style: italic;
+	margin: 0 0 2.4em;
+	padding: 12px 0 0 44px !important;
+	position: relative;
+}
+blockquote:before {
+	color: #e6e6e6;
+	content: "\201C";
+	font-family: Georgia, serif;
+	font-size: 84px;
+	left: -5px;
+	line-height: 1;
+	position: absolute;
+	top: -5px;
+}
+.wp-block-quote__citation,
+.wp-block-pullquote__citation {
+	font-size: 90%;
+	text-transform: none;
+}
+.wp-block-pullquote {
+	border: none;
+	padding: 12px 0;
+}
+address {
+	margin: 0 0 1.5em;
+}
+pre {
+	border-left: solid 3px #e6e6e6;
+	color: #777;
+	font-family: Consolas, 'Courier New', monospace;
+	font-size: 81.3%;
+	line-height: 1.4;
+	margin: 0 0 1.7em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.5em;
+	word-wrap: normal;
+}
+
+/* Layout */
+.wp-block {
+	max-width: 730px;
+}
+.wp-block-image,
+.wp-block-video{
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+}
+.wp-block-columns{
+  gap: 25px !important;
+  margin-top: 24px !important;
+  margin-bottom: 24px !important;
+}
+.wp-block-columns .wp-block-image{
+  margin: 0 !important;
+}
+.wp-block.wp-block-gallery .wp-block-image,
+.wp-block.wp-block-gallery .wp-block-video{
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+.wp-block-flexible-table-block-table.wp-block-flexible-table-block-table>table tr th,
+.wp-block-flexible-table-block-table.wp-block-flexible-table-block-table>table tr td{
+  padding: 23px 24px 22px !important;
+  border-color: #D3D3D3 !important;
+  line-height: 1.6 !important;
+}
+.wp-block-button__link{
+  display: inline-block;
+  padding: 12px 40px;
+  background: var(--c-main);
+  border-radius: 0;
+  color: #fff;
+  text-decoration: none;
+}
+.wp-block-button.is-style-outline .wp-block-button__link{
+  padding: 12px 40px;
+	background: #fff;
+	border: 1px solid var(--c-main);
+	color: var(--c-main);
+}
+
+/* オリジナルスタイル */
+.is-style-numbered{
+  position: relative;
+  --pl: 48px;
+  padding-left: var(--pl);
+}
+h1.is-style-numbered,
+h2.is-style-numbered{
+  --pl: 55px;
+}
+.is-style-numbered::before,
+.is-style-decoration-numbered::before{
+  content: "00.";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.is-style-numbered .num,
+.is-style-decoration-numbered .num{
+  display: inline-block;
+  min-width: var(--pl);
+  margin-left: calc(-1 * var(--pl));
+}
+
+ul.is-style-checklist li{
+  padding-left: 28px;
+}
+ul.is-style-checklist ul li{
+  padding-left: 18px;
+}
+ul.is-style-checklist li::before{
+  content: "";
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  background: url(../img/common/icon_checkbox.svg) left/contain no-repeat;
+  border: none;
+  border-radius: 0;
+}
+ul.is-style-checklist ul li::before{
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  background: none;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+ul.is-style-linklist li{
+  position: relative;
+  padding-left: 19px;
+  font-weight: 400;
+}
+ul.is-style-linklist li + li{
+  margin-top: 16px;
+}
+ul.is-style-linklist li a{
+  color: var(--c-main);
+  text-decoration: underline;
+  font-weight: 400;
+}
+ul.is-style-linklist li::before,
+ul.is-style-linklist li::after{
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: -2px;
+  display: block;
+	width: 10px;
+	height: 2px;
+  background: #000;
+  border: none;
+  border-radius: 5px;
+  transform-origin: right;
+}
+ul.is-style-linklist li::before{
+  transform: rotate(45deg);
+}
+ul.is-style-linklist li::after{
+  transform: rotate(-45deg);
+}

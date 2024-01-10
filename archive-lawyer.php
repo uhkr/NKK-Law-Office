@@ -30,7 +30,7 @@
               $data = get_post_meta($id, 'lawyer_img');
               $data_url = isset($data[0]) ? wp_get_attachment_url($data[0]) : false;
               if($data_url): ?>
-              <img src="<?php echo $data_url; ?>" class="--img-cover --absolute" alt="<?php the_title(); ?>">
+              <img loading="lazy" src="<?php echo $data_url; ?>" class="--img-cover --absolute" alt="<?php the_title(); ?>">
               <?php endif; ?>
             </div>
             <?php $data = get_post_meta($id, 'lawyer_position'); if(isset($data[0])): ?>

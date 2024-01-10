@@ -21,9 +21,9 @@
             $data = get_post_meta($id, 'seminar_img');
             $data_url = wp_get_attachment_url($data[0]);
             if($data_url): ?>
-            <img src="<?php echo $data_url; ?>" class="--img-cover --absolute" alt="<?php the_title(); ?>">
+            <img loading="lazy" src="<?php echo $data_url; ?>" class="--img-cover --absolute" alt="<?php the_title(); ?>">
             <?php else: ?>
-            <img src="<?php echo img_url(); ?>/seminar/seminar_img.jpg" class="--img-cover --absolute" alt="<?php the_title(); ?>">
+            <img loading="lazy" src="<?php echo img_url(); ?>/seminar/seminar_img.jpg" class="--img-cover --absolute" alt="<?php the_title(); ?>">
             <?php endif; ?>
           </div>
 					<h2 class="title"><?php the_title(); ?></h2>

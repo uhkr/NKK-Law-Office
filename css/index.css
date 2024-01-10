@@ -123,7 +123,8 @@
     position: static;
     /* width: 100%; */
   }
-  #mainVisual .cntBox::before{
+  #mainVisual .cntBox::before,
+  #mainVisual .cntBox::after{
     display: none;
   }
   #mainVisual .cntTitle{

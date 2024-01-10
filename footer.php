@@ -17,7 +17,7 @@ wp_reset_postdata();
 			<li><a href="<?php echo $url; ?>"><span class="txt">事務所概要</span></a></li>
 			<?php endif; ?>
 			<li><a href="<?php echo home_url("lawyer"); ?>"><span class="txt">弁護士紹介</span></a></li>
-			<li><a href=""><span class="txt">取扱業務</span></a></li>
+			<li><a href="<?php echo home_url("service"); ?>"><span class="txt">取扱業務</span></a></li>
 			<li><a href="<?php echo home_url("information"); ?>"><span class="txt">新着情報</span></a></li>
 			<?php $url = get_page_url("about"); if($url): ?>
 			<li><a href="<?php echo $url."#_about-access"; ?>"><span class="txt">アクセス</span></a></li>

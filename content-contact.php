@@ -11,7 +11,9 @@
 				<div class="large">TEL 052-221-8450</div>
 				<small class="small">受付時間　平日9:15～18:30</small>
 			</a>
-			<a href="" class="cntBtn -email"><div><span class="icon"><img src="<?php echo img_url(); ?>/common/icon_email-bk.svg" class="--img-contain" alt="✉"></span><span class="large">メールでのお問い合わせ</span></div></a>
+			<?php $url = get_page_url("contact"); if($url): ?>
+			<a href="<?php echo $url; ?>" class="cntBtn -email"><div><span class="icon"><img src="<?php echo img_url(); ?>/common/icon_email-bk.svg" class="--img-contain" alt="✉"></span><span class="large">メールでのお問い合わせ</span></div></a>
+			<?php endif; ?>
 		</div>
 	</div>
 </section>

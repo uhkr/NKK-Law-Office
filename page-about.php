@@ -188,7 +188,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="cntImg"><img src="<?php echo img_url(); ?>/about/history_img.jpg" class="--img-cover" alt=""></div>
+		<div class="cntImg"><img loading="lazy" src="<?php echo img_url(); ?>/about/history_img.jpg" class="--img-cover" alt=""></div>
 	</section>
 
 	<!-- Access -->
@@ -201,7 +201,7 @@
 			<p class="cntText _Text">
 				名古屋市営地下鉄鶴舞線・東山線　伏見駅１０番出口　徒歩２分<br>名古屋インターシティビルの隣です。
 			</p>
-			<a href="" class="cntBtn _Btn"><span class="txt">Google Mapで見る</span><span class="arrow"></span></a>
+			<a href="https://maps.app.goo.gl/g7e4Du5aQ3JHYXU96" class="cntBtn _Btn"><span class="txt">Google Mapで見る</span><span class="arrow"></span></a>
 		</div>
 	</section>
 

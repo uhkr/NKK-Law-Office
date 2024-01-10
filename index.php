@@ -21,7 +21,6 @@
 			<div class="more"><a href="<?php echo home_url("information"); ?>" class="button _Btn-en -right"><span class="txt">VIEW MORE</span><span class="arrow"></span></a></div>
 		</div>
 		<?php endif; wp_reset_postdata(); ?>
-		<div class="scroll"></div>
 	</div>
 	<div class="cntImg">
 		<video src="<?php echo img_url(); ?>/top/mainVisual.mov" class="--img-cover" autoplay muted playsinline loop></video>
@@ -70,7 +69,7 @@
 					</p>
 					<a href="<?php echo home_url("lawyer"); ?>" class="cntBtn _Btn"><span class="txt">弁護士 一覧</span><span class="arrow"></span></a>
 				</div>
-				<div class="cntBox-img"><div class="cntImg"><img src="<?php echo img_url(); ?>/top/lawyers_img.jpg" class="--img-cover" alt=""></div></div>
+				<div class="cntBox-img"><div class="cntImg"><img loading="lazy" src="<?php echo img_url(); ?>/top/lawyers_img.jpg" class="--img-cover" alt=""></div></div>
 			</div>
 		</div>
 	</section>
@@ -80,17 +79,17 @@
 		<div class="cntInner _Inner">
 			<div class="cntTitle _Title-bg"><h1 class="ja">取扱業務</h1><small class="en">SERVICE</small></div>
 			<div class="cntDiv">
-				<div class="cntBox-img"><div class="cntImg"><img src="<?php echo img_url(); ?>/top//services_img.jpg" class="--img-cover" alt=""></div></div>
+				<div class="cntBox-img"><div class="cntImg"><img loading="lazy" src="<?php echo img_url(); ?>/top//services_img.jpg" class="--img-cover" alt=""></div></div>
 				<div class="cntBox-text">
 					<p class="_Catch">社会のニーズに応えるため、<span class="--d-ib">幅広い分野</span>に対応しています。</p>
 					<p class="cntText _Text">
 						愛知県を中心とする東海地区において、多様な業種の企業・法人・経営者様とお付き合いさせていただいています。その経験を活かしながら、その時々の社会のニーズをキャッチして、幅広い業務に対応しております。
 					</p>
-					<a href="" class="cntBtn _Btn"><span class="txt">企業法務 一覧</span><span class="arrow"></span></a>
-					<a href="" class="cntBtn _Btn -white"><span class="txt">内部通報</span><span class="arrow"></span></a>
-					<a href="" class="cntBtn _Btn -white"><span class="txt">人事労務</span><span class="arrow"></span></a>
-					<a href="" class="cntBtn _Btn -white"><span class="txt">カスタマー法務</span><span class="arrow"></span></a>
-					<a href="" class="cntBtn _Btn"><span class="txt">個人法務 一覧</span><span class="arrow"></span></a>
+					<a href="<?php echo home_url("service/#_corporate"); ?>" class="cntBtn _Btn"><span class="txt">企業法務 一覧</span><span class="arrow"></span></a>
+					<a href="<?php echo get_permalink(82); ?>" class="cntBtn _Btn -white"><span class="txt">内部通報</span><span class="arrow"></span></a>
+					<a href="<?php echo get_permalink(76); ?>" class="cntBtn _Btn -white"><span class="txt">人事労務</span><span class="arrow"></span></a>
+					<a href="<?php echo get_permalink(80); ?>" class="cntBtn _Btn -white"><span class="txt">カスタマー法務</span><span class="arrow"></span></a>
+					<a href="<?php echo home_url("service/#_individual"); ?>" class="cntBtn _Btn"><span class="txt">個人法務 一覧</span><span class="arrow"></span></a>
 				</div>
 			</div>
 		</div>
@@ -163,9 +162,9 @@
 							$data = get_post_meta($id, 'seminar_img');
 							$data_url = wp_get_attachment_url($data[0]);
 							if($data_url): ?>
-							<img src="<?php echo $data_url; ?>" class="--img-cover --absolute" alt="<?php the_title(); ?>">
+							<img loading="lazy" src="<?php echo $data_url; ?>" class="--img-cover --absolute" alt="<?php the_title(); ?>">
 							<?php else: ?>
-							<img src="<?php echo img_url(); ?>/seminar/seminar_img.jpg" class="--img-cover --absolute" alt="<?php the_title(); ?>">
+							<img loading="lazy" src="<?php echo img_url(); ?>/seminar/seminar_img.jpg" class="--img-cover --absolute" alt="<?php the_title(); ?>">
 							<?php endif; ?>
 						</div>
 						<h3 class="title"><?php the_title(); ?></h3>

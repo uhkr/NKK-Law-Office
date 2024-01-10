@@ -5,6 +5,17 @@
 }
 
 /* MW WP Form */
+.mw_wp_form .horizontal-item + .horizontal-item{
+  margin-left: 0;
+}
+
+.mw_wp_form .error{
+  margin-top: 5px;
+}
+.mw_wp_form .error + .error{
+  margin-top: 0;
+}
+
 .mwform-checkbox-field label{
   cursor: pointer;
 }
@@ -41,6 +52,7 @@
 /* TAB */
 @media screen and (max-width: 899px) {
   .mwform-checkbox-field .mwform-checkbox-field-text{
+    padding-top: 2px;
     font-size: 1.4rem;
   }
 }
@@ -71,8 +83,11 @@
 }
 #_contact-check .cntBox-check{
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: 0 0 40px;
+}
+#_contact-check .cntBox-check .mwform-checkbox-field-text{
   font-weight: 700;
 }
 #_contact-check .cntBtn{
@@ -216,8 +231,12 @@
   border: 1px solid var(--c-base);
   border-radius: 0;
   background: #fff;
+  font: inherit;
   font-size: 16px;
   outline: none;
+}
+#_contact-form .cntItem textarea{
+  height: 240px;
 }
 #_contact-form .cntBtns{
   display: flex;
@@ -294,28 +313,40 @@
     text-align: left;
   }
 }
-
 #_form-ctype .inputs{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+}
+#_form-ctype .title,
+#_form-content .title,
+#_form-cway .title{
+  margin-top: 0;
 }
 #_form-cway .inputs{
   display: flex;
   flex-wrap: wrap;
   gap: 0 60px;
 }
-#_form-cway .container{
+#_form-cway .mwform-checkbox-field{
   margin-top: 20px;
   transform: translateY(-10px);
 }
+#_form-privacy-hidden{
+  display: none;
+}
 /* TAB */
 @media screen and (max-width: 899px) {
+  #_form-ctype,
+  #_form-cway{
+    padding-bottom: 22px;
+  }
   #_form-ctype .inputs{
     gap: 26px 20px;
     font-size: 1.4rem;
   }
   #_form-cway .inputs{
+    margin: -10px 0;
     font-size: 1.4rem;
   }
 }

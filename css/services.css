@@ -36,6 +36,7 @@
 #_services .cntItem .image{
   position: relative;
   padding-top: 100%;
+  background: #959996;
 }
 #_services .cntItem .box-texts{
   width: 100%;
